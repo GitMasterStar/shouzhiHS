@@ -1,0 +1,166 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <h3 class="title">录入新供应商</h3>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal">
+            <div>
+                <div style="border:2px; font-size:25px; text-align:center; ">供应商信息</div>
+            </div>
+            <div class="box-body">
+                <br>
+
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label"><span style="color:red;">*</span>供应商简称:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="fullName" class="col-sm-2 control-label"><span style="color:red;">*</span>供应商全称:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fullName">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="dBank" class="col-sm-2 control-label">开户银行:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="dBank">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="bacCount" class="col-sm-2 control-label">银行账号:</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="bacCount">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="type" class="col-sm-2 control-label"><span style="color:red;">*</span>企业性质:</label>
+                    <div class="col-sm-9">
+                        <select type="text" class="form-control load-dept" id="type">
+                            <option value="0">小微</option>
+                            <option value="1">其他</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="legalPersonId" class="col-sm-2 control-label"><span style="color:red;">*</span>签约法人:</label>
+                    <div class="col-sm-9">
+                        <select type="text" class="form-control legalPerson-hq" id="legalPersonId">
+                            <option value="">-- 请选择 --</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+            <div class="box-footer">
+                <button type="button" class="btn btn-info pull-right btn-save">录入</button>
+                <button type="button" class="btn btn-default btn-cancel">返回</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+        doGetInput();
+
+       $(".box-footer")
+           .on('click','.btn-save',doSaveOrUpdate)
+           .on('click',".btn-cancel",doCancel);
+
+
+        var  rowData=$("#mainContentId").data("rowData");
+        if(rowData) doInitRowData(rowData);
+    });
+
+    function doGetInput() {
+        debugger;
+        var url = "legalPerson/doFindObjects.do";
+        $.getJSON(url, function (result) {
+            debugger;
+            if(result.state==1){
+                var select = $('.legalPerson-hq');
+                for(var i in result.data.qufr){
+                    var option="<option value='"+result.data.qufr[i].legalname+"'>"+result.data.qufr[i].legalname+"</option>";
+                    select.append(option);
+                }
+                var  rowData=$("#mainContentId").data("rowData");
+                if (rowData)
+                    $("#legalPersonId").val(rowData.legalpersonid);
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+
+    /**
+     * 初始化数据
+     * @param rowData
+     */
+    function doInitRowData(rowData) {
+        $("#name").val(rowData.sname);
+        $("#fullName").val(rowData.sfullname);
+        $("#dBank").val(rowData.dbank);
+        $("#bacCount").val(rowData.baccount);
+        $("#type").val(rowData.type);
+        $("#legalPersonId").val(rowData.legalpersonid);
+        $(".btn-save").html("编辑");
+    }
+
+    /**
+     * 保存或修改
+     */
+    function doSaveOrUpdate(){
+        debugger;
+        var params=doGetRowData();
+        var rowData=$("#mainContentId").data("rowData");
+        if (rowData)params.id=rowData.id;
+        var insertUrl="supplier/doAddObject.do";
+        var updateUrl="supplier/doUpdateObject.do";
+        var url=rowData?updateUrl:insertUrl;
+        console.log(params);
+        $.post(url,params,function(result){
+            console.log(result);
+            debugger;
+            if(result.state==1){
+                swal(result.message);
+                doCancel();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+
+    function doGetRowData(){
+        debugger;
+        var params={
+            sname:$("#name").val(),
+            sfullname:$("#fullName").val(),
+            dbank:$("#dBank").val(),
+            baccount:$("#bacCount").val(),
+            type:$("#type").val(),
+            legalpersonid:$("#legalPersonId").val()
+        }
+        return params;
+    }
+
+    /**
+     * 返回
+     */
+    function doCancel(){
+        var url="supplier/doSupplierList.do";
+        $("#mainContentId").load(url,function(){
+            $("#mainContentId").removeData();
+        });
+    }
+
+    
+</script>

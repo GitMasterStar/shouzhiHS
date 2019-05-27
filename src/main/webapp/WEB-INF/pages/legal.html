@@ -1,0 +1,168 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2 class="title">发薪法人</h2>
+            <!--<div class="col-md-5 col-sm-5 col-xs-8  form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchNameId" placeholder="Search for...">
+                    <span class="input-group-btn"><button class="btn btn-default" type="button">Go!</button></span>
+                </div>
+            </div>-->
+            <div class="clearfix"></div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="x_content">
+            <ul class="nav navbar-left panel_toolbox">
+                <li><a class="btn legalPerson-add"><i class="fa fa-plus"></i> 录入</a></li>
+                <li><a class="btn legalPerson-update" ><i class="fa fa-wrench"></i> 编辑</a></li>
+                <li><a class="btn legalPerson-delete"><i class="fa fa-trash-o"></i> 删除</a></li>
+            </ul>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" id="checkAllId"></th>
+                    <th></th>
+                    <th>法人简称</th>
+                    <th>法人全称</th>
+                </tr>
+                </thead>
+                <tbody id="tbodyId">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+       doGetObjects();
+
+       $(".nav")
+            .on("click",".legalPerson-delete",doDeleteObjects)
+            .on("click",".legalPerson-add,.legalPerson-update",doLoadUI);
+       $(".input-group")
+           .on("click",".btn-default",doGetObjects);
+
+        $("#checkAllId").change(doChangeTBodyCheckBoxState);
+        $("#tbodyId")
+            .on("change",".cItem",doChangeTHeadCheckBoxState);
+    });
+
+    /**
+     * 添加修改功能
+     */
+    function doLoadPage(title){
+        var url="legalPerson/doLegalEditUI.do";
+        $("#mainContentId").load(url,function () {
+            $(".title").html(title);
+        })
+    }
+    function doLoadUI() {
+        debugger;
+        var title;
+        if ($(this).hasClass("legalPerson-add")){
+            debugger;
+            title="录入";
+        }else{
+            debugger;
+            title="编辑";
+            //1.获取选中行的记录
+            /*var id=$("tbody input[name='cItem']:checked").val();*/
+            var input=$("tbody input[type='checkbox']:checked");
+            var tr =input.parents("tr");
+            console.log("tr="+tr);
+            var rowData=tr.data("rowData");
+            if (!rowData){
+                swal("请选择一条记录");
+                return;
+            }
+            //2.绑定当前行的记录(在编辑页面使用此记录填充表单)
+            $("#mainContentId").data("rowData",rowData);
+            /*doFindByUserid(id,title);*/
+        }
+        doLoadPage(title);
+    }
+
+    /**
+     * 删除功能
+     */
+    function  doDeleteObjects() {
+        debugger;
+        var ids=doGetCheckedIds();
+        if(ids.length==0){
+            swal("请选择对象");
+            return;
+        }
+        var params={"ids":ids.toString()};
+        var url="legalPerson/doDeleteObjects.do";
+        $.post(url,params,function (result) {
+            debugger;
+            if(result.state==1){
+                swal(result.message);
+                doGetObjects();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+    function doGetCheckedIds(){
+        debugger;
+        var array=[];
+        $("#tbodyId input[type='checkbox']").each(function(){
+            if($(this).prop("checked")){
+                array.push($(this).val());
+            }
+        });
+        return array;
+    }
+
+
+    /**
+     * 获取数据
+     */
+    function doGetObjects() {
+        $("#checkAllId").prop("checked",false);
+        var url = "legalPerson/doFindObjects.do";
+        $.getJSON(url, function (result) {
+            console.log(result);
+            doHandleResponseResult(result);
+        });
+
+    }
+    function doHandleResponseResult(result){
+        if(result.state==1){
+            doSetTableBodyRows(result.data.fxfr);
+        }else{
+            swal(result.message);
+        }
+    }
+    function doSetTableBodyRows(data){
+        debugger;
+        var tbody=$("#tbodyId");
+        tbody.empty();
+        for(var i in data){
+            var tr=$("<tr></tr>");
+            tr.data("rowData",data[i]);
+            var tds=doCreateTds(data[i],parseInt(i));
+            tr.append(tds);
+            tbody.append(tr);
+        }
+
+    }
+
+    function doCreateTds(row,i){
+        debugger;
+        var tds=
+            "<td><input type='checkbox' name='cItem' class='cItem' value='"+row.id+"'></td>"+
+            "<td>"+(i+1)+"</td>"+
+            "<td>"+row.legalname+"</td>"+
+            "<td>"+row.legalfullname+"</td>"/*+
+            "<td>"+"<ul class='nav navbar-left panel_toolbox'><li><a class='btn btn-delete'><i class='fa fa-trash-o'></i>"+" 删除"+"</a></li></ul>"+"</td>"*/;
+        return tds;
+    }
+
+</script>

@@ -1,0 +1,282 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2 class="title">用户管理</h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="add"><i class="fa fa-plus"></i></a>
+                </li>
+                <li>
+                    <a class="update" ><i class="fa fa-wrench"></i></a>
+                </li>
+                <li><a class="delete"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-5 col-xs-8  form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchNameId" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="x_content">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" id="checkAllId"></th>
+                    <th>用户ID</th>
+                    <th>登录名</th>
+                    <!--<th>用户密码</th>-->
+                    <th>真实姓名</th>
+                    <th>部门</th>
+                    <th>上级领导</th>
+                    <th>邮箱</th>
+                    <th>电话</th>
+                    <th>创建用户</th>
+                    <th>创建时间</th>
+                    <th>修改用户</th>
+                    <th>修改时间</th >
+                    <th>状态</th>
+                    <!--<th>盐值</th>//密码加密时前缀，使加密后的值不同-->
+                    <th>备注</th>
+
+
+                </tr>
+                </thead>
+                <tbody id="tbodyId">
+
+                </tbody>
+            </table>
+            <div id="pageId" class="box-footer clearfix">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+       $("#pageId").load("doPageUI.do",function () {
+           debugger;
+           doGetObjects();
+       })
+
+        $(".nav")
+            .on("click",".delete",doDeleteObjects)
+            .on("click",".add,.update",doLoadUI);
+       $(".input-group")
+           .on("click",".btn-default",doQueryObject);
+
+        $("#checkAllId").change(doChangeTBodyCheckBoxState);
+        $("#tbodyId").on("change",".cItem",doChangeTHeadCheckBoxState);
+        $("#tbodyId").on("click",".btn-valid",doValidById);
+    });
+
+
+    function doQueryObject(){
+        $("#pageId").data("pageCurrent",1);
+        doGetObjects();
+    }
+
+
+
+    /**
+     * 添加修改功能
+     */
+    function  doLoadPage(userid,title){
+        var url="user/doLoadUI.do";
+        $("#mainContentId").load(url,function () {
+            $(".title").html(title);
+        })
+    }
+    function doLoadUI() {
+        debugger;
+        var title;
+        if ($(this).hasClass("add")){
+            debugger;
+            title="添加用户";
+            doLoadPage(title);
+        }else{
+            debugger;
+            title="修改用户";
+            var userid=$("tbody input[name='cItem']:checked").val();
+            if (!userid){
+                swal("请选择一条记录");
+                return;
+            }
+            doFindByUserid(userid,title);
+        }
+    }
+    function  doFindByUserid(userid,title) {
+        debugger;
+    var params={"userid":userid};
+    var url="user/doFindAllByUserId.do";
+    $.getJSON(url,params,function (result) {
+        debugger;
+        if (result.state==1){
+            $("#mainContentId").data("rowData",result.data);
+            doLoadPage(userid,title);
+        }else{
+            swal(result.message);
+        }
+    });
+    }
+
+    /**
+     * 删除功能
+     */
+    function  doDeleteObjects() {
+        debugger;
+        var userids=doGetCheckedIds();
+        if(userids.length==0){
+            swal("请选择对象");
+            return;
+        }
+        var params={"userids":userids.toString()};
+        var url="user/doDeleteObjects.do";
+        $.post(url,params,function (result) {
+            debugger;
+            if(result.state==1){
+                swal(result.message);
+                var pageCurrent = $("#pageId").data("pageCurrent");
+                var pageCount = $("#pageId").data("pageCount");
+                if(pageCurrent==pageCount){
+                    $("#pageId").data("pageCurrent",pageCount-1)
+                }
+                doGetObjects();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+    function doGetCheckedIds(){
+        debugger;
+        var array=[];
+        $("#tbodyId input[type='checkbox']").each(function(){
+            if($(this).prop("checked")){
+                array.push($(this).val());
+            }
+        });
+        return array;
+    }
+
+
+    /**
+     * 获取数据
+     */
+    function doGetObjects() {
+
+        $("#checkAllId").prop("checked",false);
+        debugger;
+      /*  var url="user/checkToken.do";
+        $.getJSON(url,function (result) {
+            debugger;
+            console.log("66666666666="+result);
+            console.log("999999999999="+result.state);
+            if(result.state==1){
+                debugger;
+                console.log("ok");
+            }else {
+                window.location.href="/doLoginUI.do";
+                /!*  window.location.href="login.html";*!/
+                /!*   window.location.href="/doLoginUI.do";
+                  window.location.reload();*!/
+                /!*swal(result.message);*!/
+
+            }
+        });*/
+        var url = "user/doFindPageObjects.do";
+        var pageCurrent = $("#pageId").data("pageCurrent");
+        if (!pageCurrent)
+            pageCurrent = 1;
+        var params = {"pageCurrent": pageCurrent}
+        params.userrealname = $("#searchNameId").val();
+        $.getJSON(url, params, function (result) {
+            console.log(result);
+            doHandleResponseResult(result);
+        });
+
+    }
+    function doHandleResponseResult(result){
+                if(result.state==1){
+                    debugger;
+            doSetTableBodyRows(result.data.records);
+            doSetPagination(result.data);
+        }else{
+            swal(result.message);
+        }
+    }
+    function doSetTableBodyRows(data){
+        debugger;
+        var tbody=$("#tbodyId");
+        tbody.empty();
+        for(var i in data){
+            var tr=$("<tr></tr>");
+            tr.data("rowData",data[i]);
+            var tds=doCreateTds(data[i]);
+            tr.append(tds);
+            tbody.append(tr);
+        }
+
+    }
+    /**
+     *  修改用户状态
+     */
+    function doValidById (){
+        debugger;
+        var btn=$(this);
+        var rowData=$(this).parents("tr").data("rowData");
+        var newValid=rowData.valid?0:1;
+        var url="user/doValidById.do";
+        var params={"userid":rowData.userid,"valid":newValid};
+        $.post(url,params,function (result) {
+            if(result.message){
+                doEditRow(btn,rowData.valid);
+                swal(result.message);
+                doGetObjects();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+    function doEditRow(obj,valid){
+        $(obj).html(valid?"启用":"禁用");
+        var tr=$(obj).parents("tr");
+        var rowData=tr.data("rowData");
+        rowData.valid=valid?0:1;
+        tr.data("rowDate",rowData);
+    }
+
+
+    function doCreateTds(row){
+
+        var tds=
+            "<td><input type='checkbox' name='cItem' class='cItem' value='"+row.userid+"'></td>"+
+            "<td>"+row.userid+"</td>"+
+            "<td>"+row.username+"</td>"+
+            "<td>"+(row.userrealname==null?"":row.userrealname)+"</td>"+
+            "<td>"+(row.name==null?"":row.name)+"</td>"+
+            "<td>"+(row.leaderName==null?"":row.leaderName)+"</td>"+
+            "<td>"+(row.email==null?"":row.email)+"</td>"+
+            "<td>"+(row.phone==null?"":row.phone)+"</td>"+
+            "<td>"+(row.createuser==null?"":row.createuser)+"</td>"+
+            "<td>"+(row.createdate==null?"":new Date(row.createdate).toLocaleString())+"</td>"+
+            "<td>"+ (row.updateuser==null?"":row.updateuser)+"</td>"+
+            "<td>"+(row.updatedate==null?"":new Date(row.updatedate).toLocaleString())+"</td>"+
+            "<td><button type='button' class='btn btn-default btn-valid'>"+(row.valid==0?"启用":"禁用")+"</button></td>"+
+            "<td>"+(row.remark==null?"":row.remark)+"</td>";
+        return tds;
+    }
+
+
+
+    
+</script>

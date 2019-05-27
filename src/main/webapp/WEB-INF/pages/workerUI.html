@@ -1,0 +1,526 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <h3 class="title">添加用户</h3>
+        <form class="form-horizontal">
+            <div class="box-body">
+                <br>
+                <div class="worker-information"
+                     style="border: 1px solid black; position:relative; border-radius: 15px 15px 15px 15px;">
+                    <h3 style=" background:#FFF; font-size:25px; text-align:center; left:30px; top:-25px; position:absolute;">
+                        员工信息</h3>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="workername" class="col-sm-1 control-label"><a style="color: red">*</a>姓名:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workername">
+                        </div>
+                        <label for="workeridcard" class="col-sm-1 control-label"><a
+                                style="color: red">*</a>身份证号:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workeridcard">
+                        </div>
+                        <label for="cmbcaccount" class="col-sm-1 control-label">招商银行账户:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="cmbcaccount">
+                        </div>
+                        <label for="icbcaccount" class="col-sm-1 control-label">工商银行账户:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="icbcaccount">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="workerphone" class="col-sm-1 control-label">手机:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workerphone">
+                        </div>
+                        <label for="workeremail" class="col-sm-1 control-label">邮箱:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workeremail">
+                        </div>
+                        <label for="worknative" class="col-sm-1 control-label">户口性质:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="worknative">
+                        </div>
+                        <label for="workersex" class="col-sm-1 control-label">性别:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workersex">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="workerdeptid" class="col-sm-1 control-label"><a style="color: red">*</a>部门:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workerdeptid">
+                        </div>
+                        <label for="workerlevel" class="col-sm-1 control-label"><a style="color: red">*</a>员工类别:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workerlevel">
+                        </div>
+                        <label for="workerleaderid" class="col-sm-1 control-label"><a
+                                style="color: red">*</a>所属上级:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workerleaderid">
+                        </div>
+                        <!--<label for="userpwd" class="col-sm-1 control-label">性别</label>
+                        <div class="col-sm-2">
+                            <input type="password" class="form-control" id="userpwd">
+                        </div>-->
+                    </div>
+                    <div class="form-group">
+
+                        <label for="createdate" class="col-sm-1 control-label"><a style="color: red">*</a>入职日期:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="createdate">
+                        </div>
+                        <label for="workercustomerid" class="col-sm-1 control-label"><a
+                                style="color: red">*</a>签约客户:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workercustomerid">
+                        </div>
+                        <label for="price" class="col-sm-1 control-label"><a style="color: red">*</a>单价:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="price">
+                        </div>
+                        <label for="pricetype" class="col-sm-1 control-label"><a style="color: red">*</a>单价方式:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="pricetype">
+                        </div>
+                    </div>
+
+                    <br>
+                </div>
+                <br>
+                <div class="personal-tax"
+                     style="border: 1px solid black; position:relative; border-radius: 15px 15px 15px 15px;">
+                    <h3 style=" background:#FFF; font-size:25px; text-align:center; left:30px; top:-25px; position:absolute;">
+                        个税专项</h3>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="childeducation" class="col-sm-1 control-label">子女教育:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="childeducation">
+                        </div>
+                        <!--  <label for="userpwd" class="col-sm-1 control-label">已用额度:</label>
+                          <div class="col-sm-2">
+                              <input type="password" class="form-control" id="userpwd">
+                          </div>
+                          <label for="userpwd" class="col-sm-1 control-label">剩余额度:</label>
+                          <div class="col-sm-2">
+                              <input type="password" class="form-control" id="userpwd">
+                          </div>-->
+
+                    </div>
+                    <div class="form-group">
+                        <label for="againeducation" class="col-sm-1 control-label">继续教育:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="againeducation">
+                        </div>
+                        <!--<label for="userpwd" class="col-sm-1 control-label">已用额度:</label>-->
+                        <!--<div class="col-sm-2">-->
+                        <!--<input type="password" class="form-control" id="userpwd">-->
+                        <!--</div>-->
+                        <!--<label for="userpwd" class="col-sm-1 control-label">剩余额度:</label>-->
+                        <!--<div class="col-sm-2">-->
+                        <!--<input type="password" class="form-control" id="userpwd">-->
+                        <!--</div>-->
+
+                    </div>
+                    <div class="form-group">
+                        <label for="seriousillness" class="col-sm-1 control-label">大病医疗:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="seriousillness">
+                        </div>
+                        <!-- <label for="userpwd" class="col-sm-1 control-label">已用额度:</label>
+                         <div class="col-sm-2">
+                             <input type="password" class="form-control" id="userpwd">
+                         </div>
+                         <label for="userpwd" class="col-sm-1 control-label">剩余额度:</label>
+                         <div class="col-sm-2">
+                             <input type="password" class="form-control" id="userpwd">
+                         </div>-->
+
+                    </div>
+                    <div class="form-group">
+                        <label for="houseloans" class="col-sm-1 control-label">住房贷款:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="houseloans">
+                        </div>
+                        <!--  <label for="userpwd" class="col-sm-1 control-label">已用额度:</label>
+                          <div class="col-sm-2">
+                              <input type="password" class="form-control" id="userpwd">
+                          </div>
+                          <label for="userpwd" class="col-sm-1 control-label">剩余额度:</label>
+                          <div class="col-sm-2">
+                              <input type="password" class="form-control" id="userpwd">
+                          </div>-->
+
+                    </div>
+                    <div class="form-group">
+                        <label for="rentinghouse" class="col-sm-1 control-label">住房租金:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="rentinghouse">
+                        </div>
+                        <!--  <label for="userpwd" class="col-sm-1 control-label">已用额度:</label>
+                          <div class="col-sm-2">
+                              <input type="password" class="form-control" id="userpwd">
+                          </div>
+                          <label for="userpwd" class="col-sm-1 control-label">剩余额度:</label>
+                          <div class="col-sm-2">
+                              <input type="password" class="form-control" id="userpwd">
+                          </div>-->
+
+                    </div>
+                    <div class="form-group">
+                        <label for="supportold" class="col-sm-1 control-label">赡养老人:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="supportold">
+                        </div>
+                        <!-- <label for="userpwd" class="col-sm-1 control-label">已用额度:</label>
+                         <div class="col-sm-2">
+                             <input type="password" class="form-control" id="userpwd">
+                         </div>
+                         <label for="userpwd" class="col-sm-1 control-label">剩余额度:</label>
+                         <div class="col-sm-2">
+                             <input type="password" class="form-control" id="userpwd">
+                         </div>-->
+
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="salary"
+                     style="border: 1px solid black; position:relative; border-radius: 15px 15px 15px 15px;">
+                    <h3 style=" background:#FFF; font-size:25px; text-align:center; left:30px; top:-25px; position:absolute;">
+                        薪酬安排</h3>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="normalsalary" class="col-sm-1 control-label"><a
+                                style="color: red">*</a>A(标准):</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="normalsalary">
+                        </div>
+                        <label for="basesalary" class="col-sm-1 control-label"><a style="color: red">*</a>基本工资:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="basesalary" value="3500.00" readonly="readonly">
+                        </div>
+                        <label for="performancesalary" class="col-sm-1 control-label"><a
+                                style="color: red">*</a>绩效工资:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="performancesalary">
+                        </div>
+                        <label for="salaryratio" class="salaryratio col-sm-1 control-label"><a style="color: red">*</a>试用折扣率(%):</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="salaryratio">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sixgoldcity" class="col-sm-1 control-label"><a style="color: red">*</a>六金城市:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="sixgoldcity">
+                        </div>
+                        <label for="sixgoldbase" class="col-sm-1 control-label"><a style="color: red">*</a>六金基数:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="sixgoldbase">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="paycity1" class="col-sm-1 control-label"><a style="color: red">*</a>发薪地1:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="paycity1">
+                        </div>
+                        <label for="paysalary1" class="col-sm-1 control-label"><a style="color: red">*</a>发薪金额1:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="paysalary1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="paycity2" class="col-sm-1 control-label">发薪地2:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="paycity2">
+                        </div>
+                        <label for="paysalary2" class="col-sm-1 control-label">发薪金额2:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="paysalary2">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="grossprofitrate" class="col-sm-1 control-label">毛利率(%):</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="grossprofitrate">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="salary-change"
+                     style="border:  1px solid black; position:relative; border-radius: 15px 15px 15px 15px; display: none;">
+                    <h3 style=" background:#FFF; font-size:25px; text-align:center; left:30px; top:-25px; position:absolute;">
+                        薪酬变动</h3>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="updatedate" class="col-sm-1 control-label">生效日期:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="updatedate">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="normalsalary" class="col-sm-1 control-label">A(标准):</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="normalsalary1">
+                        </div>
+                        <label for="basesalary" class="col-sm-1 control-label">基本工资:</label>
+                        <div class="col-sm-2">
+                            <input type="password" class="form-control" id="basesalary1">
+                        </div>
+                        <label for="performancesalary" class="col-sm-1 control-label">绩效工资:</label>
+                        <div class="col-sm-2">
+                            <input type="password" class="form-control" id="performancesalary1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sixgoldcity" class="col-sm-1 control-label">六金城市:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="sixgoldcity1">
+                        </div>
+                        <label for="sixgoldbase" class="col-sm-1 control-label">六金基数:</label>
+                        <div class="col-sm-2">
+                            <input type="password" class="form-control" id="sixgoldbase1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="paycity1" class="col-sm-1 control-label">发薪地1:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="updatepaycity1">
+                        </div>
+                        <label for="paysalary1" class="col-sm-1 control-label">发薪金额1:</label>
+                        <div class="col-sm-2">
+                            <input type="password" class="form-control" id="updatepaysalary1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="paycity2" class="col-sm-1 control-label">发薪地2:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="updatepaycity2">
+                        </div>
+                        <label for="paysalary2" class="col-sm-1 control-label">发薪金额2:</label>
+                        <div class="col-sm-2">
+                            <input type="password" class="form-control" id="updatepaysalary2">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="grossprofitrate" class="col-sm-1 control-label">调整后毛利率(%):</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="grossprofitrate1">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="noshow" style="display: none">
+                    <div class="form-group">
+                        <label for="updatepeople" class="col-sm-1 control-label">修改人:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="updatepeople">
+                        </div>
+                        <label for="createpeople" class="col-sm-1 control-label">创建人:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="createpeople">
+                        </div>
+                        <label for="workerstatus" class="col-sm-1 control-label">员工状态:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="workerstatus">
+                        </div>
+                        <label for="remark" class="col-sm-1 control-label">备注:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="remark">
+                        </div>
+                        <label for="declarationstatus" class="col-sm-1 control-label">社保状态:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="declarationstatus">
+                        </div>
+                        <label for="socialsecuritystatus" class="col-sm-1 control-label">申报状态:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="socialsecuritystatus">
+                        </div>
+                        <label for="dimissiondate" class="col-sm-1 control-label">离职时间:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="dimissiondate">
+                        </div>
+                        <label for="dimissionreason" class="col-sm-1 control-label">离职理由:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="dimissionreason">
+                        </div>
+                        <label for="equipment" class="col-sm-1 control-label">设备:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="equipment">
+                        </div>
+                        <label for="equipmentsubsidy" class="col-sm-1 control-label">设备补助:</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="equipmentsubsidy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="box-footer">
+                <button type="button" class="btn btn-info pull-right btn-save">确定</button>
+                <button type="button" class="btn btn-default btn-cancel">返回</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="bower_components/ztree/jquery.ztree.all.min.js"></script>
+<script type="text/javascript" src="bower_components/layer/layer.js"></script>
+<script type="text/javascript">
+    $(function () {
+        debugger;
+
+        $(".box-footer")
+            .on("click", ".btn-save", doSaveOrUpdate)
+            .on("click", ".btn-cancel", doCancel);
+        var rowData = $("#mainContentId").data("rowData");
+        if (rowData)
+            doInitRowData(rowData);
+    })
+
+    laydate.render({
+        elem: '#createdate'
+    });
+
+
+    /**
+     * 初始化数据
+     * @param rowData
+     */
+
+
+    function doInitRowData(rowData) {
+        $("#workername").val(rowData.workername);
+        $("#workersex").val(rowData.workersex);
+        $("#workeridcard").val(rowData.workeridcard);
+        $("#worknative").val(rowData.worknative);
+        $("#workerphone").val(rowData.workerphone);
+        $("#workeremail").val(rowData.workeremail);
+        $("#workerdeptid").val(rowData.workerdeptid);
+        $("#workerlevel").val(rowData.workerlevel);
+        $("#workerleaderid").val(rowData.workerleaderid);
+        $("#workercustomerid").val(rowData.workercustomerid);
+        $("#createpeople").val(rowData.createpeople);
+        $("#createdate").val(rowData.createdate);
+        $("#price").val(rowData.price);
+        $("#pricetype").val(rowData.pricetype);
+        $("#normalsalary").val(rowData.normalsalary);
+        /*$("#basesalary").val(rowData.basesalary);*/
+        $("#performancesalary").val(rowData.performancesalary);
+        $("#salaryratio").val(rowData.salaryratio);
+        $("#grossprofitrate").val(rowData.grossprofitrate);
+        $("#sixgoldcity").val(rowData.sixgoldcity);
+        $("#sixgoldbase").val(rowData.sixgoldbase);
+        $("#paycity1").val(rowData.paycity1);
+        $("#paysalary1").val(rowData.paysalary1);
+        $("#paycity2").val(rowData.paycity2);
+        $("#paysalary2").val(rowData.paysalary2);
+        $("#childeducation").val(rowData.childeducation);
+        $("#againeducation").val(rowData.againeducation);
+        $("#seriousillness").val(rowData.seriousillness);
+        $("#houseloans").val(rowData.houseloans);
+        $("#rentinghouse").val(rowData.rentinghouse);
+        $("#supportold").val(rowData.supportold);
+        $("#equipment").val(rowData.equipment);
+        $("#equipmentsubsidy").val(rowData.equipmentsubsidy);
+        $("#workerstatus").val(rowData.workerstatus);
+        $("#dimissiondate").val(rowData.dimissiondate);
+        $("#dimissionreason").val(rowData.dimissionreason);
+        $("#declarationstatus").val(rowData.declarationstatus);
+        $("#socialsecuritystatus").val(rowData.socialsecuritystatus);
+        $("#updatedate").val(rowData.updatedate);
+        $("#updatepeople").val(rowData.updatepeople);
+        $("#remark").val(rowData.remark);
+    }
+
+    /**
+     * 保存或修改
+     */
+    function doSaveOrUpdate() {
+        debugger;
+        var params = doGetRowData();
+        var rowData = $("#mainContentId").data("rowData");
+        if (rowData) params.id = rowData.id;
+        var insertUrl = "worker/doAddObject.do";
+        var updateUrl = "worker/doUpdateObject.do";
+        var url = rowData ? updateUrl : insertUrl;
+        console.log(params);
+        $.post(url, params, function (result) {
+            debugger;
+            console.log(result);
+            if (result.state == 1) {
+                swal(result.message);
+                doCancel();
+            } else {
+                swal(result.message);
+            }
+        });
+    }
+
+    function doGetRowData() {
+        debugger;
+        var params = {
+            workername: $("#workername").val(),
+            workersex: $("#workersex").val(),
+            workeridcard: $("#workeridcard").val(),
+            worknative: $("#worknative").val(),
+            cmbcaccount: $("#cmbcaccount").val(),
+            icbcaccount: $("#icbcaccount").val(),
+            workerphone: $("#workerphone").val(),
+            workeremail: $("#workeremail").val(),
+            workerdeptid: $("#workerdeptid").val(),
+            workerlevel: $("#workerlevel").val(),
+            workerleaderid: $("#workerleaderid").val(),
+            workercustomerid: $("#workercustomerid").val(),
+            createpeople: $("#createpeople").val(),
+            price: $("#price").val(),
+            pricetype: $("#pricetype").val(),
+            normalsalary: $("#normalsalary").val(),
+            basesalary: $("#basesalary").val(),
+            salaryratio: $("#salaryratio").val(),
+            grossprofitrate: $("#grossprofitrate").val(),
+            sixgoldcity: $("#sixgoldcity").val(),
+            sixgoldbase: $("#sixgoldbase").val(),
+            paycity1: $("#paycity1").val(),
+            paysalary1: $("#paysalary1").val(),
+            paycity2: $("#paycity2").val(),
+            paysalary2: $("#paysalary2").val(),
+            childeducation: $("#childeducation").val(),
+            againeducation: $("#againeducation").val(),
+            seriousillness: $("#seriousillness").val(),
+            houseloans: $("#houseloans").val(),
+            rentinghouse: $("#rentinghouse").val(),
+            supportold: $("#supportold").val(),
+            equipment: $("#equipment").val(),
+            equipmentsubsidy: $("#equipmentsubsidy").val(),
+            /*createdate:$("#createdate").val(),*/
+            workerstatus: $("#workerstatus").val(),
+            /*dimissiondate:$("#dimissiondate").val(),*/
+            dimissionreason: $("#dimissionreason").val(),
+            declarationstatus: $("#declarationstatus").val(),
+            socialsecuritystatus: $("#socialsecuritystatus").val(),
+
+            updatepeople: $("#updatepeople").val(),
+            remark: $("#remark").val()
+
+        }
+        return params;
+    }
+
+    /**
+     * 返回
+     */
+    function doCancel() {
+        var url = "worker/doWorkerList.do";
+        $("#mainContentId").load(url, function () {
+            $("#mainContentId").removeData();
+        });
+    }
+</script>

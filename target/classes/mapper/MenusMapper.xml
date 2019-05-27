@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sz.dao.MenusMapper" >
+  <resultMap id="BaseResultMap" type="com.sz.pojo.Menus" >
+    <constructor >
+      <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="ICON" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TYPE" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="SORT" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="NOTE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PARENTID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="PERMISSION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATEDTIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="MODIFIEDTIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="CREATEDUSER" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.sz.pojo.Menus" >
+    <constructor >
+      <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="ICON" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TYPE" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="SORT" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="NOTE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PARENTID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="PERMISSION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATEDTIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="MODIFIEDTIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="CREATEDUSER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MODIFIEDUSER" jdbcType="VARBINARY" javaType="_byte[]" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, ICON, NAME, TYPE, SORT, NOTE, PARENTID, PERMISSION, CREATEDTIME, MODIFIEDTIME, 
+    CREATEDUSER
+  </sql>
+  <sql id="Blob_Column_List" >
+    MODIFIEDUSER
+  </sql>
+  <sql id="queryWhereId">
+    <where>
+      <if test="name!=null and name!=''">
+        NAME LIKE concat("%",#{name},"%")
+      </if>
+    </where>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from menus
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from menus
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.Menus" >
+    insert into menus (ID, ICON, NAME, 
+      TYPE, SORT, NOTE, PARENTID, 
+      PERMISSION, CREATEDTIME, MODIFIEDTIME, 
+      CREATEDUSER, MODIFIEDUSER)
+    values (#{id,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR}, #{parentid,jdbcType=INTEGER}, 
+      #{permission,jdbcType=VARCHAR}, now(),now(),
+      #{createduser,jdbcType=VARCHAR}, #{modifieduser,jdbcType=VARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.Menus" >
+    insert into menus
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="icon != null" >
+        ICON,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="sort != null" >
+        SORT,
+      </if>
+      <if test="note != null" >
+        NOTE,
+      </if>
+      <if test="parentid != null" >
+        PARENTID,
+      </if>
+      <if test="permission != null" >
+        PERMISSION,
+      </if>
+      <if test="createdtime != null" >
+        CREATEDTIME,
+      </if>
+      <if test="modifiedtime != null" >
+        MODIFIEDTIME,
+      </if>
+      <if test="createduser != null" >
+        CREATEDUSER,
+      </if>
+      <if test="modifieduser != null" >
+        MODIFIEDUSER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="icon != null" >
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null" >
+        #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="permission != null" >
+        #{permission,jdbcType=VARCHAR},
+      </if>
+      <if test="createdtime != null" >
+        now(),
+      </if>
+      <if test="modifiedtime != null" >
+        now(),
+      </if>
+      <if test="createduser != null" >
+        #{createduser,jdbcType=VARCHAR},
+      </if>
+      <if test="modifieduser != null" >
+        #{modifieduser,jdbcType=VARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.Menus" >
+    update menus
+    <set >
+      <if test="icon != null" >
+        ICON = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null" >
+        SORT = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="note != null" >
+        NOTE = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="parentid != null" >
+        PARENTID = #{parentid,jdbcType=INTEGER},
+      </if>
+      <if test="permission != null" >
+        PERMISSION = #{permission,jdbcType=VARCHAR},
+      </if>
+      <if test="createdtime != null" >
+        CREATEDTIME = #{createdtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedtime != null" >
+        MODIFIEDTIME =now(),
+      </if>
+      <if test="createduser != null" >
+        CREATEDUSER = #{createduser,jdbcType=VARCHAR},
+      </if>
+      <if test="modifieduser != null" >
+        MODIFIEDUSER = #{modifieduser,jdbcType=VARBINARY},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.sz.pojo.Menus" >
+    update menus
+    set ICON = #{icon,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=INTEGER},
+      SORT = #{sort,jdbcType=INTEGER},
+      NOTE = #{note,jdbcType=VARCHAR},
+      PARENTID = #{parentid,jdbcType=INTEGER},
+      PERMISSION = #{permission,jdbcType=VARCHAR},
+      CREATEDTIME = #{createdtime,jdbcType=TIMESTAMP},
+      MODIFIEDTIME = now(),
+      CREATEDUSER = #{createduser,jdbcType=VARCHAR},
+      MODIFIEDUSER = #{modifieduser,jdbcType=VARBINARY}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.Menus" >
+    update menus
+    set ICON = #{icon,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=INTEGER},
+      SORT = #{sort,jdbcType=INTEGER},
+      NOTE = #{note,jdbcType=VARCHAR},
+      PARENTID = #{parentid,jdbcType=INTEGER},
+      PERMISSION = #{permission,jdbcType=VARCHAR},
+      CREATEDTIME = #{createdtime,jdbcType=TIMESTAMP},
+      MODIFIEDTIME = now(),
+      CREATEDUSER = #{createduser,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findPermissions" resultType="string">
+    SELECT PERMISSION FROM menus WHERE ID IN
+    <foreach collection="menuIds" open="(" close=")" separator="," item="menuId">
+      #{menuId}
+    </foreach>
+
+  </select>
+  <select id="findZtreeMenuNodes" resultType="com.sz.common.vo.Node">
+    SELECT  ID,PARENTID,NAME
+    FROM menus
+
+  </select>
+  <select id="getRowCount" resultType="int">
+    SELECT count(*) FROM menus
+    <include refid="queryWhereId"/>
+  </select>
+  <select id="findPageObjects" parameterType="com.sz.pojo.Menus" resultType="com.sz.pojo.Menus">
+    SELECT * FROM menus
+    <include refid="queryWhereId"/>
+    limit #{startIndex},#{pageSize}
+  </select>
+  <select id="selectByPrimaryKeyALL" resultMap="ResultMapWithBLOBs" parameterType="List">
+    SELECT
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from menus
+  </select>
+  <select id="getClildCount" parameterType="int" resultType="int">
+    SELECT COUNT(*)
+    FROM menus
+    WHERE PARENTID=#{id}
+  </select>
+  <select id="findObjects" resultType="java.util.Map">
+    SELECT c.*,(SELECT NAME FROM menus p
+    WHERE c.PARENTID=p.ID) parentName
+    FROM menus c
+  </select>
+</mapper>

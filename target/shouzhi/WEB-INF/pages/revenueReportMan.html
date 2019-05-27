@@ -1,0 +1,389 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2 class="title">人力收支申报</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-horizontal form-label-left">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">姓名:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="searchNameId">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">部门:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control">
+                                    <option value="">--请选择--</option>
+                                    <!--<option value="1">待处理</option>
+                                    <option value="2">未上报</option>
+                                    <option value="3">入职成功</option>
+                                    <option value="4">离职</option>-->
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">员工类型:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control">
+                                    <option value="">--请选择--</option>
+                                    <!--<option value="1">待处理</option>
+                                    <option value="2">未上报</option>
+                                    <option value="3">入职成功</option>
+                                    <option value="4">离职</option>-->
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">顾客:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control">
+                                    <option value="">--请选择--</option>
+                                    <!--<option value="1">待处理</option>
+                                    <option value="2">未上报</option>
+                                    <option value="3">入职成功</option>
+                                    <option value="4">离职</option>-->
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">状态:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control">
+                                    <option value="">--请选择--</option>
+                                    <option value="1">待录入</option>
+                                    <option value="2">待申报</option>
+                                    <option value="3">已上报</option>
+                                    <option value="4">审批通过</option>
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4">合计项:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control">
+                                    <option value="">--请选择--</option>
+                                    <option value="1">待入保</option>
+                                    <option value="2">已入保</option>
+                                    <option value="2">已退保</option>
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="nav pull-right panel_toolbox">
+                            <li><a class="btn refresh pull-right" id="refresh" type="button"><i class="fa fa-refresh"></i>重置</a></li>
+                            <li><a class="btn search pull-right" id="serach" type="button"><i class="fa fa-search"></i>查询</a></li>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <ul class="nav navbar-left panel_toolbox form-horizontal form-label-left">
+            <li class="form-group" style="width: 250px;">
+                <label class="control-label col-sm-4">生成月度:</label>
+                <div class="input-group date form_date col-sm-8" data-date="" data-date-format="yyyy/MM" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+                <input type="hidden" id="dtp_input2" value="" /><br/>
+            </li>
+            <li><a class="btn add"><i class="fa fa-plus"></i> 生成</a></li>
+            <li><a class="btn eye"><i class="fa fa-eye"></i> 查看</a></li>
+            <li><a class="btn update" ><i class="fa fa-wrench"></i> 编辑</a></li>
+            <li><a class="btn delete"><i class="fa fa-close"></i> 删除</a></li>
+            <li><a class="btn send"><i class="fa fa-sign-in"></i> 申报</a></li>
+            <li><a class="btn false"><i class="fa fa-exclamation"></i> 拒绝</a></li>
+            <li><a class="btn add"><i class="fa fa-plus"></i> 合计</a></li>
+            <li><a class="btn control-label downloadTo"><i class="fa fa-cloud-download"></i> 导出</a></li>
+        </ul>
+        <br>
+
+        <div class="x_content">
+            <ul class="nav navbar-left panel_toolbox" style="width: 100%;font-size: 24px;">
+                <li class="col-sm-3">总收入：</li>
+                <li class="col-sm-3">总毛利：</li>
+                <li class="col-sm-3">人数：</li>
+                <li class="col-sm-3">人均毛利：</li>
+            </ul>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" id="checkAllId"></th>
+                    <th>年月</th>
+                    <th>姓名</th>
+                    <th>部门</th>
+                    <th>员工类型</th>
+                    <th>顾客</th>
+                    <th>验收出勤日</th>
+                    <th>有绩效出勤日</th>
+                    <th>无绩效出勤日</th>
+                    <th>月间调整</th>
+                    <th>收入</th>
+                    <th>毛利</th>
+                    <th>毛利率</th>
+                    <th>状态</th>
+                    <th>失败理由</th>
+                    <th>录入者</th>
+                </tr>
+                </thead>
+                <tbody id="tbodyId">
+
+                </tbody>
+            </table>
+            <div id="pageId" class="box-footer clearfix">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+        debugger;
+        $("#pageId").load("doPageUI.do",function () {
+           /*doGetObjects();*/
+       })
+
+        $(".nav")
+            .on("click",".delete",doDeleteObjects)
+            .on("click",".add,.update,.eye",doLoadUI)
+
+            .on("click",".refresh",formReset);
+       $(".input-group")
+           .on("click",".btn-default",doQueryObject);
+
+        $("#checkAllId").change(doChangeTBodyCheckBoxState);
+        $("#tbodyId").on("change",".cItem",doChangeTHeadCheckBoxState);
+        $("#tbodyId").on("click",".btn-valid",doValidById);
+    });
+
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 3,
+        minView: 3,
+        forceParse: 0
+    });
+
+    function doQueryObject(){
+        $("#pageId").data("pageCurrent",1);
+        doGetObjects();
+    }
+
+    function formReset() {
+        $("#searchForm").find("input,select").val("");
+    }
+    /**
+     * 添加修改功能
+     */
+    function doLoadUI() {
+        debugger;
+        var title;
+        if ($(this).hasClass("add")){
+            debugger;
+            title="添加用户";
+            doLoadPage(title);
+        }else if($(this).hasClass("update")){
+            debugger;
+            title="修改用户";
+            var id=$("tbody input[name='cItem']:checked").val();
+            if (!id){
+                swal("请选择一条记录");
+                return;
+            }
+            doFindByUserid(id,title);
+        }else if($(this).hasClass("eye")){
+            title="用户信息";
+            var id=$("tbody input[name='cItem']:checked").val();
+            if (!id){
+                swal("请选择一条记录");
+                return;
+            }
+            doFindByUserid(id,title);
+        }
+    }
+    function doLoadPage(title){
+        var url="worker/doWorkerUI.do";
+        $("#mainContentId").load(url,function () {
+            $(".title").html(title);
+            if(title=="修改用户"){
+                $(".salary-change").css('display','');
+                $(".salary").find('input').attr('readonly','');
+                document.getElementById("salaryratio").removeAttribute("readonly");
+            }
+            if(title=="用户信息"){
+                $(".box-body").find('input').attr('readonly','');
+                $(".btn-save").css('display','none');
+            }
+        })
+    }
+    function  doFindByUserid(id,title) {
+        debugger;
+    var params={"id":id};
+    var url="worker/doFindWorkerById.do";
+    $.getJSON(url,params,function (result) {
+        debugger;
+        if (result.state==1){
+            $("#mainContentId").data("rowData",result.data);
+            doLoadPage(title);
+        }else{
+            swal(result.message);
+        }
+    });
+    }
+
+    /**
+     * 删除功能
+     */
+    function  doDeleteObjects() {
+        debugger;
+        var ids=doGetCheckedIds();
+        if(ids.length==0){
+            swal("请选择对象");
+            return;
+        }
+        var params={"ids":ids.toString()};
+        var url="worker/doDeleteObjects.do";
+        $.post(url,params,function (result) {
+            debugger;
+            if(result.state==1){
+                swal(result.message);
+                var pageCurrent = $("#pageId").data("pageCurrent");
+                var pageCount = $("#pageId").data("pageCount");
+                if(pageCurrent==pageCount){
+                    $("#pageId").data("pageCurrent",pageCount-1)
+                }
+                doGetObjects();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+    function doGetCheckedIds(){
+        debugger;
+        var array=[];
+        $("#tbodyId input[type='checkbox']").each(function(){
+            if($(this).prop("checked")){
+                array.push($(this).val());
+            }
+        });
+        return array;
+    }
+
+
+    /**
+     * 获取数据
+     */
+    function doGetObjects() {
+        $("#checkAllId").prop("checked",false);
+        debugger;
+        var url = "worker/doFindPageObjects.do";
+        var pageCurrent = $("#pageId").data("pageCurrent");
+        if (!pageCurrent)
+            pageCurrent = 1;
+        var params = {"pageCurrent": pageCurrent}
+        params.workername = $("#searchNameId").val();
+        $.getJSON(url, params, function (result) {
+
+            console.log(result);
+            doHandleResponseResult(result);
+        });
+
+    }
+    function doHandleResponseResult(result){
+                if(result.state==1){
+                    debugger;
+            doSetTableBodyRows(result.data.records);
+            doSetPagination(result.data);
+        }else{
+            swal(result.message);
+        }
+    }
+    function doSetTableBodyRows(data){
+        debugger;
+        var tbody=$("#tbodyId");
+        tbody.empty();
+        for(var i in data){
+            var tr=$("<tr></tr>");
+            tr.data("rowData",data[i]);
+            var tds=doCreateTds(data[i]);
+            tr.append(tds);
+            tbody.append(tr);
+        }
+
+    }
+    /**
+     *  修改用户状态
+     */
+    function doValidById (){
+        debugger;
+        var btn=$(this);
+        var rowData=$(this).parents("tr").data("rowData");
+        var newValid=rowData.valid?0:1;
+        var url="user/doValidById.do";
+        var params={"userid":rowData.userid,"valid":newValid};
+        $.post(url,params,function (result) {
+            if(result.message){
+                doEditRow(btn,rowData.valid);
+                swal(result.message);
+                doGetObjects();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+    function doEditRow(obj,valid){
+        $(obj).html(valid?"启用":"禁用");
+        var tr=$(obj).parents("tr");
+        var rowData=tr.data("rowData");
+        rowData.valid=valid?0:1;
+        tr.data("rowDate",rowData);
+    }
+
+
+
+
+    function doCreateTds(row){
+        var tds=
+            "<td><input type='checkbox' name='cItem' class='cItem' value='"+row.id+"'></td>"+
+            "<td>"+row.workername+"</td>"+
+            "<td>"+(row.workeridcard==null?"":row.workeridcard)+"</td>"+
+            "<td>"+(row.workerlevel==null?"":row.workerlevel)+"</td>"+
+            "<td>"+(row.workerdeptid==null?"":row.workerdeptid)+"</td>"+
+            "<td>"+(row.workerleaderid==null?"":row.workerleaderid)+"</td>"+
+            "<td>"+(row.normalsalary==null?"":row.normalsalary)+"</td>"+
+            "<td>"+(row.grossprofitrate==null?"":row.grossprofitrate)+"</td>"+
+            "<td>"+(row.createdate==null?"":new Date(row.createdate).toLocaleString())+"</td>"+
+            "<td>"+(row.dimissiondate==null?"":new Date(row.dimissiondate).toLocaleString())+"</td>"+
+            "<td>"+ (row.declarationstatus==null?"":row.declarationstatus)+"</td>"+
+            "<td>"+ (row.socialsecuritystatus==null?"":row.socialsecuritystatus)+"</td>"+
+            "<td>"+(row.remark==null?"":row.remark)+"</td>";
+        return tds;
+    }
+
+
+
+    
+</script>

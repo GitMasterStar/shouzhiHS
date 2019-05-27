@@ -1,0 +1,103 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <h3 class="title">录入新客户</h3>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal">
+            <div>
+                <div style="border:2px; font-size:25px; text-align:center; ">法人信息</div>
+            </div>
+            <div class="box-body">
+                <br>
+
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label"><span style="color:red;">*</span>法人简称</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="fullName" class="col-sm-2 control-label"><span style="color:red;">*</span>法人全称</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fullName">
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+            <div class="box-footer">
+                <button type="button" class="btn btn-info pull-right btn-save">录入</button>
+                <button type="button" class="btn btn-default btn-cancel">返回</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+        $(".box-footer")
+            .on('click','.btn-save',doSaveOrUpdate)
+            .on('click',".btn-cancel",doCancel);
+
+        var  rowData=$("#mainContentId").data("rowData");
+        if(rowData) doInitRowData(rowData);
+    });
+
+    /**
+     * 初始化数据
+     * @param rowData
+     */
+    function doInitRowData(rowData) {
+        $("#name").val(rowData.legalname);
+        $("#fullName").val(rowData.legalfullname);
+        $(".btn-save").html("编辑");
+    }
+
+    /**
+     * 保存或修改
+     */
+    function doSaveOrUpdate(){
+        debugger;
+        var params=doGetRowData();
+        var rowData=$("#mainContentId").data("rowData");
+        if (rowData)params.id=rowData.id;
+        var insertUrl="legalPerson/doAddObject.do";
+        var updateUrl="legalPerson/doUpdateObject.do";
+        var url=rowData?updateUrl:insertUrl;
+        console.log(params);
+        $.post(url,params,function(result){
+            console.log(result);
+            debugger;
+            if(result.state==1){
+                swal(result.message);
+                doCancel();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+
+    function doGetRowData(){
+        debugger;
+        var params={
+            legalname:$("#name").val(),
+            legalfullname:$("#fullName").val(),
+            legaltype:1
+        }
+        return params;
+    }
+
+    /**
+     * 返回
+     */
+    function doCancel(){
+        var url="legalPerson/doLegalPersonList.do";
+        $("#mainContentId").load(url,function(){
+            $("#mainContentId").removeData();
+        });
+    }
+
+
+</script>

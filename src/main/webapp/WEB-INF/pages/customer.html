@@ -1,0 +1,262 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2 class="title">客户管理</h2>
+            <div class="col-md-5 col-sm-5 col-xs-8  form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchNameId" placeholder="Search for...">
+                    <span class="input-group-btn"><button class="btn btn-default" type="button">Go!</button></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="x_content">
+
+            <ul class="nav navbar-left panel_toolbox">
+                <li><a class="btn customer-add"><i class="fa fa-plus"></i> 录入</a></li>
+                <li><a class="btn customer-update" ><i class="fa fa-wrench"></i> 编辑</a></li>
+                <li><a class="btn customer-delete"><i class="fa fa-trash-o"></i> 删除</a></li>
+            </ul>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" id="checkAllId"></th>
+                    <th>简称</th>
+                    <th>全称</th>
+                    <th>企业性质</th>
+                    <th>地址</th>
+                    <th>联系电话</th>
+                    <th>签约法人</th>
+                    <th>约定工作日</th>
+                    <th>约定账龄</th>
+                    <th>激活状态</th>
+                    <th>操作</th>
+
+                </tr>
+                </thead>
+                <tbody id="tbodyId">
+
+                </tbody>
+            </table>
+            <div id="pageId" class="box-footer clearfix">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+       $("#pageId").load("doPageUI.do",function () {
+           doGetObjects();
+       })
+
+        $(".nav")
+            .on("click",".customer-delete",doDeleteObjects)
+            .on("click",".customer-add,.customer-update",doLoadUI);
+       $(".input-group")
+           .on("click",".btn-default",doGetObjects);
+
+        $("#checkAllId").change(doChangeTBodyCheckBoxState);
+        $("#tbodyId").on("change",".cItem",doChangeTHeadCheckBoxState);
+        $("#tbodyId")
+            .on("click",".btn-activate,.btn-forbidden",doValidById);
+    });
+
+    /**
+     * 添加修改功能
+     */
+    function doLoadPage(title){
+        var url="customer/doCustomerEditUI.do";
+        $("#mainContentId").load(url,function () {
+            $(".title").html(title);
+        })
+    }
+    function doLoadUI() {
+        debugger;
+        var title;
+        if ($(this).hasClass("customer-add")){
+            debugger;
+            title="录入新客户";
+        }else{
+            debugger;
+            title="编辑客户";
+            //1.获取选中行的记录
+            /*var id=$("tbody input[name='cItem']:checked").val();*/
+            var input=$("tbody input[type='checkbox']:checked");
+            var tr =input.parents("tr");
+            console.log("tr="+tr);
+            var rowData=tr.data("rowData");
+            if (!rowData){
+                swal("请选择一条记录");
+                return;
+            }
+            //2.绑定当前行的记录(在编辑页面使用此记录填充表单)
+            $("#mainContentId").data("rowData",rowData);
+            /*doFindByUserid(id,title);*/
+        }
+        doLoadPage(title);
+    }
+    function  doFindByUserid(id,title) {
+        debugger;
+        var params={"id":id};
+        var url="worker/doFindUserById.do";
+        $.getJSON(url,params,function (result) {
+            debugger;
+            if (result.state==1){
+                $("#mainContentId").data("rowData",result.data);
+                doLoadPage(title);
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+
+    /**
+     * 删除功能
+     */
+    function  doDeleteObjects() {
+        debugger;
+        var ids=doGetCheckedIds();
+        if(ids.length==0){
+            swal("请选择对象");
+            return;
+        }
+        var params={"ids":ids.toString()};
+        var url="customer/doDeleteObjects.do";
+        $.post(url,params,function (result) {
+            debugger;
+            if(result.state==1){
+                swal(result.message);
+                var pageCurrent = $("#pageId").data("pageCurrent");
+                var pageCount = $("#pageId").data("pageCount");
+                if(pageCurrent==pageCount){
+                    $("#pageId").data("pageCurrent",pageCount-1)
+                }
+                doGetObjects();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+    function doGetCheckedIds(){
+        debugger;
+        var array=[];
+        $("#tbodyId input[type='checkbox']").each(function(){
+            if($(this).prop("checked")){
+                array.push($(this).val());
+            }
+        });
+        return array;
+    }
+
+
+    /**
+     * 获取数据
+     */
+    function doGetObjects() {
+        $("#checkAllId").prop("checked",false);
+        var url = "customer/doFindPageObjects.do";
+        var pageCurrent = $("#pageId").data("pageCurrent");
+        if (!pageCurrent)
+            pageCurrent = 1;
+        var params = {"pageCurrent": pageCurrent}
+        params.cname = $("#searchNameId").val().toString();
+        $.getJSON(url, params, function (result) {
+            doHandleResponseResult(result);
+        });
+
+    }
+    function doHandleResponseResult(result){
+        if(result.state==1){
+            doSetTableBodyRows(result.data.records);
+            doSetPagination(result.data);
+        }else{
+            swal(result.message);
+        }
+    }
+    function doSetTableBodyRows(data){
+        debugger;
+        var tbody=$("#tbodyId");
+        tbody.empty();
+        for(var i in data){
+            var tr=$("<tr></tr>");
+            tr.data("rowData",data[i]);
+            var tds=doCreateTds(data[i]);
+            tr.append(tds);
+            tbody.append(tr);
+        }
+
+    }
+    /**
+     *  修改用户状态
+     */
+    function doValidById (){
+        debugger;
+        /*var btn=$(this);*/
+        var rowData=$(this).parents("tr").data("rowData");
+        var newValid=rowData.cstatus==0?1:0;
+        var url="customer/doStatusById.do";
+        var params={"id":rowData.id,"status":newValid};
+        $.post(url,params,function (result) {
+            if(result.message){
+                /*doEditRow(btn,rowData.valid);*/
+                swal(result.message);
+                doGetObjects();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+    function doEditRow(obj,valid){
+        $(obj).html(valid?"启用":"禁用");
+        var tr=$(obj).parents("tr");
+        var rowData=tr.data("rowData");
+        rowData.valid=valid?0:1;
+        tr.data("rowDate",rowData);
+    }
+
+    function doCreateTds(row){
+        var tds=
+            "<td><input type='checkbox' name='cItem' class='cItem' value='"+row.id+"'></td>"+
+            "<td>"+row.cname+"</td>"+
+            "<td>"+row.cfullname+"</td>"+
+            "<td>"+doTypeByZt(row.ctype)+"</td>"+
+            "<td>"+row.caddress+"</td>"+
+            "<td>"+row.cphone+"</td>"+
+            "<td>"+row.legalpersonid+"</td>"+
+            "<td>"+row.csignday+"</td>"+
+            "<td>"+row.csignaging+"</td>"+
+            "<td>"+(row.cstatus==0?"激活":"禁用")+"</td>"+
+            "<td>"+doCz(row.cstatus)+"</td>"/*+
+            "<td>"+(row.remark==null?"":row.remark)+"</td>"*/;
+        return tds;
+    }
+
+    function doCz(pd) {
+        debugger;
+        var tdss;
+        if (pd==1)
+            tdss = "<li><a class='btn btn-activate'><i class='fa fa-unlock'></i>"+" 激活"+"</a></li>";
+        else if (pd==0)
+            tdss = "<li><a class='btn btn-forbidden'><i class='fa fa-unlock-alt'></i>"+" 禁用"+"</a></li>";
+        var tds="<ul class='nav navbar-left panel_toolbox'>" + tdss + "</ul>";
+        return tds;
+    }
+
+    function doTypeByZt(typeId) {
+        var tds;
+        if (typeId==0)
+            tds="<span>"+"国企"+"</span>";
+        else if (typeId==1)
+            tds="<span>"+"民企"+"</span>";
+        else
+            tds="<span>"+"外企"+"</span>";
+        return tds;
+    }
+
+</script>

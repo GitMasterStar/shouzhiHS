@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sz.dao.CustomerMapper" >
+  <resultMap id="BaseResultMap" type="com.sz.pojo.Customer" >
+    <constructor >
+      <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="CNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CFULLNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CTYPE" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="CADDRESS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CPHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LEGALPERSONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CSIGNDAY" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="CSIGNAGING" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="CSTATUS" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, CNAME, CFULLNAME, CTYPE, CADDRESS, CPHONE, LEGALPERSONID, CSIGNDAY, CSIGNAGING, 
+    CSTATUS
+  </sql>
+  <sql id="queryWhereId">
+    <where>
+      <if test="cname!=null and cname!=''">
+        CNAME LIKE concat("%",#{cname},"%")
+      </if>
+    </where>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from customer
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.Customer" >
+    insert into customer (ID, CNAME, CFULLNAME, 
+      CTYPE, CADDRESS, CPHONE, 
+      LEGALPERSONID, CSIGNDAY, CSIGNAGING, 
+      CSTATUS)
+    values (#{id,jdbcType=INTEGER}, #{cname,jdbcType=VARCHAR}, #{cfullname,jdbcType=VARCHAR}, 
+      #{ctype,jdbcType=INTEGER}, #{caddress,jdbcType=VARCHAR}, #{cphone,jdbcType=VARCHAR}, 
+      #{legalpersonid,jdbcType=VARCHAR}, #{csignday,jdbcType=DOUBLE}, #{csignaging,jdbcType=DOUBLE}, 
+      #{cstatus,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.Customer" >
+    insert into customer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="cname != null" >
+        CNAME,
+      </if>
+      <if test="cfullname != null" >
+        CFULLNAME,
+      </if>
+      <if test="ctype != null" >
+        CTYPE,
+      </if>
+      <if test="caddress != null" >
+        CADDRESS,
+      </if>
+      <if test="cphone != null" >
+        CPHONE,
+      </if>
+      <if test="legalpersonid != null" >
+        LEGALPERSONID,
+      </if>
+      <if test="csignday != null" >
+        CSIGNDAY,
+      </if>
+      <if test="csignaging != null" >
+        CSIGNAGING,
+      </if>
+      <if test="cstatus != null" >
+        CSTATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cname != null" >
+        #{cname,jdbcType=VARCHAR},
+      </if>
+      <if test="cfullname != null" >
+        #{cfullname,jdbcType=VARCHAR},
+      </if>
+      <if test="ctype != null" >
+        #{ctype,jdbcType=INTEGER},
+      </if>
+      <if test="caddress != null" >
+        #{caddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cphone != null" >
+        #{cphone,jdbcType=VARCHAR},
+      </if>
+      <if test="legalpersonid != null" >
+        #{legalpersonid,jdbcType=VARCHAR},
+      </if>
+      <if test="csignday != null" >
+        #{csignday,jdbcType=DOUBLE},
+      </if>
+      <if test="csignaging != null" >
+        #{csignaging,jdbcType=DOUBLE},
+      </if>
+      <if test="cstatus != null" >
+        #{cstatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.Customer" >
+    update customer
+    <set >
+      <if test="cname != null" >
+        CNAME = #{cname,jdbcType=VARCHAR},
+      </if>
+      <if test="cfullname != null" >
+        CFULLNAME = #{cfullname,jdbcType=VARCHAR},
+      </if>
+      <if test="ctype != null" >
+        CTYPE = #{ctype,jdbcType=INTEGER},
+      </if>
+      <if test="caddress != null" >
+        CADDRESS = #{caddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cphone != null" >
+        CPHONE = #{cphone,jdbcType=VARCHAR},
+      </if>
+      <if test="legalpersonid != null" >
+        LEGALPERSONID = #{legalpersonid,jdbcType=VARCHAR},
+      </if>
+      <if test="csignday != null" >
+        CSIGNDAY = #{csignday,jdbcType=DOUBLE},
+      </if>
+      <if test="csignaging != null" >
+        CSIGNAGING = #{csignaging,jdbcType=DOUBLE},
+      </if>
+      <if test="cstatus != null" >
+        CSTATUS = #{cstatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.Customer" >
+    update customer
+    set CNAME = #{cname,jdbcType=VARCHAR},
+      CFULLNAME = #{cfullname,jdbcType=VARCHAR},
+      CTYPE = #{ctype,jdbcType=INTEGER},
+      CADDRESS = #{caddress,jdbcType=VARCHAR},
+      CPHONE = #{cphone,jdbcType=VARCHAR},
+      LEGALPERSONID = #{legalpersonid,jdbcType=VARCHAR},
+      CSIGNDAY = #{csignday,jdbcType=DOUBLE},
+      CSIGNAGING = #{csignaging,jdbcType=DOUBLE},
+      CSTATUS = #{cstatus,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!-- 计算查询数量 -->
+  <select id="getRowCount" resultType="int">
+    SELECT count(*) FROM customer
+    <include refid="queryWhereId"/>
+  </select>
+  <!-- 分页查询客户信息 -->
+  <select id="findPageObjects" parameterType="com.sz.pojo.Customer" resultType="com.sz.pojo.Customer">
+    SELECT * FROM customer
+    <include refid="queryWhereId"/>
+    limit #{startIndex},#{pageSize}
+  </select>
+  <!-- 修改客户状态 -->
+  <update id="statusById" parameterType="com.sz.pojo.Customer">
+    UPDATE customer
+    set CSTATUS = #{status}
+    where ID = #{id}
+  </update>
+</mapper>

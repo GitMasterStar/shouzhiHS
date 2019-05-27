@@ -1,0 +1,236 @@
+<!-- Horizontal Form -->
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="box-header with-border">
+        <h3 class="box-title">添加资源</h3>
+    </div>
+    <div id="sx" style="height: 44px;">
+        <button type="button" class="btn btn-info btn-cs">测试</button>
+        <button type="button" class="btn btn-info pull-right btn-clear">刷新</button>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form class="form-horizontal">
+        <div class="box-body">
+            <div class="form-group">
+                <label for="nameId" class="col-sm-2 control-label wbcd">类型</label>
+                <div class="col-sm-10 typeRadio">
+                    <label class="radio-inline"> <input type="radio" name="typeId" value="0" checked> 菜单 </label>
+                    <label class="radio-inline"> <input type="radio" name="typeId" value="1"> 功能 </label>
+                    <label class="radio-inline"> <input type="radio" name="typeId" value="2"> 按钮 </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nameId" class="col-sm-2 control-label wbcd">菜单名称：</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nameId"
+                           placeholder="名称">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label wbcd">上级菜单：</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control load-sys-menu" readonly="readonly" id="parentId" placeholder="上级菜单">
+                    <div style="display:none;border:0 solid;width:100%;float: left;" class="menuTree">
+                        <ul id="menuTree" class="ztree"></ul>
+                        <!-- 动态加载树 -->
+                    </div>
+                </div>
+            </div>
+            <!--<div class="form-group">
+                <label for="urlId" class="col-sm-2 control-label">菜单URL</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="urlId"
+                           placeholder="url">
+                </div>
+            </div>-->
+            <div class="form-group">
+                <label for="permissionId" class="col-sm-2 control-label wbcd">授权标识：</label>
+                <div class="col-sm-10">
+                    <input type="text" id="permissionId"
+                           placeholder="多个用逗号分隔，如：user:list,user:create" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sortId" class="col-sm-2 control-label wbcd">排序号：</label>
+                <div class="col-sm-10">
+                    <input type="text" id="sortId" placeholder="排序号"
+                           class="form-control">
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            <button type="button" class="btn btn-default btn-cancel">返回</button>
+            <button type="button" class="btn btn-info pull-right btn-save">添加</button>
+        </div>
+        <!-- /.box-footer -->
+    </form>
+</div>
+<script type="text/javascript" src="bower_components/ztree/jquery.ztree.all.min.js"></script>
+<style type="text/css">
+    .wbcd{
+        width:12%;
+    }
+</style>
+<script type="text/javascript">
+    var zTree;
+    //初始化zTree时会用到
+    var setting = {
+        data : {
+            simpleData : {
+                enable : true,
+                idKey : "id", //节点数据中保存唯一标识的属性名称
+                pIdKey : "parentId", //节点数据中保存其父节点唯一标识的属性名称
+                rootPId : null
+                //根节点id
+            }
+            //json 格式javascript对象
+        },
+        callback:{
+            onClick:zTreeOnClick
+        }
+    }//json 格式的javascript对象
+
+    $(function(){
+        $(".form-group")
+            .on("click","#parentId",doLoadZtreeNodes);
+        $("#sx")
+            .on("click",".btn-clear",doRefresh);
+        $(".box-footer")
+            .on("click",".btn-save",doSaveOrUpdate)
+            .on("click",".btn-cancel",doCancel);
+        debugger;
+        //假如是修改则初始化页面数据
+        var rowData=$("#mainContentId").data("rowData");
+        if(rowData)doInitEditFormData(rowData);
+    });
+
+    //刷新页面
+    function doRefresh() {
+        var title = "添加资源";
+        var rowData=$("#mainContentId").data("data");
+        if (rowData) title = "修改资源";
+        var url="menu/doMenuEditUI.do";
+        $("#mainContentId").load(url,function(){
+            $(".box-title").html(title);
+        })
+    }
+
+    //加载页面信息
+    function doInitEditFormData(rowData){
+        debugger;
+        $(".form-group input[value='"+rowData.TYPE+"']").prop("checked",true);
+        $("#nameId").val(rowData.NAME);
+        /*$("#urlId").val(rowData.url);*/
+        $("#sortId").val(rowData.SORT);
+        $("#permissionId").val(rowData.PERMISSION);
+        $("#parentId").val(rowData.parentName);
+        $("#parentId").data("parentId",rowData.PARENTID);
+        $(".btn-save").html("修改");
+    }
+    function doSaveOrUpdate(){
+        debugger
+        //1.获取页面表单中的数据
+        var params=doGetEditFromData();
+        var rowData=$("#mainContentId").data("rowData");
+        //只有更新操作rowData才会有值
+        if(rowData)params.id=rowData.ID;//基于id进行记录更新
+        //2.异步提交表单数据
+        var insertUrl="menu/doSaveObject.do";
+        var updateUrl="menu/doUpdateObject.do";
+        //rowData有值说明是更新操作
+        var url=rowData?updateUrl:insertUrl;
+        console.log(params);
+        $.post(url,params,function(result){
+            if(result.state==1){
+                alert(result.message);
+                //doGetCancel();
+                doCancel();
+            }else{
+                alert(result.message);
+            }
+        });
+    }
+    function doGetEditFromData(){
+        var params={
+            type:$(".form-group input[name='typeId']:checked").val(),
+            name:$("#nameId").val(),
+            /*url:$("#urlId").val(),*/
+            sort:$("#sortId").val(),
+            permission:$("#permissionId").val(),
+            parentid:$("#parentId").data("parentId")
+        }
+        return params;
+    }
+    function doCancel(){
+        /* $("#mainContentId").load("menu/doMenuEditUI.do",function(){
+            $("#mainContentId").removeData();
+            $("#parentId").removeData();
+        }) */
+        var url="menu/doMenuList.do";
+        $("#mainContentId").load(url,function(){
+            $("#mainContentId").removeData();
+        })
+    }
+    function doLoadZtreeNodes(){
+        debugger;
+        //显示div
+        showTree();
+        var url="menu/doFindZtreeMenuNodes.do";
+        //异步加载数据,并初始化数据
+        $.getJSON(url,function(result){
+            //使用init函数需要先引入ztree对应的js文件
+            if(result.state==1){
+                zTree=$.fn.zTree.init(
+                    $("#menuTree"),
+                    setting,
+                    result.data);
+                //console.log(zTree);
+                zTree.expandAll(true);
+            }else{
+                alert(result.message);
+            }
+        })
+    }
+
+    function doMenuList(){
+        var url="menu/doDeleteObject.do";
+        console.log(url);
+    }
+
+    //节点点击事件
+    function zTreeOnClick(event, treeId, treeNode) {
+        //1.将treeNode数据填充到页面上级菜单对应的表单元素上
+        //1.1)节点名字(表单中显示这个值)
+        $("#parentId").val(treeNode.name);
+        //1.2)节点id(进行绑定,此值最后要存储到数据库)
+        $("#parentId").data("parentId",treeNode.id);
+        /*alert("选中上级菜单：名称："+$("#parentId").val()+",ID："+$("#parentId").data("parentId"));*/
+        //2.隐藏下拉框
+        hideTree();
+    }
+    //下拉框显示 隐藏
+    function showTree(){
+        if($('.menuTree').css('display') == 'none'){
+            $('.menuTree').css('display','block');
+        } else{
+            $('.menuTree').css('display','none');
+        }
+        $("body").bind("mousedown", onBodyDownByActionType);
+    }
+    function hideTree() {
+        $('.menuTree').css('display','none');
+        $("body").unbind("mousedown", onBodyDownByActionType);
+        return false;
+    }
+    //区域外点击事件
+    function onBodyDownByActionType(event) {
+        debugger;
+        if (event.target.id.indexOf('menuTree') == -1){
+            if(event.target.id != 'selectDevType'){
+                hideTree();
+            }
+        }
+    }
+
+</script>

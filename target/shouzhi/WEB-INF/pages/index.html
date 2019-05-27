@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>智蓝收支系统</title>
+    <!-- 自备 -->
+    <link href="bower_components/layer/skin/default/layer.css" rel="stylesheet">
+    <link href="bower_components/ztree/css/metroStyle/metroStyle.css" rel="stylesheet"/>
+    <link href="bower_components/treegrid/jquery.treegrid.css" rel="stylesheet"/>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+   <!-- <link rel="stylesheet" href="../assets/css/app.css">-->
+
+    <!--时间插件css-->
+    <link rel="stylesheet" type="text/css" media="all" href="js/daterangepicker-bs3.css" />
+
+    <style type="text/css">
+      .mask {
+        position: absolute; top: 0px; filter: alpha(opacity=60); background-color: #777;
+        z-index: 1002; left: 0px;
+        opacity:0.5; -moz-opacity:0.5;
+      }
+      .wbcd{
+        width:150px;
+      }
+    </style>
+
+  </head>
+
+  <body class="nav-md">
+  <div id="mask" class="mask"></div>
+  <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0; background-color: #EDEDED;">
+              <a href="index.do" class="site_title"><!--<i class="fa fa-paw"></i> <span>Gentelella Alela!</span>-->
+                <img src="images/logo.png" alt="..." width="202" style="border: 0;">
+              </a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <!--<div class="profile clearfix">
+              <div class="profile_pic">
+              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+            </div>
+              <div class="profile_info">
+                <span>&nbsp;欢迎</span>
+                <h2 id="person"></h2>
+              </div>
+            </div>-->
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3 style="font-size: 18px;">后台系统管理</h3>
+                <ul class="nav side-menu">
+                  <li><a id="load-menu-id"><i class="fa fa-home"></i> 资源管理 </a>
+                    <!--<ul class="nav child_menu">
+                      <li><a href="index.html">Dashboard</a></li>
+                      <li><a href="index2.html">Dashboard2</a></li>
+                      <li><a href="index3.html">Dashboard3</a></li>
+                    </ul>-->
+                  </li>
+                  <li><a id="load-role-id"><i class="fa fa-edit"></i> 角色管理 </span></a>
+                    <!--<ul class="nav child_menu">
+                      <li><a href="form.html">General Form</a></li>
+                      <li><a href="form_advanced.html">Advanced Components</a></li>
+                      <li><a href="form_validation.html">Form Validation</a></li>
+                      <li><a href="form_wizards.html">Form Wizard</a></li>
+                      <li><a href="form_upload.html">Form Upload</a></li>
+                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                    </ul>-->
+                  </li>
+                  <li><a id="load-user-id"><i class="fa fa-desktop"></i> 用户管理 </a>
+                    <!--<ul class="nav child_menu">
+                      <li><a href="general_elements.html">General Elements</a></li>
+                      <li><a href="media_gallery.html">Media Gallery</a></li>
+                      <li><a href="typography.html">Typography</a></li>
+                      <li><a href="icons.html">Icons</a></li>
+                      <li><a href="glyphicons.html">Glyphicons</a></li>
+                      <li><a href="widgets.html">Widgets</a></li>
+                      <li><a href="invoice.html">Invoice</a></li>
+                      <li><a href="inbox.html">Inbox</a></li>
+                      <li><a href="calendar.html">Calendar</a></li>
+                    </ul>-->
+                  </li>
+                  <li><a id="load-dept-id"><i class="fa fa-table"></i> 部门管理</a>
+                    <!--<ul class="nav child_menu">
+                      <li><a href="tables.html">Tables</a></li>
+                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                    </ul>-->
+                  </li>
+                  <li><a id="load-parameter-id"><i class="fa fa-bar-chart-o"></i> 数据字典管理</span></a>
+                   <!-- <ul class="nav child_menu">
+                      <li><a href="chartjs.html">Chart JS</a></li>
+                  <li><a href="chartjs2.html">Chart JS2</a></li>
+                  <li><a href="morisjs.html">Moris JS</a></li>
+                  <li><a href="echarts.html">ECharts</a></li>
+                  <li><a href="other_charts.html">Other Charts</a></li>
+                </ul>-->
+                  </li>
+                  <!--<li><a><i class="fa fa-clone"></i> Layouts <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                    </ul>
+                  </li>-->
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3 style="font-size: 18px;">前台业务管理</h3>
+                <ul class="nav side-menu">
+                  <li><a id="load-legal-id"><i class="fa fa-newspaper-o"></i> 法人设置 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a id="load-legalPerson-id">客户签约法人</a></li>
+                      <li><a id="load-person-id">发薪法人</a></li>
+                    </ul>
+                  </li>
+                  <li><a id="load-legalxx-id"><i class="fa fa-newspaper-o"></i> 法定信息 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a id="load-insurance-id">六金配置</a></li>
+                      <li><a id="load-workday-id">工作日</a></li>
+                    </ul>
+                  </li>
+                  <li><a id="load-crm-id"><i class="fa fa-group"></i> CRM <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a id="load-customer-id">客户</a>
+                      <li><a id="load-supplier-id">供应商</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!--<li><a id="load-sixgold-id"><i class="fa fa-sitemap"></i> 员工六金 <span class="fa fa-chevron-down"></span></a></li>-->
+                  <li><a id="load-sixgold-id"><i class="fa fa-area-chart"></i> 员工六金 </a></li>
+                  <li><a id="load-declareWorker-id"><i class="fa fa-user"></i> 员工申报 </a></li>
+                  <li><a id="load-auditWorker-id"><i class="fa fa-user"></i> 员工审批 </a></li>
+                  <li><a id="load-worker-id"><i class="fa fa-user"></i> 员工信息 </a></li>
+                  <li><a id="load-szsb-id"><i class="fa fa-money"></i> 收支申报 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a id="load-rl-id">人力</a>
+                      <li><a >项目</a>
+                      <li><a>经费</a></li>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li><a id="load-szsh-id"><i class="fa fa-money"></i> 收支审批 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a id="load-revenueApprovalMan-id">人力</a>
+                      <li><a href="#level1_1">项目</a>
+                      <li><a>经费录入<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li class="sub_menu"><a href="level2.html">Level Two</a>
+                          </li>
+                          <li><a href="#level2_1">Level Two</a>
+                          </li>
+                          <li><a href="#level2_2">Level Two</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="#level1_2">Level One</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <!--<li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> 员工六金 <span class="label label-success pull-right">Coming Soon</span></a></li>-->
+                </ul>
+              </div>
+
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+           <!-- <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>-->
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- 个人信息设置 -->
+        <div id="topId" class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <!--<div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>-->
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span id="loginName"></span>
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a onclick="clean()"><i class="fa fa-sign-out pull-right"></i>退出</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div id="mainContentId" class="right_col" role="main">
+          <tbody id="tbodyId">
+            欢迎大家
+          </tbody>
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+
+          <div  style="text-align: center">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script>, CopyRight@ <a href="http://www.cssmoban.com/" target="_blank" title="智蓝信息">智蓝信息</a>
+          </div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="../vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../vendors/Flot/jquery.flot.js"></script>
+    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+    <script src="../js/bootprompt.all.min.js"></script>
+    <script src="../assets/sweetalert/sweetalert.min.js"></script>
+
+  <!--时间插件js-->
+  <script src="../laydate/laydate.js"></script>
+
+    <script type="text/javascript">
+    $(function () {
+
+        doLoadUI("load-menu-id","/menu/doMenuList.do");
+        doLoadUI("load-role-id","/role/doRoleList.do");
+        doLoadUI("load-user-id","/user/doUserList.do");
+        doLoadUI("load-dept-id","/dept/doDeptList.do");
+        doLoadUI("load-parameter-id","/parameter/doParameterList.do");
+        doLoadUI("load-worker-id","/worker/doWorkerList.do");
+        doLoadUI("load-customer-id","customer/doCustomerList.do");
+        doLoadUI("load-legalPerson-id","legalPerson/doLegalPersonList.do");
+        doLoadUI("load-person-id","legalPerson/doLegalList.do");
+        doLoadUI("load-insurance-id","insurance/doInsuranceList.do");
+        doLoadUI("load-workday-id","workday/doWorkdayList.do");
+        doLoadUI("load-supplier-id","supplier/doSupplierList.do");
+        doLoadUI("load-revenueApprovalMan-id","revenue/doApprovalMan.do");
+        doLoadUI("load-declareWorker-id","worker/doDeclareWorkerList.do");
+        doLoadUI("load-auditWorker-id","worker/doAuditWorkerList.do");
+        doLoadUI("load-sixgold-id","sixGlodDetail/doSixGlodDetailList.do");
+        doLoadUI("load-rl-id","revenueReport/doRevenueReportManList.do");
+
+
+
+        $("#checkAllId").change(doChangeTBodyCheckBoxState);
+        $("#tbodyId").on("change",".cItem",doChangeTHeadCheckBoxState);
+        doGetUser();
+        debugger;
+    });
+    function doGetUser(){
+        debugger;
+    var url="user/doSession.do";
+    $.getJSON(url,function (result) {
+        debugger;
+        if(result.state==1){
+            $("#topId").data("data",result.data);
+            var data=$("#topId").data("data");
+            doInitUser(data);
+        }else {
+            swal(result.message);
+        }
+    })
+    }
+    function doInitUser(data) {
+        debugger;
+        $("#loginName" ).html(data.roleName+"&nbsp;&nbsp;&nbsp;"+data.user.userrealname);
+    }
+
+    //设置thead中checkbox的值
+    function doChangeTHeadCheckBoxState(){
+        console.log("doChangeTHeadCheckBoxState");
+        debugger;
+        //1.获得tbody中所有checkbox状态值,然后执行&&操作,获得一个结果
+        var flag=true;//给定一个初始值
+        $("#tbodyId input[type='checkbox']")
+            .each(function(){
+                flag=flag&&$(this).prop("checked");
+            });
+        //2.设置thead中checkbox的值
+        $("#checkAllId").prop("checked",flag);
+    }
+    function doLoadUI(id,url) {
+
+
+
+            $("#" + id).click(function () {
+
+                debugger;
+                var urlo="user/checkToken.do";
+                $.getJSON(urlo,function (result) {
+                    debugger;
+                    console.log("66666666666="+result);
+                    console.log("999999999999="+result.state);
+                    if(result.state==1){
+                        debugger;
+                        console.log("ok");
+                    }else {
+
+                        window.location.href="/doLoginUI.do";
+                        /*  location.href="/doLoginUI.do";
+                          window.location.reload();*/
+                        /*swal(result.message);*/
+
+                    }
+                })
+
+
+                $("#mainContentId").load(url, function () {
+                    debugger;
+
+
+                  /*  var data=$("#topId").data("data");
+                    console.log(data);
+                    if(data!=null) {
+                        $("#mainContentId").removeData();
+                    }else{
+                        swal("登录超时，请重新登录");
+                        window.location.href="/doLoginUI.do";
+                    }*/
+                    $("#mainContentId").removeData();
+                  /*  if($("#tbodyId").data()!=null) {
+                        debugger;
+                        $("#mainContentId").removeData();
+                    }else {
+                        swal("登录超时，请重新登录");
+                        window.location.href="/doLoginUI.do";
+                    }*/
+                });
+
+            });
+
+    }
+    function clean(){
+        debugger;
+       var url="user/closeSession.do";
+      $.getJSON(url,function (result) {
+          debugger;
+        if(result.state==1){
+            debugger;
+            location.href="doLoginUI.do";
+
+        }else {
+            swal(result.message);
+        }
+      });
+    }
+
+    //thead 中checkbox全选操作
+    function doChangeTBodyCheckBoxState(){
+        //1. 获取thead中当前checkbox对象状态
+        var state=$(this).prop("checked");
+        //2. 设置tbody中checkbox对应的状态值
+        //方案一
+        /* $("#tbodyId input[type='checkbox']")
+        .each(function(){
+            $(this).prop("checked",state);
+        }); */
+        //方案二
+        $("#tbodyId input[type='checkbox']")
+            .prop("checked",state);
+    }
+
+    //兼容火狐、IE8
+    //显示遮罩层
+    function showMask(){
+        $("#mask").css("height",$(document).height());
+        $("#mask").css("width",$(document).width());
+        $("#mask").show();
+    }
+    //隐藏遮罩层
+    function hideMask(){
+        $("#mask").hide();
+    }
+
+
+    </script>
+
+  </body>
+</html>

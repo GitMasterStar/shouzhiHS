@@ -1,0 +1,186 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2 class="title">角色管理</h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="btn role-add"><i class="fa fa-plus"></i></a>
+                </li>
+                <li>
+                    <a class="btn role-update"><i class="fa fa-wrench"></i></a>
+                </li>
+                <li><a class="btn close-link"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" id="checkAllId" class="flat"></th>
+                    <th>角色</th>
+                    <th>上级角色</th>
+                    <th>权限分配</th>
+                    <th>备注</th>
+                </tr>
+                </thead>
+                <tbody id="tbodyId">
+
+                </tbody>
+            </table>
+            <div id="pageId" class="box-footer clearfix">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $("#pageId").load("doPageUI.do",function(){
+            doGetObjects();
+        });
+
+        //添加角色
+        $(".nav")
+            .on("click",".role-add",doLoadEditUI)
+            .on("click",".role-update",doLoadEditUI);
+
+
+        $("#checkAllId").change(doChangeTBodyCheckBoxState);
+        $("#tbodyId").on("change",".cItem",doChangeTHeadCheckBoxState);
+    });
+    function doLoadEditUI(){
+        debugger;
+        var title;
+        if($(this).hasClass('role-add')){
+            title="添加角色";
+            doLoadPageUI(title);
+        }else{
+            title="修改角色"
+            var id=$("tbody input[name='cItem']:checked").val();
+            if (!id){
+                alert("请选择一条数据");
+                return;
+            }
+            var params={"id":id};
+            var url="role/doFindObjectById.do";
+            $.getJSON(url,params,function(result){
+                if(result.state==1){
+                    $("#mainContentId").data("data",result.data);
+                    doLoadPageUI(title);
+                }else{
+                    alert(result.message);
+                }
+            });
+        }
+        //doLoadPageUI(title); 放在此位置有问题
+    }
+    function doLoadPageUI(title){
+        var url="role/doRoleEditUI.do"
+        $("#mainContentId").load(url,function(){
+                $(".box-title").html(title);
+            })
+    }
+
+    function doDeleteObject(){
+        //1.params
+        var id=$(this).parents("tr").data("id");
+        var params={"id":id};
+        //2.url
+        var url="role/doDeleteObject.do"
+        //3.ajax request
+        $.post(url,params,function(result){
+            if(result.state==1){
+                alert(result.message);
+                doGetObjects();
+            }else{
+                alert(result.message);
+            }
+        })
+
+    }
+    function doQueryObjects(){
+        $("#pageId").data("pageCurrent",1);
+        doGetObjects();
+    }
+    function doGetObjects(){
+        debugger;
+        //1.params
+        //获取在Page.html中绑定的当前页码值
+        var pageCurrent=$("#pageId").data("pageCurrent");
+        //假如没有值,设置初始值为1
+        if(!pageCurrent)pageCurrent=1;
+        //var params="pageCurrrent="+pageCurrent;
+        var params={"pageCurrent":pageCurrent};
+        //获取查询时用户输入的名字
+        var name=$("#searchNameId").val();
+        if(name)params.name=name;
+        //2.url
+        var url="role/doFindPageObjects.do";
+        //3.ajax request
+        console.log(params);
+        $.getJSON(url,params,function(result){
+            doHandleResponseResult(result);
+        });
+    }
+    function doHandleResponseResult(result){
+
+        if(result.state==1){
+            doSetTableBodyRows(result.data.records);
+            doSetPagination(result.data);
+        }else{
+            doSetTableBodyErrors(result.message);
+        }
+    }
+    function doSetTableBodyErrors(message){
+        //获取body对象并清空
+        var tBody=$("#tbodyId");
+        tBody.empty();
+        //创建tr对象
+        var tr=$("<tr></tr>");
+        //创建td对象
+        //var len=$("table thead").find("tr").find("th").length;
+        var len=$("table th").length;
+        var td=$("<td></td>");
+        td.prop("colspan",len);
+        td.append(message);
+        tr.append(td);
+        //将tr追加到tbody
+        tBody.append(tr);
+    }
+    function doSetTableBodyRows(records){
+
+        //获取tbody对象,并清空
+        var tBody=$("#tbodyId");
+        tBody.empty();
+        //2.迭代数据,并追加到tBody
+        for(var i in records){
+            //2.1构建tr对象
+            var tr=$("<tr></tr>");
+            tr.data("id",records[i].id);
+            //2.2构建tds对象
+            var tds=doCreateTds(records[i],0);
+            //2.3将tds对象追加到tr中
+            tr.append(tds);
+            //2.4将tr追加到tbody中
+            tBody.append(tr);
+        }
+    }
+    function doCreateTds(row,i){
+        console.log("1111111111"+row);
+        var tds=
+            "<td><input type='checkbox' name='cItem' class='cItem' value='"+row.id+"'></td>"+
+            "<td width='10%'>"+row.name+"</td>"+
+            /*"<td width='10%'>"+row.uproleid+"</td>"+*/
+            "<td width='10%'>"+(row.uprolename?row.uprolename:"无")+"</td>"+
+            /*"<td>"+new Date(row.createdTime).toLocaleString()+"</td>"+
+            "<td>"+new Date(row.modifiedTime).toLocaleString()+"</td>"+*/
+            "<td>"+row.manager+"</td>"+
+            "<td>"+row.remark+"</td>"/*+
+            "<td><a class='btn-delete'>delete</a>"+
+            "&nbsp;<a class='btn-update'>update</a></td>"*/;
+        return tds;
+    }
+</script>

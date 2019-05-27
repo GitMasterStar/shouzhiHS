@@ -1,0 +1,457 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <h3 class="title">新增</h3>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" name="workdayForm">
+            <div>
+                <div style="border:2px; font-size:25px; text-align:center; ">工作日信息</div>
+            </div>
+            <div class="box-body">
+                <br>
+
+                <div class="form-group">
+                    <label for="year" class="col-sm-1 control-label"><span style="color:red;">*</span>年度:</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="year" id="year" oninput="value=value.replace(/[^\d]/g,'')">
+                    </div>
+                    <label class="control-label">年</label>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">1月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JanuaryNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JanuaryNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JanuaryNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JanNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">2月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="FebruaryNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="FebruaryNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="FebruaryNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="FebNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">3月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="MarchNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="MarchNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="MarchNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="MarNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">4月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="AprilNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="AprilNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="AprilNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="AprNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">5月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="MayNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="MayNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="MayNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="MayDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">6月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JuneNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JuneNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JuneNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JunNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">7月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JulyNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JulyNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JulyNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="JulNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">8月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="AugustNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="AugustNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="AugustNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="AugNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">9月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="SeptemberNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="SeptemberNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="SeptemberNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="SepNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">10月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="OctoberNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="OctoberNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="OctoberNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="OctNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">11月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="NovemberNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="NovemberNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="NovemberNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="NovNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">12月:</label>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>工作日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="DecemberNumberDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>自然日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="DecemberNumber" readonly>
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>双休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="DecemberNumDay" oninput="doForNumberDay()">
+                    </div>
+                    <label class="col-sm-1 control-label"><span style="color:red;">*</span>公休日数:</label>
+                    <div class="col-sm-1">
+                        <input type="text" class="form-control" id="DecNumberDay" readonly>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+            <div class="box-footer">
+                <button type="button" class="btn btn-info pull-right btn-save">新增</button>
+                <button type="button" class="btn btn-default btn-cancel">返回</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        $(".box-footer")
+            .on('click','.btn-save',doSaveOrUpdate)
+            .on('click',".btn-cancel",doCancel);
+
+        var  rowData=$("#mainContentId").data("rowData");
+        if(rowData) doInitRowData(rowData);
+        else $('.form-control').val("0");
+
+        doGetMonthDate();
+    });
+
+    function doGetMonthDate() {
+        var loginForm=document.forms['workdayForm'], year=loginForm.elements['year'];
+        year.onkeyup=function () {
+            doForNumberDayDate(year.value);
+            doForNumberDay();
+        }
+    }
+
+    function doForNumberDayDate(year) {
+        $('#JanuaryNumber').val(getMonthDates(year,1));
+        $('#FebruaryNumber').val(getMonthDates(year,2));
+        $('#MarchNumber').val(getMonthDates(year,3));
+        $('#AprilNumber').val(getMonthDates(year,4));
+        $('#MayNumber').val(getMonthDates(year,5));
+        $('#JuneNumber').val(getMonthDates(year,6));
+        $('#JulyNumber').val(getMonthDates(year,7));
+        $('#AugustNumber').val(getMonthDates(year,8));
+        $('#SeptemberNumber').val(getMonthDates(year,9));
+        $('#OctoberNumber').val(getMonthDates(year,10));
+        $('#NovemberNumber').val(getMonthDates(year,11));
+        $('#DecemberNumber').val(getMonthDates(year,12));
+    }
+
+    function doForNumberDay() {
+        $("#JanNumberDay").val(doForAllDay($('#JanuaryNumber').val(),$('#JanuaryNumberDay').val(),$('#JanuaryNumDay').val()));
+        $("#FebNumberDay").val(doForAllDay($('#FebruaryNumber').val(),$('#FebruaryNumberDay').val(),$('#FebruaryNumDay').val()));
+        $("#MarNumberDay").val(doForAllDay($('#MarchNumber').val(),$('#MarchNumberDay').val(),$('#MarchNumDay').val()));
+        $("#AprNumberDay").val(doForAllDay($('#AprilNumber').val(),$('#AprilNumberDay').val(),$('#AprilNumDay').val()));
+        $("#MayDay").val(doForAllDay($('#MayNumber').val(),$('#MayNumberDay').val(),$('#MayNumDay').val()));
+        $("#JunNumberDay").val(doForAllDay($('#JuneNumber').val(),$('#JuneNumberDay').val(),$('#JuneNumDay').val()));
+        $("#JulNumberDay").val(doForAllDay($('#JulyNumber').val(),$('#JulyNumberDay').val(),$('#JulyNumDay').val()));
+        $("#AugNumberDay").val(doForAllDay($('#AugustNumber').val(),$('#AugustNumberDay').val(),$('#AugustNumDay').val()));
+        $("#SepNumberDay").val(doForAllDay($('#SeptemberNumber').val(),$('#SeptemberNumberDay').val(),$('#SeptemberNumDay').val()));
+        $("#OctNumberDay").val(doForAllDay($('#OctoberNumber').val(),$('#OctoberNumberDay').val(),$('#OctoberNumDay').val()));
+        $("#NovNumberDay").val(doForAllDay($('#NovemberNumber').val(),$('#NovemberNumberDay').val(),$('#NovemberNumDay').val()));
+        $("#DecNumberDay").val(doForAllDay($('#DecemberNumber').val(),$('#DecemberNumberDay').val(),$('#DecemberNumDay').val()));
+    }
+
+    function doForAllDay(text1,text2,text3) {
+        var txtJG = text1-text2-text3;
+        if (text1-text2-text3>=0) {
+            return txtJG;
+        } else {
+            swal("天数太多了！已超越当月天数！");
+            return txtJG;
+        }
+    }
+
+    /**
+     * 获取具体月份天数
+     * @param year 年
+     * @param month 月
+     */
+    function getMonthDates(year, month){
+        var d = new Date(year, month, 0);
+        return d.getDate();
+    }
+
+    /**
+     * 初始化数据
+     * @param rowData
+     */
+    function doInitRowData(rowData) {
+        doForNumberDayDate(rowData.year);
+        $("#year").val(rowData.year);
+        $("#JanuaryNumberDay").val(rowData.january);
+        $("#FebruaryNumberDay").val(rowData.february);
+        $("#MarchNumberDay").val(rowData.march);
+        $("#AprilNumberDay").val(rowData.april);
+        $("#MayNumberDay").val(rowData.may);
+        $("#JuneNumberDay").val(rowData.june);
+        $("#JulyNumberDay").val(rowData.july);
+        $("#AugustNumberDay").val(rowData.august);
+        $("#SeptemberNumberDay").val(rowData.september);
+        $("#OctoberNumberDay").val(rowData.october);
+        $("#NovemberNumberDay").val(rowData.november);
+        $("#DecemberNumberDay").val(rowData.december);
+        $("#JanuaryNumDay").val(rowData.januaryweekend);
+        $("#FebruaryNumDay").val(rowData.februaryweekend);
+        $("#MarchNumDay").val(rowData.marchweekend);
+        $("#AprilNumDay").val(rowData.aprilweekend);
+        $("#MayNumDay").val(rowData.mayweekend);
+        $("#JuneNumDay").val(rowData.juneweekend);
+        $("#JulyNumDay").val(rowData.julyweekend);
+        $("#AugustNumDay").val(rowData.augustweekend);
+        $("#SeptemberNumDay").val(rowData.septemberweekend);
+        $("#OctoberNumDay").val(rowData.octoberweekend);
+        $("#NovemberNumDay").val(rowData.novemberweekend);
+        $("#DecemberNumDay").val(rowData.decemberweekend);
+        $("#JanNumberDay").val($('#JanuaryNumber').val()-rowData.january-rowData.januaryweekend);
+        $("#FebNumberDay").val($('#FebruaryNumber').val()-rowData.february-rowData.februaryweekend);
+        $("#MarNumberDay").val($('#MarchNumber').val()-rowData.march-rowData.marchweekend);
+        $("#AprNumberDay").val($('#AprilNumber').val()-rowData.april-rowData.aprilweekend);
+        $("#MayDay").val($('#MayNumber').val()-rowData.may-rowData.mayweekend);
+        $("#JunNumberDay").val($('#JuneNumber').val()-rowData.june-rowData.juneweekend);
+        $("#JulNumberDay").val($('#JulyNumber').val()-rowData.july-rowData.julyweekend);
+        $("#AugNumberDay").val($('#AugustNumber').val()-rowData.august-rowData.augustweekend);
+        $("#SepNumberDay").val($('#SeptemberNumber').val()-rowData.september-rowData.septemberweekend);
+        $("#OctNumberDay").val($('#OctoberNumber').val()-rowData.october-rowData.octoberweekend);
+        $("#NovNumberDay").val($('#NovemberNumber').val()-rowData.november-rowData.novemberweekend);
+        $("#DecNumberDay").val($('#DecemberNumber').val()-rowData.december-rowData.decemberweekend);
+        $(".btn-save").html("编辑");
+    }
+
+    /**
+     * 保存或修改
+     */
+    function doSaveOrUpdate(){
+        debugger;
+        var params=doGetRowData();
+        var rowData=$("#mainContentId").data("rowData");
+        if (rowData)params.id=rowData.id;
+        var insertUrl="workday/doAddObject.do";
+        var updateUrl="workday/doUpdateObject.do";
+        var url=rowData?updateUrl:insertUrl;
+        console.log(params);
+        $.post(url,params,function(result){
+            console.log(result);
+            debugger;
+            if(result.state==1){
+                swal(result.message);
+                doCancel();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+
+    function doGetRowData(){
+        debugger;
+        var params={
+            year:$("#year").val(),
+            january:$("#JanuaryNumberDay").val(),
+            february:$("#FebruaryNumberDay").val(),
+            march:$("#MarchNumberDay").val(),
+            april:$("#AprilNumberDay").val(),
+            may:$("#MayNumberDay").val(),
+            june:$("#JuneNumberDay").val(),
+            july:$("#JulyNumberDay").val(),
+            august:$("#AugustNumberDay").val(),
+            september:$("#SeptemberNumberDay").val(),
+            october:$("#OctoberNumberDay").val(),
+            november:$("#NovemberNumberDay").val(),
+            december:$("#DecemberNumberDay").val(),
+            januaryweekend:$("#JanuaryNumDay").val(),
+            februaryweekend:$("#FebruaryNumDay").val(),
+            marchweekend:$("#MarchNumDay").val(),
+            aprilweekend:$("#AprilNumDay").val(),
+            mayweekend:$("#MayNumDay").val(),
+            juneweekend:$("#JuneNumDay").val(),
+            julyweekend:$("#JulyNumDay").val(),
+            augustweekend:$("#AugustNumDay").val(),
+            septemberweekend:$("#SeptemberNumDay").val(),
+            octoberweekend:$("#OctoberNumDay").val(),
+            novemberweekend:$("#NovemberNumDay").val(),
+            decemberweekend:$("#DecemberNumDay").val()
+        }
+        return params;
+    }
+
+    /**
+     * 返回
+     */
+    function doCancel(){
+        var url="workday/doWorkdayList.do";
+        $("#mainContentId").load(url,function(){
+            $("#mainContentId").removeData();
+        });
+    }
+
+
+</script>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sz.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.sz.pojo.User" >
+    <constructor >
+      <idArg column="USERID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="USERNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="USERPWD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="USERREALNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATEDATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="UPDATEDATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="DEPTID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="LEADERID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="EMAIL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="REMARK" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STANDBY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATEUSER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATEUSER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="VALID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="SALT" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    USERID, USERNAME, USERPWD, USERREALNAME, CREATEDATE, UPDATEDATE, DEPTID, LEADERID,
+    EMAIL, PHONE, REMARK, STANDBY, CREATEUSER, UPDATEUSER, VALID, SALT
+  </sql>
+  <sql id="queryWhereId">
+    <where>
+      <if test="userrealname!=null and userrealname!=''">
+        USERREALNAME LIKE concat("%",#{userrealname},"%")
+      </if>
+    </where>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />,(SELECT DNAME FROM dept d WHERE d.ID=c.DEPTID) name
+    from user c
+    where USERID = #{userid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where USERID = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.User" >
+    insert into user (USERID, USERNAME, USERPWD, 
+      USERREALNAME, CREATEDATE, UPDATEDATE, 
+      ROLEID, DEPTID, LEADERID, 
+      EMAIL, PHONE, REMARK, 
+      STANDBY, CREATEUSER, UPDATEUSER,
+      VALID, SALT)
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}, 
+      #{userrealname,jdbcType=VARCHAR}, now(),now(),
+      #{deptid,jdbcType=INTEGER}, #{leaderid,jdbcType=INTEGER},
+      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{standby,jdbcType=VARCHAR}, #{createuser,jdbcType=VARCHAR}, #{updateuser,jdbcType=VARCHAR},
+      #{valid,jdbcType=INTEGER}, #{salt,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        USERID,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="userpwd != null" >
+        USERPWD,
+      </if>
+      <if test="userrealname != null" >
+        USERREALNAME,
+      </if>
+      <!--<if test="createdate != null" >
+      </if>-->
+      CREATEDATE,
+      <if test="updatedate != null" >
+        UPDATEDATE,
+      </if>
+      <if test="deptid != null" >
+        DEPTID,
+      </if>
+      <if test="leaderid != null" >
+        LEADERID,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="standby != null" >
+        STANDBY,
+      </if>
+      <if test="createuser != null" >
+        CREATEUSER,
+      </if>
+      <if test="updateuser != null" >
+        UPDATEUSER,
+      </if>
+      <if test="valid != null" >
+        VALID,
+      </if>
+      <if test="salt != null" >
+        SALT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userrealname != null" >
+        #{userrealname,jdbcType=VARCHAR},
+      </if>
+      <!--<if test="createdate != null" >
+      </if>-->
+      now(),
+      <if test="updatedate != null" >
+        now(),
+      </if>
+      <if test="deptid != null" >
+        #{deptid,jdbcType=INTEGER},
+      </if>
+      <if test="leaderid != null" >
+        #{leaderid,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="standby != null" >
+        #{standby,jdbcType=VARCHAR},
+      </if>
+      <if test="createuser != null" >
+        #{createuser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateuser != null" >
+        #{updateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null" >
+        #{valid,jdbcType=INTEGER},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.User" >
+    update user
+    <set >
+      <if test="username != null" >
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        USERPWD = #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userrealname != null" >
+        USERREALNAME = #{userrealname,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedate != null" >
+        UPDATEDATE = now(),
+      </if>
+      <if test="deptid != null" >
+        DEPTID = #{deptid,jdbcType=INTEGER},
+      </if>
+      <if test="leaderid != null" >
+        LEADERID = #{leaderid,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="standby != null" >
+        STANDBY = #{standby,jdbcType=VARCHAR},
+      </if>
+      <if test="createuser != null" >
+        CREATEUSER = #{createuser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateuser != null" >
+        UPDATEUSER = #{updateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="valid != null" >
+        VALID = #{valid,jdbcType=INTEGER},
+      </if>
+      <if test="salt != null" >
+        SALT = #{salt,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USERID = #{userid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.User" >
+    update user
+    set USERNAME = #{username,jdbcType=VARCHAR},
+      USERPWD = #{userpwd,jdbcType=VARCHAR},
+      USERREALNAME = #{userrealname,jdbcType=VARCHAR},
+      CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      UPDATEDATE = now(),
+      DEPTID = #{deptid,jdbcType=INTEGER},
+      LEADERID = #{leaderid,jdbcType=INTEGER},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      STANDBY = #{standby,jdbcType=VARCHAR},
+      CREATEUSER = #{createuser,jdbcType=VARCHAR},
+      UPDATEUSER = #{updateuser,jdbcType=VARCHAR},
+      VALID = #{valid,jdbcType=INTEGER},
+      SALT = #{salt,jdbcType=VARCHAR}
+    where USERID = #{userid,jdbcType=INTEGER}
+  </update>
+  <select id="findUserByUserName" parameterType="com.sz.pojo.User" resultType="com.sz.pojo.User">
+    SELECT * FROM user
+    WHERE USERNAME=#{username,jdbcType=VARCHAR}
+  </select>
+
+  <select id="getRowCount" resultType="java.lang.Integer">
+    SELECT count(*) FROM user
+    <include refid="queryWhereId"/>
+  </select>
+  <select id="findPageObjects" resultType="java.util.Map">
+    SELECT c.USERNAME username,c.USERREALNAME userrealname, c.EMAIL email,
+    (SELECT USERREALNAME FROM user b WHERE c.LEADERID=b.USERID)leaderName,
+    c.LEADERID leaderid,c.CREATEDATE createdate,c.CREATEUSER createuser,
+    c.PHONE phone,c.UPDATEUSER updateuser,c.UPDATEDATE updatedate,c.VALID valid,c.REMARK remark,c.USERID userid,
+    (SELECT DNAME FROM dept d WHERE d.ID=c.DEPTID) name
+    FROM user c
+    <include refid="queryWhereId"/>
+    limit #{startIndex},#{pageSize}
+  </select>
+  <update id="validById">
+    UPDATE user
+    SET VALID=#{valid},
+    UPDATEUSER=#{updateuser},
+    UPDATEDATE=now()
+    where USERID=#{userid}
+  </update>
+  <delete id="deleteObjects">
+    DELETE FROM user WHERE USERID IN
+    <foreach collection="userids"
+             open="("
+             close=")"
+             separator=","
+             item="item">
+      #{item}
+    </foreach>
+  </delete>
+    <select id="findRoleNameByUserId" resultType="java.lang.String">
+        SELECT NAME FROM role WHERE ID=#{id}
+    </select>
+  <select id="findDeptNameByUserId" resultType="java.lang.String">
+    SELECT DNAME FROM dept d WHERE d.ID=#{deptid};
+      </select>
+  <select id="findZTreeNodes" resultType="com.sz.common.vo.Node">
+    SELECT USERID id,LEADERID parentId,USERREALNAME name FROM
+    user;
+  </select>
+  <select id="findLeaderNameByLeaderId" resultType="java.lang.String">
+    SELECT USERREALNAME FROM user where USERID=#{leaderid}
+  </select>
+</mapper>

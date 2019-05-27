@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sz.dao.InsuranceMapper" >
+  <resultMap id="BaseResultMap" type="com.sz.pojo.Insurance" >
+    <constructor >
+      <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="ICITY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENDOWMENTJ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENDOWMENTP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ENDOWMENTMAX" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="ENDOWMENTMIN" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="MEDICALJ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MEDICALP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MEDICALMAX" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="MEDICALMIN" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="UNEMPLOYMENTJ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UNEMPLOYMENTP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UNEMPLOYMENTMAX" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="UNEMPLOYMENTMIN" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="INDUCTRIALINJURYJ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="INDUCTRIALINJURYMAX" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="INDUCTRIALINJURYMIN" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="FERTILITYJOB" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FERTILITYMAX" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="FERTILITYMIN" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="HOUSEJ" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HOUSEP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HOUSEMAX" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="HOUSEMIN" jdbcType="DOUBLE" javaType="java.lang.Double" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, ICITY, ENDOWMENTJ, ENDOWMENTP, ENDOWMENTMAX, ENDOWMENTMIN, MEDICALJ, MEDICALP, 
+    MEDICALMAX, MEDICALMIN, UNEMPLOYMENTJ, UNEMPLOYMENTP, UNEMPLOYMENTMAX, UNEMPLOYMENTMIN, 
+    INDUCTRIALINJURYJ, INDUCTRIALINJURYMAX, INDUCTRIALINJURYMIN, FERTILITYJOB, FERTILITYMAX, 
+    FERTILITYMIN, HOUSEJ, HOUSEP, HOUSEMAX, HOUSEMIN
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from insurance
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from insurance
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.Insurance" >
+    insert into insurance (ID, ICITY, ENDOWMENTJ, 
+      ENDOWMENTP, ENDOWMENTMAX, ENDOWMENTMIN, 
+      MEDICALJ, MEDICALP, MEDICALMAX, 
+      MEDICALMIN, UNEMPLOYMENTJ, UNEMPLOYMENTP, 
+      UNEMPLOYMENTMAX, UNEMPLOYMENTMIN, INDUCTRIALINJURYJ, 
+      INDUCTRIALINJURYMAX, INDUCTRIALINJURYMIN, 
+      FERTILITYJOB, FERTILITYMAX, FERTILITYMIN, 
+      HOUSEJ, HOUSEP, HOUSEMAX, 
+      HOUSEMIN)
+    values (#{id,jdbcType=INTEGER}, #{icity,jdbcType=VARCHAR}, #{endowmentj,jdbcType=VARCHAR}, 
+      #{endowmentp,jdbcType=VARCHAR}, #{endowmentmax,jdbcType=DOUBLE}, #{endowmentmin,jdbcType=DOUBLE}, 
+      #{medicalj,jdbcType=VARCHAR}, #{medicalp,jdbcType=VARCHAR}, #{medicalmax,jdbcType=DOUBLE}, 
+      #{medicalmin,jdbcType=DOUBLE}, #{unemploymentj,jdbcType=VARCHAR}, #{unemploymentp,jdbcType=VARCHAR}, 
+      #{unemploymentmax,jdbcType=DOUBLE}, #{unemploymentmin,jdbcType=DOUBLE}, #{inductrialinjuryj,jdbcType=VARCHAR}, 
+      #{inductrialinjurymax,jdbcType=DOUBLE}, #{inductrialinjurymin,jdbcType=DOUBLE}, 
+      #{fertilityjob,jdbcType=VARCHAR}, #{fertilitymax,jdbcType=DOUBLE}, #{fertilitymin,jdbcType=DOUBLE}, 
+      #{housej,jdbcType=VARCHAR}, #{housep,jdbcType=VARCHAR}, #{housemax,jdbcType=DOUBLE}, 
+      #{housemin,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.Insurance" >
+    insert into insurance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="icity != null" >
+        ICITY,
+      </if>
+      <if test="endowmentj != null" >
+        ENDOWMENTJ,
+      </if>
+      <if test="endowmentp != null" >
+        ENDOWMENTP,
+      </if>
+      <if test="endowmentmax != null" >
+        ENDOWMENTMAX,
+      </if>
+      <if test="endowmentmin != null" >
+        ENDOWMENTMIN,
+      </if>
+      <if test="medicalj != null" >
+        MEDICALJ,
+      </if>
+      <if test="medicalp != null" >
+        MEDICALP,
+      </if>
+      <if test="medicalmax != null" >
+        MEDICALMAX,
+      </if>
+      <if test="medicalmin != null" >
+        MEDICALMIN,
+      </if>
+      <if test="unemploymentj != null" >
+        UNEMPLOYMENTJ,
+      </if>
+      <if test="unemploymentp != null" >
+        UNEMPLOYMENTP,
+      </if>
+      <if test="unemploymentmax != null" >
+        UNEMPLOYMENTMAX,
+      </if>
+      <if test="unemploymentmin != null" >
+        UNEMPLOYMENTMIN,
+      </if>
+      <if test="inductrialinjuryj != null" >
+        INDUCTRIALINJURYJ,
+      </if>
+      <if test="inductrialinjurymax != null" >
+        INDUCTRIALINJURYMAX,
+      </if>
+      <if test="inductrialinjurymin != null" >
+        INDUCTRIALINJURYMIN,
+      </if>
+      <if test="fertilityjob != null" >
+        FERTILITYJOB,
+      </if>
+      <if test="fertilitymax != null" >
+        FERTILITYMAX,
+      </if>
+      <if test="fertilitymin != null" >
+        FERTILITYMIN,
+      </if>
+      <if test="housej != null" >
+        HOUSEJ,
+      </if>
+      <if test="housep != null" >
+        HOUSEP,
+      </if>
+      <if test="housemax != null" >
+        HOUSEMAX,
+      </if>
+      <if test="housemin != null" >
+        HOUSEMIN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="icity != null" >
+        #{icity,jdbcType=VARCHAR},
+      </if>
+      <if test="endowmentj != null" >
+        #{endowmentj,jdbcType=VARCHAR},
+      </if>
+      <if test="endowmentp != null" >
+        #{endowmentp,jdbcType=VARCHAR},
+      </if>
+      <if test="endowmentmax != null" >
+        #{endowmentmax,jdbcType=DOUBLE},
+      </if>
+      <if test="endowmentmin != null" >
+        #{endowmentmin,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalj != null" >
+        #{medicalj,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalp != null" >
+        #{medicalp,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalmax != null" >
+        #{medicalmax,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalmin != null" >
+        #{medicalmin,jdbcType=DOUBLE},
+      </if>
+      <if test="unemploymentj != null" >
+        #{unemploymentj,jdbcType=VARCHAR},
+      </if>
+      <if test="unemploymentp != null" >
+        #{unemploymentp,jdbcType=VARCHAR},
+      </if>
+      <if test="unemploymentmax != null" >
+        #{unemploymentmax,jdbcType=DOUBLE},
+      </if>
+      <if test="unemploymentmin != null" >
+        #{unemploymentmin,jdbcType=DOUBLE},
+      </if>
+      <if test="inductrialinjuryj != null" >
+        #{inductrialinjuryj,jdbcType=VARCHAR},
+      </if>
+      <if test="inductrialinjurymax != null" >
+        #{inductrialinjurymax,jdbcType=DOUBLE},
+      </if>
+      <if test="inductrialinjurymin != null" >
+        #{inductrialinjurymin,jdbcType=DOUBLE},
+      </if>
+      <if test="fertilityjob != null" >
+        #{fertilityjob,jdbcType=VARCHAR},
+      </if>
+      <if test="fertilitymax != null" >
+        #{fertilitymax,jdbcType=DOUBLE},
+      </if>
+      <if test="fertilitymin != null" >
+        #{fertilitymin,jdbcType=DOUBLE},
+      </if>
+      <if test="housej != null" >
+        #{housej,jdbcType=VARCHAR},
+      </if>
+      <if test="housep != null" >
+        #{housep,jdbcType=VARCHAR},
+      </if>
+      <if test="housemax != null" >
+        #{housemax,jdbcType=DOUBLE},
+      </if>
+      <if test="housemin != null" >
+        #{housemin,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.Insurance" >
+    update insurance
+    <set >
+      <if test="icity != null" >
+        ICITY = #{icity,jdbcType=VARCHAR},
+      </if>
+      <if test="endowmentj != null" >
+        ENDOWMENTJ = #{endowmentj,jdbcType=VARCHAR},
+      </if>
+      <if test="endowmentp != null" >
+        ENDOWMENTP = #{endowmentp,jdbcType=VARCHAR},
+      </if>
+      <if test="endowmentmax != null" >
+        ENDOWMENTMAX = #{endowmentmax,jdbcType=DOUBLE},
+      </if>
+      <if test="endowmentmin != null" >
+        ENDOWMENTMIN = #{endowmentmin,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalj != null" >
+        MEDICALJ = #{medicalj,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalp != null" >
+        MEDICALP = #{medicalp,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalmax != null" >
+        MEDICALMAX = #{medicalmax,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalmin != null" >
+        MEDICALMIN = #{medicalmin,jdbcType=DOUBLE},
+      </if>
+      <if test="unemploymentj != null" >
+        UNEMPLOYMENTJ = #{unemploymentj,jdbcType=VARCHAR},
+      </if>
+      <if test="unemploymentp != null" >
+        UNEMPLOYMENTP = #{unemploymentp,jdbcType=VARCHAR},
+      </if>
+      <if test="unemploymentmax != null" >
+        UNEMPLOYMENTMAX = #{unemploymentmax,jdbcType=DOUBLE},
+      </if>
+      <if test="unemploymentmin != null" >
+        UNEMPLOYMENTMIN = #{unemploymentmin,jdbcType=DOUBLE},
+      </if>
+      <if test="inductrialinjuryj != null" >
+        INDUCTRIALINJURYJ = #{inductrialinjuryj,jdbcType=VARCHAR},
+      </if>
+      <if test="inductrialinjurymax != null" >
+        INDUCTRIALINJURYMAX = #{inductrialinjurymax,jdbcType=DOUBLE},
+      </if>
+      <if test="inductrialinjurymin != null" >
+        INDUCTRIALINJURYMIN = #{inductrialinjurymin,jdbcType=DOUBLE},
+      </if>
+      <if test="fertilityjob != null" >
+        FERTILITYJOB = #{fertilityjob,jdbcType=VARCHAR},
+      </if>
+      <if test="fertilitymax != null" >
+        FERTILITYMAX = #{fertilitymax,jdbcType=DOUBLE},
+      </if>
+      <if test="fertilitymin != null" >
+        FERTILITYMIN = #{fertilitymin,jdbcType=DOUBLE},
+      </if>
+      <if test="housej != null" >
+        HOUSEJ = #{housej,jdbcType=VARCHAR},
+      </if>
+      <if test="housep != null" >
+        HOUSEP = #{housep,jdbcType=VARCHAR},
+      </if>
+      <if test="housemax != null" >
+        HOUSEMAX = #{housemax,jdbcType=DOUBLE},
+      </if>
+      <if test="housemin != null" >
+        HOUSEMIN = #{housemin,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.Insurance" >
+    update insurance
+    set ICITY = #{icity,jdbcType=VARCHAR},
+      ENDOWMENTJ = #{endowmentj,jdbcType=VARCHAR},
+      ENDOWMENTP = #{endowmentp,jdbcType=VARCHAR},
+      ENDOWMENTMAX = #{endowmentmax,jdbcType=DOUBLE},
+      ENDOWMENTMIN = #{endowmentmin,jdbcType=DOUBLE},
+      MEDICALJ = #{medicalj,jdbcType=VARCHAR},
+      MEDICALP = #{medicalp,jdbcType=VARCHAR},
+      MEDICALMAX = #{medicalmax,jdbcType=DOUBLE},
+      MEDICALMIN = #{medicalmin,jdbcType=DOUBLE},
+      UNEMPLOYMENTJ = #{unemploymentj,jdbcType=VARCHAR},
+      UNEMPLOYMENTP = #{unemploymentp,jdbcType=VARCHAR},
+      UNEMPLOYMENTMAX = #{unemploymentmax,jdbcType=DOUBLE},
+      UNEMPLOYMENTMIN = #{unemploymentmin,jdbcType=DOUBLE},
+      INDUCTRIALINJURYJ = #{inductrialinjuryj,jdbcType=VARCHAR},
+      INDUCTRIALINJURYMAX = #{inductrialinjurymax,jdbcType=DOUBLE},
+      INDUCTRIALINJURYMIN = #{inductrialinjurymin,jdbcType=DOUBLE},
+      FERTILITYJOB = #{fertilityjob,jdbcType=VARCHAR},
+      FERTILITYMAX = #{fertilitymax,jdbcType=DOUBLE},
+      FERTILITYMIN = #{fertilitymin,jdbcType=DOUBLE},
+      HOUSEJ = #{housej,jdbcType=VARCHAR},
+      HOUSEP = #{housep,jdbcType=VARCHAR},
+      HOUSEMAX = #{housemax,jdbcType=DOUBLE},
+      HOUSEMIN = #{housemin,jdbcType=DOUBLE}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--总记录数-->
+  <select id="getRowCount" resultType="java.lang.Integer">
+    SELECT COUNT(*) FROM insurance
+  </select>
+  <!--分页查询工作日信息-->
+  <select id="findPageObjects" resultType="com.sz.pojo.Insurance" parameterType="com.sz.pojo.Insurance">
+    SELECT * FROM insurance
+    limit #{startIndex},#{pageSize}
+  </select>
+</mapper>

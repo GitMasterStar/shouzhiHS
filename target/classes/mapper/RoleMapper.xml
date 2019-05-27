@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sz.dao.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.sz.pojo.Role">
+    <constructor>
+      <idArg column="ID" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="UPROLEID" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="MANAGER" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="REMARK" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, NAME, UPROLEID, MANAGER, REMARK
+  </sql>
+  <sql id="queryWhereId">
+    <where>
+      <if test="name!=null and name!=''">
+        NAME LIKE concat("%",#{name},"%")
+      </if>
+    </where>
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from role
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from role
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.Role">
+    insert into role (ID, NAME, UPROLEID, 
+      MANAGER, REMARK)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{uproleid,jdbcType=INTEGER}, 
+      #{manager,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.Role">
+    insert into role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="uproleid != null">
+        UPROLEID,
+      </if>
+      <if test="manager != null">
+        MANAGER,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="uproleid != null">
+        #{uproleid,jdbcType=INTEGER},
+      </if>
+      <if test="manager != null">
+        #{manager,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.Role">
+    update role
+    <set>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="uproleid != null">
+        UPROLEID = #{uproleid,jdbcType=INTEGER},
+      </if>
+      <if test="manager != null">
+        MANAGER = #{manager,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.Role">
+    update role
+    set NAME = #{name,jdbcType=VARCHAR},
+      UPROLEID = #{uproleid,jdbcType=INTEGER},
+      MANAGER = #{manager,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getRowCount" resultType="int">
+    SELECT count(*) FROM role
+    <include refid="queryWhereId"/>
+  </select>
+  <select id="findPageObjects" parameterType="com.sz.pojo.Role" resultType="com.sz.pojo.Role">
+    SELECT * FROM role
+    <include refid="queryWhereId"/>
+    limit #{startIndex},#{pageSize}
+  </select>
+  <select id="findObjects" resultType="com.sz.common.vo.CheckBox">
+    SELECT ID,NAME
+    FROM role
+  </select>
+  <select id="findZtreeRoleRNodes" resultType="com.sz.common.vo.RNode">
+    SELECT
+    ID,UPROLEID,NAME
+    FROM role
+  </select>
+  <select id="findObject" resultType="java.util.Map">
+    SELECT c.ID id,c.NAME name, c.UPROLEID uproleid,c.MANAGER manager,c.REMARK remark,(SELECT NAME FROM role p
+    WHERE c.UPROLEID=p.ID) uprolename
+    FROM role c
+    <include refid="queryWhereId"/>
+    limit #{startIndex},#{pageSize}
+  </select>
+
+  <select id="selectByName" resultType="com.sz.pojo.Role" parameterType="com.sz.pojo.Role">
+    SELECT * FROM role
+    WHERE NAME = #{name,jdbcType=VARCHAR}
+
+  </select>
+</mapper>

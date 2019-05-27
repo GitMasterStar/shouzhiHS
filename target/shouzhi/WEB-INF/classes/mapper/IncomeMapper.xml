@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sz.dao.IncomeMapper" >
+  <resultMap id="BaseResultMap" type="com.sz.pojo.Income" >
+    <constructor >
+      <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="WORKERID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="ATTENDANCEID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="INCOME" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="INITIALINCOME" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="INVOICEVALUE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="DIFFERENCE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="DIFFERENCEMONTH" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RETURNMONEYDATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="RETURNSTATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, WORKERID, ATTENDANCEID, INCOME, INITIALINCOME, INVOICEVALUE, DIFFERENCE, DIFFERENCEMONTH, 
+    RETURNMONEYDATE, RETURNSTATUS
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from income
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from income
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.Income" >
+    insert into income (ID, WORKERID, ATTENDANCEID, 
+      INCOME, INITIALINCOME, INVOICEVALUE, 
+      DIFFERENCE, DIFFERENCEMONTH, RETURNMONEYDATE, 
+      RETURNSTATUS)
+    values (#{id,jdbcType=INTEGER}, #{workerid,jdbcType=INTEGER}, #{attendanceid,jdbcType=INTEGER}, 
+      #{income,jdbcType=DOUBLE}, #{initialincome,jdbcType=DOUBLE}, #{invoicevalue,jdbcType=DOUBLE}, 
+      #{difference,jdbcType=DOUBLE}, #{differencemonth,jdbcType=VARCHAR}, #{returnmoneydate,jdbcType=TIMESTAMP}, 
+      #{returnstatus,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.Income" >
+    insert into income
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="workerid != null" >
+        WORKERID,
+      </if>
+      <if test="attendanceid != null" >
+        ATTENDANCEID,
+      </if>
+      <if test="income != null" >
+        INCOME,
+      </if>
+      <if test="initialincome != null" >
+        INITIALINCOME,
+      </if>
+      <if test="invoicevalue != null" >
+        INVOICEVALUE,
+      </if>
+      <if test="difference != null" >
+        DIFFERENCE,
+      </if>
+      <if test="differencemonth != null" >
+        DIFFERENCEMONTH,
+      </if>
+      <if test="returnmoneydate != null" >
+        RETURNMONEYDATE,
+      </if>
+      <if test="returnstatus != null" >
+        RETURNSTATUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workerid != null" >
+        #{workerid,jdbcType=INTEGER},
+      </if>
+      <if test="attendanceid != null" >
+        #{attendanceid,jdbcType=INTEGER},
+      </if>
+      <if test="income != null" >
+        #{income,jdbcType=DOUBLE},
+      </if>
+      <if test="initialincome != null" >
+        #{initialincome,jdbcType=DOUBLE},
+      </if>
+      <if test="invoicevalue != null" >
+        #{invoicevalue,jdbcType=DOUBLE},
+      </if>
+      <if test="difference != null" >
+        #{difference,jdbcType=DOUBLE},
+      </if>
+      <if test="differencemonth != null" >
+        #{differencemonth,jdbcType=VARCHAR},
+      </if>
+      <if test="returnmoneydate != null" >
+        #{returnmoneydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="returnstatus != null" >
+        #{returnstatus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.Income" >
+    update income
+    <set >
+      <if test="workerid != null" >
+        WORKERID = #{workerid,jdbcType=INTEGER},
+      </if>
+      <if test="attendanceid != null" >
+        ATTENDANCEID = #{attendanceid,jdbcType=INTEGER},
+      </if>
+      <if test="income != null" >
+        INCOME = #{income,jdbcType=DOUBLE},
+      </if>
+      <if test="initialincome != null" >
+        INITIALINCOME = #{initialincome,jdbcType=DOUBLE},
+      </if>
+      <if test="invoicevalue != null" >
+        INVOICEVALUE = #{invoicevalue,jdbcType=DOUBLE},
+      </if>
+      <if test="difference != null" >
+        DIFFERENCE = #{difference,jdbcType=DOUBLE},
+      </if>
+      <if test="differencemonth != null" >
+        DIFFERENCEMONTH = #{differencemonth,jdbcType=VARCHAR},
+      </if>
+      <if test="returnmoneydate != null" >
+        RETURNMONEYDATE = #{returnmoneydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="returnstatus != null" >
+        RETURNSTATUS = #{returnstatus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.Income" >
+    update income
+    set WORKERID = #{workerid,jdbcType=INTEGER},
+      ATTENDANCEID = #{attendanceid,jdbcType=INTEGER},
+      INCOME = #{income,jdbcType=DOUBLE},
+      INITIALINCOME = #{initialincome,jdbcType=DOUBLE},
+      INVOICEVALUE = #{invoicevalue,jdbcType=DOUBLE},
+      DIFFERENCE = #{difference,jdbcType=DOUBLE},
+      DIFFERENCEMONTH = #{differencemonth,jdbcType=VARCHAR},
+      RETURNMONEYDATE = #{returnmoneydate,jdbcType=TIMESTAMP},
+      RETURNSTATUS = #{returnstatus,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sz.dao.LegalpersonMapper" >
+  <resultMap id="BaseResultMap" type="com.sz.pojo.Legalperson" >
+    <constructor >
+      <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="LEGALNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LEGALFULLNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LEGALTYPE" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, LEGALNAME, LEGALFULLNAME, LEGALTYPE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from legalperson
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from legalperson
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.Legalperson" >
+    insert into legalperson (ID, LEGALNAME, LEGALFULLNAME, 
+      LEGALTYPE)
+    values (#{id,jdbcType=INTEGER}, #{legalname,jdbcType=VARCHAR}, #{legalfullname,jdbcType=VARCHAR}, 
+      #{legaltype,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.Legalperson" >
+    insert into legalperson
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="legalname != null" >
+        LEGALNAME,
+      </if>
+      <if test="legalfullname != null" >
+        LEGALFULLNAME,
+      </if>
+      <if test="legaltype != null" >
+        LEGALTYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="legalname != null" >
+        #{legalname,jdbcType=VARCHAR},
+      </if>
+      <if test="legalfullname != null" >
+        #{legalfullname,jdbcType=VARCHAR},
+      </if>
+      <if test="legaltype != null" >
+        #{legaltype,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.Legalperson" >
+    update legalperson
+    <set >
+      <if test="legalname != null" >
+        LEGALNAME = #{legalname,jdbcType=VARCHAR},
+      </if>
+      <if test="legalfullname != null" >
+        LEGALFULLNAME = #{legalfullname,jdbcType=VARCHAR},
+      </if>
+      <if test="legaltype != null" >
+        LEGALTYPE = #{legaltype,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.Legalperson" >
+    update legalperson
+    set LEGALNAME = #{legalname,jdbcType=VARCHAR},
+      LEGALFULLNAME = #{legalfullname,jdbcType=VARCHAR},
+      LEGALTYPE = #{legaltype,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKeyType" parameterType="com.sz.pojo.Legalperson" resultType="com.sz.pojo.Legalperson">
+    SELECT *
+    FROM legalperson
+    WHERE LEGALTYPE = #{legalType}
+  </select>
+</mapper>

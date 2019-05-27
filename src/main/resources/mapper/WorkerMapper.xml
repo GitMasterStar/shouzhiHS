@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sz.dao.WorkerMapper">
+  <resultMap id="BaseResultMap" type="com.sz.pojo.Worker">
+    <constructor>
+      <idArg column="ID" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="WORKERNAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORKERSEX" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORKERIDCARD" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORKNATIVE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORKERPHONE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORKEREMAIL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORKERDEPT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORKERLEVEL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORKERLEADER" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="WORKERCUSTOMER" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATEPEOPLE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATEDATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="PRICE" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="PRICETYPE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="NORMALSALARY" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="BASESALARY" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="PERFORMANCESALARY" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="SALARYRATIO" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="GROSSPROFITRATE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SIXGOLDCITY" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SIXGOLDBASE" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="PAYCITY1" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PAYSALARY1" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="PAYCITY2" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PAYSALARY2" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="CHILDEDUCATION" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="AGAINEDUCATION" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="SERIOUSILLNESS" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="HOUSELOANS" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="RENTINGHOUSE" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="SUPPORTOLD" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="EQUIPMENT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EQUIPMENTSUBSIDY" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="WORKERSTATUS" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="DIMISSIONDATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="DIMISSIONREASON" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="DECLARATIONSTATUS" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="SOCIALSECURITYSTATUS" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="UPDATEDATE" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="UPDATEPEOPLE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="REMARK" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="STANDBY" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CMBCACCOUNT" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ICBCACCOUNT" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, WORKERNAME, WORKERSEX, WORKERIDCARD, WORKNATIVE, WORKERPHONE, WORKEREMAIL, WORKERDEPT, 
+    WORKERLEVEL, WORKERLEADER, WORKERCUSTOMER, CREATEPEOPLE, CREATEDATE, PRICE, PRICETYPE, 
+    NORMALSALARY, BASESALARY, PERFORMANCESALARY, SALARYRATIO, GROSSPROFITRATE, SIXGOLDCITY, 
+    SIXGOLDBASE, PAYCITY1, PAYSALARY1, PAYCITY2, PAYSALARY2, CHILDEDUCATION, AGAINEDUCATION, 
+    SERIOUSILLNESS, HOUSELOANS, RENTINGHOUSE, SUPPORTOLD, EQUIPMENT, EQUIPMENTSUBSIDY, 
+    WORKERSTATUS, DIMISSIONDATE, DIMISSIONREASON, DECLARATIONSTATUS, SOCIALSECURITYSTATUS, 
+    UPDATEDATE, UPDATEPEOPLE, REMARK, STANDBY, CMBCACCOUNT, ICBCACCOUNT
+  </sql>
+  <sql id="queryWhereId">
+    <where>
+      <if test="workername!=null and workername!=''">
+        WORKERNAME LIKE concat("%",#{workername},"%")
+      </if>
+    </where>
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from worker
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from worker
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.Worker">
+    insert into worker (ID, WORKERNAME, WORKERSEX, 
+      WORKERIDCARD, WORKNATIVE, WORKERPHONE, 
+      WORKEREMAIL, WORKERDEPT, WORKERLEVEL, 
+      WORKERLEADER, WORKERCUSTOMER, CREATEPEOPLE, 
+      CREATEDATE, PRICE, PRICETYPE, 
+      NORMALSALARY, BASESALARY, PERFORMANCESALARY, 
+      SALARYRATIO, GROSSPROFITRATE, SIXGOLDCITY, 
+      SIXGOLDBASE, PAYCITY1, PAYSALARY1, 
+      PAYCITY2, PAYSALARY2, CHILDEDUCATION, 
+      AGAINEDUCATION, SERIOUSILLNESS, HOUSELOANS, 
+      RENTINGHOUSE, SUPPORTOLD, EQUIPMENT, 
+      EQUIPMENTSUBSIDY, WORKERSTATUS, DIMISSIONDATE, 
+      DIMISSIONREASON, DECLARATIONSTATUS, SOCIALSECURITYSTATUS, 
+      UPDATEDATE, UPDATEPEOPLE, REMARK, 
+      STANDBY, CMBCACCOUNT, ICBCACCOUNT
+      )
+    values (#{id,jdbcType=INTEGER}, #{workername,jdbcType=VARCHAR}, #{workersex,jdbcType=VARCHAR}, 
+      #{workeridcard,jdbcType=VARCHAR}, #{worknative,jdbcType=VARCHAR}, #{workerphone,jdbcType=VARCHAR}, 
+      #{workeremail,jdbcType=VARCHAR}, #{workerdept,jdbcType=VARCHAR}, #{workerlevel,jdbcType=VARCHAR}, 
+      #{workerleader,jdbcType=VARCHAR}, #{workercustomer,jdbcType=VARCHAR}, #{createpeople,jdbcType=VARCHAR}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{price,jdbcType=DOUBLE}, #{pricetype,jdbcType=VARCHAR}, 
+      #{normalsalary,jdbcType=DOUBLE}, #{basesalary,jdbcType=DOUBLE}, #{performancesalary,jdbcType=DOUBLE}, 
+      #{salaryratio,jdbcType=VARCHAR}, #{grossprofitrate,jdbcType=VARCHAR}, #{sixgoldcity,jdbcType=VARCHAR}, 
+      #{sixgoldbase,jdbcType=DOUBLE}, #{paycity1,jdbcType=VARCHAR}, #{paysalary1,jdbcType=DOUBLE}, 
+      #{paycity2,jdbcType=VARCHAR}, #{paysalary2,jdbcType=DOUBLE}, #{childeducation,jdbcType=DOUBLE}, 
+      #{againeducation,jdbcType=DOUBLE}, #{seriousillness,jdbcType=DOUBLE}, #{houseloans,jdbcType=DOUBLE}, 
+      #{rentinghouse,jdbcType=DOUBLE}, #{supportold,jdbcType=DOUBLE}, #{equipment,jdbcType=VARCHAR}, 
+      #{equipmentsubsidy,jdbcType=DOUBLE}, #{workerstatus,jdbcType=INTEGER}, #{dimissiondate,jdbcType=TIMESTAMP}, 
+      #{dimissionreason,jdbcType=VARCHAR}, #{declarationstatus,jdbcType=VARCHAR}, #{socialsecuritystatus,jdbcType=VARCHAR}, 
+      #{updatedate,jdbcType=TIMESTAMP}, #{updatepeople,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{standby,jdbcType=VARCHAR}, #{cmbcaccount,jdbcType=VARCHAR}, #{icbcaccount,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.Worker">
+    insert into worker
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="workername != null">
+        WORKERNAME,
+      </if>
+      <if test="workersex != null">
+        WORKERSEX,
+      </if>
+      <if test="workeridcard != null">
+        WORKERIDCARD,
+      </if>
+      <if test="worknative != null">
+        WORKNATIVE,
+      </if>
+      <if test="workerphone != null">
+        WORKERPHONE,
+      </if>
+      <if test="workeremail != null">
+        WORKEREMAIL,
+      </if>
+      <if test="workerdept != null">
+        WORKERDEPT,
+      </if>
+      <if test="workerlevel != null">
+        WORKERLEVEL,
+      </if>
+      <if test="workerleader != null">
+        WORKERLEADER,
+      </if>
+      <if test="workercustomer != null">
+        WORKERCUSTOMER,
+      </if>
+      <if test="createpeople != null">
+        CREATEPEOPLE,
+      </if>
+      <if test="createdate != null">
+        CREATEDATE,
+      </if>
+      <if test="price != null">
+        PRICE,
+      </if>
+      <if test="pricetype != null">
+        PRICETYPE,
+      </if>
+      <if test="normalsalary != null">
+        NORMALSALARY,
+      </if>
+      <if test="basesalary != null">
+        BASESALARY,
+      </if>
+      <if test="performancesalary != null">
+        PERFORMANCESALARY,
+      </if>
+      <if test="salaryratio != null">
+        SALARYRATIO,
+      </if>
+      <if test="grossprofitrate != null">
+        GROSSPROFITRATE,
+      </if>
+      <if test="sixgoldcity != null">
+        SIXGOLDCITY,
+      </if>
+      <if test="sixgoldbase != null">
+        SIXGOLDBASE,
+      </if>
+      <if test="paycity1 != null">
+        PAYCITY1,
+      </if>
+      <if test="paysalary1 != null">
+        PAYSALARY1,
+      </if>
+      <if test="paycity2 != null">
+        PAYCITY2,
+      </if>
+      <if test="paysalary2 != null">
+        PAYSALARY2,
+      </if>
+      <if test="childeducation != null">
+        CHILDEDUCATION,
+      </if>
+      <if test="againeducation != null">
+        AGAINEDUCATION,
+      </if>
+      <if test="seriousillness != null">
+        SERIOUSILLNESS,
+      </if>
+      <if test="houseloans != null">
+        HOUSELOANS,
+      </if>
+      <if test="rentinghouse != null">
+        RENTINGHOUSE,
+      </if>
+      <if test="supportold != null">
+        SUPPORTOLD,
+      </if>
+      <if test="equipment != null">
+        EQUIPMENT,
+      </if>
+      <if test="equipmentsubsidy != null">
+        EQUIPMENTSUBSIDY,
+      </if>
+      <if test="workerstatus != null">
+        WORKERSTATUS,
+      </if>
+      <if test="dimissiondate != null">
+        DIMISSIONDATE,
+      </if>
+      <if test="dimissionreason != null">
+        DIMISSIONREASON,
+      </if>
+      <if test="declarationstatus != null">
+        DECLARATIONSTATUS,
+      </if>
+      <if test="socialsecuritystatus != null">
+        SOCIALSECURITYSTATUS,
+      </if>
+      <if test="updatedate != null">
+        UPDATEDATE,
+      </if>
+      <if test="updatepeople != null">
+        UPDATEPEOPLE,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="standby != null">
+        STANDBY,
+      </if>
+      <if test="cmbcaccount != null">
+        CMBCACCOUNT,
+      </if>
+      <if test="icbcaccount != null">
+        ICBCACCOUNT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workername != null">
+        #{workername,jdbcType=VARCHAR},
+      </if>
+      <if test="workersex != null">
+        #{workersex,jdbcType=VARCHAR},
+      </if>
+      <if test="workeridcard != null">
+        #{workeridcard,jdbcType=VARCHAR},
+      </if>
+      <if test="worknative != null">
+        #{worknative,jdbcType=VARCHAR},
+      </if>
+      <if test="workerphone != null">
+        #{workerphone,jdbcType=VARCHAR},
+      </if>
+      <if test="workeremail != null">
+        #{workeremail,jdbcType=VARCHAR},
+      </if>
+      <if test="workerdept != null">
+        #{workerdept,jdbcType=VARCHAR},
+      </if>
+      <if test="workerlevel != null">
+        #{workerlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="workerleader != null">
+        #{workerleader,jdbcType=VARCHAR},
+      </if>
+      <if test="workercustomer != null">
+        #{workercustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="createpeople != null">
+        #{createpeople,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="pricetype != null">
+        #{pricetype,jdbcType=VARCHAR},
+      </if>
+      <if test="normalsalary != null">
+        #{normalsalary,jdbcType=DOUBLE},
+      </if>
+      <if test="basesalary != null">
+        #{basesalary,jdbcType=DOUBLE},
+      </if>
+      <if test="performancesalary != null">
+        #{performancesalary,jdbcType=DOUBLE},
+      </if>
+      <if test="salaryratio != null">
+        #{salaryratio,jdbcType=VARCHAR},
+      </if>
+      <if test="grossprofitrate != null">
+        #{grossprofitrate,jdbcType=VARCHAR},
+      </if>
+      <if test="sixgoldcity != null">
+        #{sixgoldcity,jdbcType=VARCHAR},
+      </if>
+      <if test="sixgoldbase != null">
+        #{sixgoldbase,jdbcType=DOUBLE},
+      </if>
+      <if test="paycity1 != null">
+        #{paycity1,jdbcType=VARCHAR},
+      </if>
+      <if test="paysalary1 != null">
+        #{paysalary1,jdbcType=DOUBLE},
+      </if>
+      <if test="paycity2 != null">
+        #{paycity2,jdbcType=VARCHAR},
+      </if>
+      <if test="paysalary2 != null">
+        #{paysalary2,jdbcType=DOUBLE},
+      </if>
+      <if test="childeducation != null">
+        #{childeducation,jdbcType=DOUBLE},
+      </if>
+      <if test="againeducation != null">
+        #{againeducation,jdbcType=DOUBLE},
+      </if>
+      <if test="seriousillness != null">
+        #{seriousillness,jdbcType=DOUBLE},
+      </if>
+      <if test="houseloans != null">
+        #{houseloans,jdbcType=DOUBLE},
+      </if>
+      <if test="rentinghouse != null">
+        #{rentinghouse,jdbcType=DOUBLE},
+      </if>
+      <if test="supportold != null">
+        #{supportold,jdbcType=DOUBLE},
+      </if>
+      <if test="equipment != null">
+        #{equipment,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentsubsidy != null">
+        #{equipmentsubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="workerstatus != null">
+        #{workerstatus,jdbcType=INTEGER},
+      </if>
+      <if test="dimissiondate != null">
+        #{dimissiondate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dimissionreason != null">
+        #{dimissionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="declarationstatus != null">
+        #{declarationstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="socialsecuritystatus != null">
+        #{socialsecuritystatus,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatepeople != null">
+        #{updatepeople,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="standby != null">
+        #{standby,jdbcType=VARCHAR},
+      </if>
+      <if test="cmbcaccount != null">
+        #{cmbcaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="icbcaccount != null">
+        #{icbcaccount,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.Worker">
+    update worker
+    <set>
+      <if test="workername != null">
+        WORKERNAME = #{workername,jdbcType=VARCHAR},
+      </if>
+      <if test="workersex != null">
+        WORKERSEX = #{workersex,jdbcType=VARCHAR},
+      </if>
+      <if test="workeridcard != null">
+        WORKERIDCARD = #{workeridcard,jdbcType=VARCHAR},
+      </if>
+      <if test="worknative != null">
+        WORKNATIVE = #{worknative,jdbcType=VARCHAR},
+      </if>
+      <if test="workerphone != null">
+        WORKERPHONE = #{workerphone,jdbcType=VARCHAR},
+      </if>
+      <if test="workeremail != null">
+        WORKEREMAIL = #{workeremail,jdbcType=VARCHAR},
+      </if>
+      <if test="workerdept != null">
+        WORKERDEPT = #{workerdept,jdbcType=VARCHAR},
+      </if>
+      <if test="workerlevel != null">
+        WORKERLEVEL = #{workerlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="workerleader != null">
+        WORKERLEADER = #{workerleader,jdbcType=VARCHAR},
+      </if>
+      <if test="workercustomer != null">
+        WORKERCUSTOMER = #{workercustomer,jdbcType=VARCHAR},
+      </if>
+      <if test="createpeople != null">
+        CREATEPEOPLE = #{createpeople,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="price != null">
+        PRICE = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="pricetype != null">
+        PRICETYPE = #{pricetype,jdbcType=VARCHAR},
+      </if>
+      <if test="normalsalary != null">
+        NORMALSALARY = #{normalsalary,jdbcType=DOUBLE},
+      </if>
+      <if test="basesalary != null">
+        BASESALARY = #{basesalary,jdbcType=DOUBLE},
+      </if>
+      <if test="performancesalary != null">
+        PERFORMANCESALARY = #{performancesalary,jdbcType=DOUBLE},
+      </if>
+      <if test="salaryratio != null">
+        SALARYRATIO = #{salaryratio,jdbcType=VARCHAR},
+      </if>
+      <if test="grossprofitrate != null">
+        GROSSPROFITRATE = #{grossprofitrate,jdbcType=VARCHAR},
+      </if>
+      <if test="sixgoldcity != null">
+        SIXGOLDCITY = #{sixgoldcity,jdbcType=VARCHAR},
+      </if>
+      <if test="sixgoldbase != null">
+        SIXGOLDBASE = #{sixgoldbase,jdbcType=DOUBLE},
+      </if>
+      <if test="paycity1 != null">
+        PAYCITY1 = #{paycity1,jdbcType=VARCHAR},
+      </if>
+      <if test="paysalary1 != null">
+        PAYSALARY1 = #{paysalary1,jdbcType=DOUBLE},
+      </if>
+      <if test="paycity2 != null">
+        PAYCITY2 = #{paycity2,jdbcType=VARCHAR},
+      </if>
+      <if test="paysalary2 != null">
+        PAYSALARY2 = #{paysalary2,jdbcType=DOUBLE},
+      </if>
+      <if test="childeducation != null">
+        CHILDEDUCATION = #{childeducation,jdbcType=DOUBLE},
+      </if>
+      <if test="againeducation != null">
+        AGAINEDUCATION = #{againeducation,jdbcType=DOUBLE},
+      </if>
+      <if test="seriousillness != null">
+        SERIOUSILLNESS = #{seriousillness,jdbcType=DOUBLE},
+      </if>
+      <if test="houseloans != null">
+        HOUSELOANS = #{houseloans,jdbcType=DOUBLE},
+      </if>
+      <if test="rentinghouse != null">
+        RENTINGHOUSE = #{rentinghouse,jdbcType=DOUBLE},
+      </if>
+      <if test="supportold != null">
+        SUPPORTOLD = #{supportold,jdbcType=DOUBLE},
+      </if>
+      <if test="equipment != null">
+        EQUIPMENT = #{equipment,jdbcType=VARCHAR},
+      </if>
+      <if test="equipmentsubsidy != null">
+        EQUIPMENTSUBSIDY = #{equipmentsubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="workerstatus != null">
+        WORKERSTATUS = #{workerstatus,jdbcType=INTEGER},
+      </if>
+      <if test="dimissiondate != null">
+        DIMISSIONDATE = #{dimissiondate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dimissionreason != null">
+        DIMISSIONREASON = #{dimissionreason,jdbcType=VARCHAR},
+      </if>
+      <if test="declarationstatus != null">
+        DECLARATIONSTATUS = #{declarationstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="socialsecuritystatus != null">
+        SOCIALSECURITYSTATUS = #{socialsecuritystatus,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedate != null">
+        UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatepeople != null">
+        UPDATEPEOPLE = #{updatepeople,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="standby != null">
+        STANDBY = #{standby,jdbcType=VARCHAR},
+      </if>
+      <if test="cmbcaccount != null">
+        CMBCACCOUNT = #{cmbcaccount,jdbcType=VARCHAR},
+      </if>
+      <if test="icbcaccount != null">
+        ICBCACCOUNT = #{icbcaccount,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.Worker">
+    update worker
+    set WORKERNAME = #{workername,jdbcType=VARCHAR},
+      WORKERSEX = #{workersex,jdbcType=VARCHAR},
+      WORKERIDCARD = #{workeridcard,jdbcType=VARCHAR},
+      WORKNATIVE = #{worknative,jdbcType=VARCHAR},
+      WORKERPHONE = #{workerphone,jdbcType=VARCHAR},
+      WORKEREMAIL = #{workeremail,jdbcType=VARCHAR},
+      WORKERDEPT = #{workerdept,jdbcType=VARCHAR},
+      WORKERLEVEL = #{workerlevel,jdbcType=VARCHAR},
+      WORKERLEADER = #{workerleader,jdbcType=VARCHAR},
+      WORKERCUSTOMER = #{workercustomer,jdbcType=VARCHAR},
+      CREATEPEOPLE = #{createpeople,jdbcType=VARCHAR},
+      CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      PRICE = #{price,jdbcType=DOUBLE},
+      PRICETYPE = #{pricetype,jdbcType=VARCHAR},
+      NORMALSALARY = #{normalsalary,jdbcType=DOUBLE},
+      BASESALARY = #{basesalary,jdbcType=DOUBLE},
+      PERFORMANCESALARY = #{performancesalary,jdbcType=DOUBLE},
+      SALARYRATIO = #{salaryratio,jdbcType=VARCHAR},
+      GROSSPROFITRATE = #{grossprofitrate,jdbcType=VARCHAR},
+      SIXGOLDCITY = #{sixgoldcity,jdbcType=VARCHAR},
+      SIXGOLDBASE = #{sixgoldbase,jdbcType=DOUBLE},
+      PAYCITY1 = #{paycity1,jdbcType=VARCHAR},
+      PAYSALARY1 = #{paysalary1,jdbcType=DOUBLE},
+      PAYCITY2 = #{paycity2,jdbcType=VARCHAR},
+      PAYSALARY2 = #{paysalary2,jdbcType=DOUBLE},
+      CHILDEDUCATION = #{childeducation,jdbcType=DOUBLE},
+      AGAINEDUCATION = #{againeducation,jdbcType=DOUBLE},
+      SERIOUSILLNESS = #{seriousillness,jdbcType=DOUBLE},
+      HOUSELOANS = #{houseloans,jdbcType=DOUBLE},
+      RENTINGHOUSE = #{rentinghouse,jdbcType=DOUBLE},
+      SUPPORTOLD = #{supportold,jdbcType=DOUBLE},
+      EQUIPMENT = #{equipment,jdbcType=VARCHAR},
+      EQUIPMENTSUBSIDY = #{equipmentsubsidy,jdbcType=DOUBLE},
+      WORKERSTATUS = #{workerstatus,jdbcType=INTEGER},
+      DIMISSIONDATE = #{dimissiondate,jdbcType=TIMESTAMP},
+      DIMISSIONREASON = #{dimissionreason,jdbcType=VARCHAR},
+      DECLARATIONSTATUS = #{declarationstatus,jdbcType=VARCHAR},
+      SOCIALSECURITYSTATUS = #{socialsecuritystatus,jdbcType=VARCHAR},
+      UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP},
+      UPDATEPEOPLE = #{updatepeople,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      STANDBY = #{standby,jdbcType=VARCHAR},
+      CMBCACCOUNT = #{cmbcaccount,jdbcType=VARCHAR},
+      ICBCACCOUNT = #{icbcaccount,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getRowCount" resultType="java.lang.Integer">
+    SELECT COUNT(*) FROM worker
+    <include refid="queryWhereId"/>
+  </select>
+  <select id="findPageObjects" resultType="com.sz.pojo.Worker" parameterType="com.sz.pojo.Worker">
+    SELECT * FROM worker
+    <include refid="queryWhereId"/>
+    limit #{startIndex},#{pageSize}
+  </select>
+
+  <delete id="deleteObjects" parameterType="integer">
+    DELETE FROM worker
+    WHERE ID IN
+    <foreach collection="ids" open="(" close=")" separator="," item="item">
+      #{item}
+    </foreach>
+  </delete>
+  <sql id="queryWhereWorker">
+    <where>
+      <if test="workername != null" >
+        WORKERNAME = #{workername,jdbcType=VARCHAR},
+      </if>
+      <if test="workeridcard != null" >
+        WORKERIDCARD = #{workeridcard,jdbcType=VARCHAR},
+      </if>
+      <if test="workerdept != null" >
+        WORKERDEPT = #{workerdeptid,jdbcType=VARCHAR},
+      </if>
+      <if test="declarationstatus != null" >
+        DECLARATIONSTATUS,
+      </if>
+      <if test="socialsecuritystatus != null" >
+        SOCIALSECURITYSTATUS,
+      </if>
+      <if test="workerlevel != null" >
+        WORKERLEVEL = #{workerlevel,jdbcType=VARCHAR},
+      </if>
+    </where>
+  </sql>
+  <select id="doFindByWorker" parameterType="com.sz.pojo.Worker" resultType="integer">
+    SELECT COUNT(*) FROM worker WHERE
+    <include refid="queryWhereWorker"/>
+  </select>
+
+</mapper>

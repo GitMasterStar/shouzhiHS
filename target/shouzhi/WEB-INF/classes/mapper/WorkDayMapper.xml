@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sz.dao.WorkDayMapper" >
+  <resultMap id="BaseResultMap" type="com.sz.pojo.WorkDay" >
+    <constructor >
+      <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="YEAR" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="JANUARY" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="FEBRUARY" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="MARCH" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="APRIL" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="MAY" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="JUNE" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="JULY" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="AUGUST" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="SEPTEMBER" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="OCTOBER" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="NOVEMBER" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="DECEMBER" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="JANUARYWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="FEBRUARYWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="MARCHWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="APRILWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="MAYWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="JUNEWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="JULYWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="AUGUSTWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="SEPTEMBERWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="OCTOBERWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="NOVEMBERWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="DECEMBERWEEKEND" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, YEAR, JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, 
+    NOVEMBER, DECEMBER, JANUARYWEEKEND, FEBRUARYWEEKEND, MARCHWEEKEND, APRILWEEKEND, 
+    MAYWEEKEND, JUNEWEEKEND, JULYWEEKEND, AUGUSTWEEKEND, SEPTEMBERWEEKEND, OCTOBERWEEKEND, 
+    NOVEMBERWEEKEND, DECEMBERWEEKEND
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from workday
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from workday
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.WorkDay" >
+    insert into workday (ID, YEAR, JANUARY, 
+      FEBRUARY, MARCH, APRIL, 
+      MAY, JUNE, JULY, AUGUST, 
+      SEPTEMBER, OCTOBER, NOVEMBER, 
+      DECEMBER, JANUARYWEEKEND, FEBRUARYWEEKEND, 
+      MARCHWEEKEND, APRILWEEKEND, MAYWEEKEND, 
+      JUNEWEEKEND, JULYWEEKEND, AUGUSTWEEKEND, 
+      SEPTEMBERWEEKEND, OCTOBERWEEKEND, NOVEMBERWEEKEND, 
+      DECEMBERWEEKEND)
+    values (#{id,jdbcType=INTEGER}, #{year,jdbcType=INTEGER}, #{january,jdbcType=INTEGER}, 
+      #{february,jdbcType=INTEGER}, #{march,jdbcType=INTEGER}, #{april,jdbcType=INTEGER}, 
+      #{may,jdbcType=INTEGER}, #{june,jdbcType=INTEGER}, #{july,jdbcType=INTEGER}, #{august,jdbcType=INTEGER}, 
+      #{september,jdbcType=INTEGER}, #{october,jdbcType=INTEGER}, #{november,jdbcType=INTEGER}, 
+      #{december,jdbcType=INTEGER}, #{januaryweekend,jdbcType=INTEGER}, #{februaryweekend,jdbcType=INTEGER}, 
+      #{marchweekend,jdbcType=INTEGER}, #{aprilweekend,jdbcType=INTEGER}, #{mayweekend,jdbcType=INTEGER}, 
+      #{juneweekend,jdbcType=INTEGER}, #{julyweekend,jdbcType=INTEGER}, #{augustweekend,jdbcType=INTEGER}, 
+      #{septemberweekend,jdbcType=INTEGER}, #{octoberweekend,jdbcType=INTEGER}, #{novemberweekend,jdbcType=INTEGER}, 
+      #{decemberweekend,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.WorkDay" >
+    insert into workday
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="year != null" >
+        YEAR,
+      </if>
+      <if test="january != null" >
+        JANUARY,
+      </if>
+      <if test="february != null" >
+        FEBRUARY,
+      </if>
+      <if test="march != null" >
+        MARCH,
+      </if>
+      <if test="april != null" >
+        APRIL,
+      </if>
+      <if test="may != null" >
+        MAY,
+      </if>
+      <if test="june != null" >
+        JUNE,
+      </if>
+      <if test="july != null" >
+        JULY,
+      </if>
+      <if test="august != null" >
+        AUGUST,
+      </if>
+      <if test="september != null" >
+        SEPTEMBER,
+      </if>
+      <if test="october != null" >
+        OCTOBER,
+      </if>
+      <if test="november != null" >
+        NOVEMBER,
+      </if>
+      <if test="december != null" >
+        DECEMBER,
+      </if>
+      <if test="januaryweekend != null" >
+        JANUARYWEEKEND,
+      </if>
+      <if test="februaryweekend != null" >
+        FEBRUARYWEEKEND,
+      </if>
+      <if test="marchweekend != null" >
+        MARCHWEEKEND,
+      </if>
+      <if test="aprilweekend != null" >
+        APRILWEEKEND,
+      </if>
+      <if test="mayweekend != null" >
+        MAYWEEKEND,
+      </if>
+      <if test="juneweekend != null" >
+        JUNEWEEKEND,
+      </if>
+      <if test="julyweekend != null" >
+        JULYWEEKEND,
+      </if>
+      <if test="augustweekend != null" >
+        AUGUSTWEEKEND,
+      </if>
+      <if test="septemberweekend != null" >
+        SEPTEMBERWEEKEND,
+      </if>
+      <if test="octoberweekend != null" >
+        OCTOBERWEEKEND,
+      </if>
+      <if test="novemberweekend != null" >
+        NOVEMBERWEEKEND,
+      </if>
+      <if test="decemberweekend != null" >
+        DECEMBERWEEKEND,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="year != null" >
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="january != null" >
+        #{january,jdbcType=INTEGER},
+      </if>
+      <if test="february != null" >
+        #{february,jdbcType=INTEGER},
+      </if>
+      <if test="march != null" >
+        #{march,jdbcType=INTEGER},
+      </if>
+      <if test="april != null" >
+        #{april,jdbcType=INTEGER},
+      </if>
+      <if test="may != null" >
+        #{may,jdbcType=INTEGER},
+      </if>
+      <if test="june != null" >
+        #{june,jdbcType=INTEGER},
+      </if>
+      <if test="july != null" >
+        #{july,jdbcType=INTEGER},
+      </if>
+      <if test="august != null" >
+        #{august,jdbcType=INTEGER},
+      </if>
+      <if test="september != null" >
+        #{september,jdbcType=INTEGER},
+      </if>
+      <if test="october != null" >
+        #{october,jdbcType=INTEGER},
+      </if>
+      <if test="november != null" >
+        #{november,jdbcType=INTEGER},
+      </if>
+      <if test="december != null" >
+        #{december,jdbcType=INTEGER},
+      </if>
+      <if test="januaryweekend != null" >
+        #{januaryweekend,jdbcType=INTEGER},
+      </if>
+      <if test="februaryweekend != null" >
+        #{februaryweekend,jdbcType=INTEGER},
+      </if>
+      <if test="marchweekend != null" >
+        #{marchweekend,jdbcType=INTEGER},
+      </if>
+      <if test="aprilweekend != null" >
+        #{aprilweekend,jdbcType=INTEGER},
+      </if>
+      <if test="mayweekend != null" >
+        #{mayweekend,jdbcType=INTEGER},
+      </if>
+      <if test="juneweekend != null" >
+        #{juneweekend,jdbcType=INTEGER},
+      </if>
+      <if test="julyweekend != null" >
+        #{julyweekend,jdbcType=INTEGER},
+      </if>
+      <if test="augustweekend != null" >
+        #{augustweekend,jdbcType=INTEGER},
+      </if>
+      <if test="septemberweekend != null" >
+        #{septemberweekend,jdbcType=INTEGER},
+      </if>
+      <if test="octoberweekend != null" >
+        #{octoberweekend,jdbcType=INTEGER},
+      </if>
+      <if test="novemberweekend != null" >
+        #{novemberweekend,jdbcType=INTEGER},
+      </if>
+      <if test="decemberweekend != null" >
+        #{decemberweekend,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.WorkDay" >
+    update workday
+    <set >
+      <if test="year != null" >
+        YEAR = #{year,jdbcType=INTEGER},
+      </if>
+      <if test="january != null" >
+        JANUARY = #{january,jdbcType=INTEGER},
+      </if>
+      <if test="february != null" >
+        FEBRUARY = #{february,jdbcType=INTEGER},
+      </if>
+      <if test="march != null" >
+        MARCH = #{march,jdbcType=INTEGER},
+      </if>
+      <if test="april != null" >
+        APRIL = #{april,jdbcType=INTEGER},
+      </if>
+      <if test="may != null" >
+        MAY = #{may,jdbcType=INTEGER},
+      </if>
+      <if test="june != null" >
+        JUNE = #{june,jdbcType=INTEGER},
+      </if>
+      <if test="july != null" >
+        JULY = #{july,jdbcType=INTEGER},
+      </if>
+      <if test="august != null" >
+        AUGUST = #{august,jdbcType=INTEGER},
+      </if>
+      <if test="september != null" >
+        SEPTEMBER = #{september,jdbcType=INTEGER},
+      </if>
+      <if test="october != null" >
+        OCTOBER = #{october,jdbcType=INTEGER},
+      </if>
+      <if test="november != null" >
+        NOVEMBER = #{november,jdbcType=INTEGER},
+      </if>
+      <if test="december != null" >
+        DECEMBER = #{december,jdbcType=INTEGER},
+      </if>
+      <if test="januaryweekend != null" >
+        JANUARYWEEKEND = #{januaryweekend,jdbcType=INTEGER},
+      </if>
+      <if test="februaryweekend != null" >
+        FEBRUARYWEEKEND = #{februaryweekend,jdbcType=INTEGER},
+      </if>
+      <if test="marchweekend != null" >
+        MARCHWEEKEND = #{marchweekend,jdbcType=INTEGER},
+      </if>
+      <if test="aprilweekend != null" >
+        APRILWEEKEND = #{aprilweekend,jdbcType=INTEGER},
+      </if>
+      <if test="mayweekend != null" >
+        MAYWEEKEND = #{mayweekend,jdbcType=INTEGER},
+      </if>
+      <if test="juneweekend != null" >
+        JUNEWEEKEND = #{juneweekend,jdbcType=INTEGER},
+      </if>
+      <if test="julyweekend != null" >
+        JULYWEEKEND = #{julyweekend,jdbcType=INTEGER},
+      </if>
+      <if test="augustweekend != null" >
+        AUGUSTWEEKEND = #{augustweekend,jdbcType=INTEGER},
+      </if>
+      <if test="septemberweekend != null" >
+        SEPTEMBERWEEKEND = #{septemberweekend,jdbcType=INTEGER},
+      </if>
+      <if test="octoberweekend != null" >
+        OCTOBERWEEKEND = #{octoberweekend,jdbcType=INTEGER},
+      </if>
+      <if test="novemberweekend != null" >
+        NOVEMBERWEEKEND = #{novemberweekend,jdbcType=INTEGER},
+      </if>
+      <if test="decemberweekend != null" >
+        DECEMBERWEEKEND = #{decemberweekend,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.WorkDay" >
+    update workday
+    set YEAR = #{year,jdbcType=INTEGER},
+      JANUARY = #{january,jdbcType=INTEGER},
+      FEBRUARY = #{february,jdbcType=INTEGER},
+      MARCH = #{march,jdbcType=INTEGER},
+      APRIL = #{april,jdbcType=INTEGER},
+      MAY = #{may,jdbcType=INTEGER},
+      JUNE = #{june,jdbcType=INTEGER},
+      JULY = #{july,jdbcType=INTEGER},
+      AUGUST = #{august,jdbcType=INTEGER},
+      SEPTEMBER = #{september,jdbcType=INTEGER},
+      OCTOBER = #{october,jdbcType=INTEGER},
+      NOVEMBER = #{november,jdbcType=INTEGER},
+      DECEMBER = #{december,jdbcType=INTEGER},
+      JANUARYWEEKEND = #{januaryweekend,jdbcType=INTEGER},
+      FEBRUARYWEEKEND = #{februaryweekend,jdbcType=INTEGER},
+      MARCHWEEKEND = #{marchweekend,jdbcType=INTEGER},
+      APRILWEEKEND = #{aprilweekend,jdbcType=INTEGER},
+      MAYWEEKEND = #{mayweekend,jdbcType=INTEGER},
+      JUNEWEEKEND = #{juneweekend,jdbcType=INTEGER},
+      JULYWEEKEND = #{julyweekend,jdbcType=INTEGER},
+      AUGUSTWEEKEND = #{augustweekend,jdbcType=INTEGER},
+      SEPTEMBERWEEKEND = #{septemberweekend,jdbcType=INTEGER},
+      OCTOBERWEEKEND = #{octoberweekend,jdbcType=INTEGER},
+      NOVEMBERWEEKEND = #{novemberweekend,jdbcType=INTEGER},
+      DECEMBERWEEKEND = #{decemberweekend,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--总记录数-->
+  <select id="getRowCount" resultType="java.lang.Integer">
+    SELECT COUNT(*) FROM workday
+  </select>
+  <!--分页查询工作日信息-->
+  <select id="findPageObjects" resultType="com.sz.pojo.WorkDay" parameterType="com.sz.pojo.WorkDay">
+    SELECT * FROM workday
+    limit #{startIndex},#{pageSize}
+  </select>
+</mapper>

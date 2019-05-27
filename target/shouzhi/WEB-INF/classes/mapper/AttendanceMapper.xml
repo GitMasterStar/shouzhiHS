@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sz.dao.AttendanceMapper" >
+  <resultMap id="BaseResultMap" type="com.sz.pojo.Attendance" >
+    <constructor >
+      <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="WORKERID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="DEPTID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="WORKDAY" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="CHECKOUTDAY" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="CHECKOUTPRICE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="OTHER" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="ADJUSTMENT" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="VALIDDAY" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="INVALIDDAY" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="NORMALSALARY" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="PAYSALARY1" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="PAYSALARY2" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="SALARYRATIO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PAYREALSALARY1" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="PAYREALSALARY2" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="COMPUTERSUBSIDY" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="OVERTIMESUBSIDY" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="OTHERSUBSIDY" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="ALLSUBSIDY" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="SENDSALARY1" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="SENDSALARY2" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="ALLSENDSALARY" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="CHECKOUT" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="REASON" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PAYCITY2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BONUS" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="ALLSEND" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="UPDATEID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="MONTH" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STANDBY" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, WORKERID, DEPTID, WORKDAY, CHECKOUTDAY, CHECKOUTPRICE, OTHER, ADJUSTMENT, VALIDDAY, 
+    INVALIDDAY, NORMALSALARY, PAYSALARY1, PAYSALARY2, SALARYRATIO, PAYREALSALARY1, PAYREALSALARY2, 
+    COMPUTERSUBSIDY, OVERTIMESUBSIDY, OTHERSUBSIDY, ALLSUBSIDY, SENDSALARY1, SENDSALARY2, 
+    ALLSENDSALARY, CHECKOUT, REASON, PAYCITY2, BONUS, ALLSEND, UPDATEID, MONTH, STANDBY
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from attendance
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from attendance
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.Attendance" >
+    insert into attendance (ID, WORKERID, DEPTID, 
+      WORKDAY, CHECKOUTDAY, CHECKOUTPRICE, 
+      OTHER, ADJUSTMENT, VALIDDAY, 
+      INVALIDDAY, NORMALSALARY, PAYSALARY1, 
+      PAYSALARY2, SALARYRATIO, PAYREALSALARY1, 
+      PAYREALSALARY2, COMPUTERSUBSIDY, OVERTIMESUBSIDY, 
+      OTHERSUBSIDY, ALLSUBSIDY, SENDSALARY1, 
+      SENDSALARY2, ALLSENDSALARY, CHECKOUT, 
+      REASON, PAYCITY2, BONUS, 
+      ALLSEND, UPDATEID, MONTH, 
+      STANDBY)
+    values (#{id,jdbcType=INTEGER}, #{workerid,jdbcType=INTEGER}, #{deptid,jdbcType=INTEGER}, 
+      #{workday,jdbcType=INTEGER}, #{checkoutday,jdbcType=INTEGER}, #{checkoutprice,jdbcType=DOUBLE}, 
+      #{other,jdbcType=DOUBLE}, #{adjustment,jdbcType=DOUBLE}, #{validday,jdbcType=INTEGER}, 
+      #{invalidday,jdbcType=INTEGER}, #{normalsalary,jdbcType=DOUBLE}, #{paysalary1,jdbcType=DOUBLE}, 
+      #{paysalary2,jdbcType=DOUBLE}, #{salaryratio,jdbcType=VARCHAR}, #{payrealsalary1,jdbcType=DOUBLE}, 
+      #{payrealsalary2,jdbcType=DOUBLE}, #{computersubsidy,jdbcType=DOUBLE}, #{overtimesubsidy,jdbcType=DOUBLE}, 
+      #{othersubsidy,jdbcType=DOUBLE}, #{allsubsidy,jdbcType=DOUBLE}, #{sendsalary1,jdbcType=DOUBLE}, 
+      #{sendsalary2,jdbcType=DOUBLE}, #{allsendsalary,jdbcType=DOUBLE}, #{checkout,jdbcType=BIT}, 
+      #{reason,jdbcType=VARCHAR}, #{paycity2,jdbcType=VARCHAR}, #{bonus,jdbcType=DOUBLE}, 
+      #{allsend,jdbcType=DOUBLE}, #{updateid,jdbcType=INTEGER}, #{month,jdbcType=VARCHAR}, 
+      #{standby,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.Attendance" >
+    insert into attendance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="workerid != null" >
+        WORKERID,
+      </if>
+      <if test="deptid != null" >
+        DEPTID,
+      </if>
+      <if test="workday != null" >
+        WORKDAY,
+      </if>
+      <if test="checkoutday != null" >
+        CHECKOUTDAY,
+      </if>
+      <if test="checkoutprice != null" >
+        CHECKOUTPRICE,
+      </if>
+      <if test="other != null" >
+        OTHER,
+      </if>
+      <if test="adjustment != null" >
+        ADJUSTMENT,
+      </if>
+      <if test="validday != null" >
+        VALIDDAY,
+      </if>
+      <if test="invalidday != null" >
+        INVALIDDAY,
+      </if>
+      <if test="normalsalary != null" >
+        NORMALSALARY,
+      </if>
+      <if test="paysalary1 != null" >
+        PAYSALARY1,
+      </if>
+      <if test="paysalary2 != null" >
+        PAYSALARY2,
+      </if>
+      <if test="salaryratio != null" >
+        SALARYRATIO,
+      </if>
+      <if test="payrealsalary1 != null" >
+        PAYREALSALARY1,
+      </if>
+      <if test="payrealsalary2 != null" >
+        PAYREALSALARY2,
+      </if>
+      <if test="computersubsidy != null" >
+        COMPUTERSUBSIDY,
+      </if>
+      <if test="overtimesubsidy != null" >
+        OVERTIMESUBSIDY,
+      </if>
+      <if test="othersubsidy != null" >
+        OTHERSUBSIDY,
+      </if>
+      <if test="allsubsidy != null" >
+        ALLSUBSIDY,
+      </if>
+      <if test="sendsalary1 != null" >
+        SENDSALARY1,
+      </if>
+      <if test="sendsalary2 != null" >
+        SENDSALARY2,
+      </if>
+      <if test="allsendsalary != null" >
+        ALLSENDSALARY,
+      </if>
+      <if test="checkout != null" >
+        CHECKOUT,
+      </if>
+      <if test="reason != null" >
+        REASON,
+      </if>
+      <if test="paycity2 != null" >
+        PAYCITY2,
+      </if>
+      <if test="bonus != null" >
+        BONUS,
+      </if>
+      <if test="allsend != null" >
+        ALLSEND,
+      </if>
+      <if test="updateid != null" >
+        UPDATEID,
+      </if>
+      <if test="month != null" >
+        MONTH,
+      </if>
+      <if test="standby != null" >
+        STANDBY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workerid != null" >
+        #{workerid,jdbcType=INTEGER},
+      </if>
+      <if test="deptid != null" >
+        #{deptid,jdbcType=INTEGER},
+      </if>
+      <if test="workday != null" >
+        #{workday,jdbcType=INTEGER},
+      </if>
+      <if test="checkoutday != null" >
+        #{checkoutday,jdbcType=INTEGER},
+      </if>
+      <if test="checkoutprice != null" >
+        #{checkoutprice,jdbcType=DOUBLE},
+      </if>
+      <if test="other != null" >
+        #{other,jdbcType=DOUBLE},
+      </if>
+      <if test="adjustment != null" >
+        #{adjustment,jdbcType=DOUBLE},
+      </if>
+      <if test="validday != null" >
+        #{validday,jdbcType=INTEGER},
+      </if>
+      <if test="invalidday != null" >
+        #{invalidday,jdbcType=INTEGER},
+      </if>
+      <if test="normalsalary != null" >
+        #{normalsalary,jdbcType=DOUBLE},
+      </if>
+      <if test="paysalary1 != null" >
+        #{paysalary1,jdbcType=DOUBLE},
+      </if>
+      <if test="paysalary2 != null" >
+        #{paysalary2,jdbcType=DOUBLE},
+      </if>
+      <if test="salaryratio != null" >
+        #{salaryratio,jdbcType=VARCHAR},
+      </if>
+      <if test="payrealsalary1 != null" >
+        #{payrealsalary1,jdbcType=DOUBLE},
+      </if>
+      <if test="payrealsalary2 != null" >
+        #{payrealsalary2,jdbcType=DOUBLE},
+      </if>
+      <if test="computersubsidy != null" >
+        #{computersubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="overtimesubsidy != null" >
+        #{overtimesubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="othersubsidy != null" >
+        #{othersubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="allsubsidy != null" >
+        #{allsubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="sendsalary1 != null" >
+        #{sendsalary1,jdbcType=DOUBLE},
+      </if>
+      <if test="sendsalary2 != null" >
+        #{sendsalary2,jdbcType=DOUBLE},
+      </if>
+      <if test="allsendsalary != null" >
+        #{allsendsalary,jdbcType=DOUBLE},
+      </if>
+      <if test="checkout != null" >
+        #{checkout,jdbcType=BIT},
+      </if>
+      <if test="reason != null" >
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="paycity2 != null" >
+        #{paycity2,jdbcType=VARCHAR},
+      </if>
+      <if test="bonus != null" >
+        #{bonus,jdbcType=DOUBLE},
+      </if>
+      <if test="allsend != null" >
+        #{allsend,jdbcType=DOUBLE},
+      </if>
+      <if test="updateid != null" >
+        #{updateid,jdbcType=INTEGER},
+      </if>
+      <if test="month != null" >
+        #{month,jdbcType=VARCHAR},
+      </if>
+      <if test="standby != null" >
+        #{standby,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.Attendance" >
+    update attendance
+    <set >
+      <if test="workerid != null" >
+        WORKERID = #{workerid,jdbcType=INTEGER},
+      </if>
+      <if test="deptid != null" >
+        DEPTID = #{deptid,jdbcType=INTEGER},
+      </if>
+      <if test="workday != null" >
+        WORKDAY = #{workday,jdbcType=INTEGER},
+      </if>
+      <if test="checkoutday != null" >
+        CHECKOUTDAY = #{checkoutday,jdbcType=INTEGER},
+      </if>
+      <if test="checkoutprice != null" >
+        CHECKOUTPRICE = #{checkoutprice,jdbcType=DOUBLE},
+      </if>
+      <if test="other != null" >
+        OTHER = #{other,jdbcType=DOUBLE},
+      </if>
+      <if test="adjustment != null" >
+        ADJUSTMENT = #{adjustment,jdbcType=DOUBLE},
+      </if>
+      <if test="validday != null" >
+        VALIDDAY = #{validday,jdbcType=INTEGER},
+      </if>
+      <if test="invalidday != null" >
+        INVALIDDAY = #{invalidday,jdbcType=INTEGER},
+      </if>
+      <if test="normalsalary != null" >
+        NORMALSALARY = #{normalsalary,jdbcType=DOUBLE},
+      </if>
+      <if test="paysalary1 != null" >
+        PAYSALARY1 = #{paysalary1,jdbcType=DOUBLE},
+      </if>
+      <if test="paysalary2 != null" >
+        PAYSALARY2 = #{paysalary2,jdbcType=DOUBLE},
+      </if>
+      <if test="salaryratio != null" >
+        SALARYRATIO = #{salaryratio,jdbcType=VARCHAR},
+      </if>
+      <if test="payrealsalary1 != null" >
+        PAYREALSALARY1 = #{payrealsalary1,jdbcType=DOUBLE},
+      </if>
+      <if test="payrealsalary2 != null" >
+        PAYREALSALARY2 = #{payrealsalary2,jdbcType=DOUBLE},
+      </if>
+      <if test="computersubsidy != null" >
+        COMPUTERSUBSIDY = #{computersubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="overtimesubsidy != null" >
+        OVERTIMESUBSIDY = #{overtimesubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="othersubsidy != null" >
+        OTHERSUBSIDY = #{othersubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="allsubsidy != null" >
+        ALLSUBSIDY = #{allsubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="sendsalary1 != null" >
+        SENDSALARY1 = #{sendsalary1,jdbcType=DOUBLE},
+      </if>
+      <if test="sendsalary2 != null" >
+        SENDSALARY2 = #{sendsalary2,jdbcType=DOUBLE},
+      </if>
+      <if test="allsendsalary != null" >
+        ALLSENDSALARY = #{allsendsalary,jdbcType=DOUBLE},
+      </if>
+      <if test="checkout != null" >
+        CHECKOUT = #{checkout,jdbcType=BIT},
+      </if>
+      <if test="reason != null" >
+        REASON = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="paycity2 != null" >
+        PAYCITY2 = #{paycity2,jdbcType=VARCHAR},
+      </if>
+      <if test="bonus != null" >
+        BONUS = #{bonus,jdbcType=DOUBLE},
+      </if>
+      <if test="allsend != null" >
+        ALLSEND = #{allsend,jdbcType=DOUBLE},
+      </if>
+      <if test="updateid != null" >
+        UPDATEID = #{updateid,jdbcType=INTEGER},
+      </if>
+      <if test="month != null" >
+        MONTH = #{month,jdbcType=VARCHAR},
+      </if>
+      <if test="standby != null" >
+        STANDBY = #{standby,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.Attendance" >
+    update attendance
+    set WORKERID = #{workerid,jdbcType=INTEGER},
+      DEPTID = #{deptid,jdbcType=INTEGER},
+      WORKDAY = #{workday,jdbcType=INTEGER},
+      CHECKOUTDAY = #{checkoutday,jdbcType=INTEGER},
+      CHECKOUTPRICE = #{checkoutprice,jdbcType=DOUBLE},
+      OTHER = #{other,jdbcType=DOUBLE},
+      ADJUSTMENT = #{adjustment,jdbcType=DOUBLE},
+      VALIDDAY = #{validday,jdbcType=INTEGER},
+      INVALIDDAY = #{invalidday,jdbcType=INTEGER},
+      NORMALSALARY = #{normalsalary,jdbcType=DOUBLE},
+      PAYSALARY1 = #{paysalary1,jdbcType=DOUBLE},
+      PAYSALARY2 = #{paysalary2,jdbcType=DOUBLE},
+      SALARYRATIO = #{salaryratio,jdbcType=VARCHAR},
+      PAYREALSALARY1 = #{payrealsalary1,jdbcType=DOUBLE},
+      PAYREALSALARY2 = #{payrealsalary2,jdbcType=DOUBLE},
+      COMPUTERSUBSIDY = #{computersubsidy,jdbcType=DOUBLE},
+      OVERTIMESUBSIDY = #{overtimesubsidy,jdbcType=DOUBLE},
+      OTHERSUBSIDY = #{othersubsidy,jdbcType=DOUBLE},
+      ALLSUBSIDY = #{allsubsidy,jdbcType=DOUBLE},
+      SENDSALARY1 = #{sendsalary1,jdbcType=DOUBLE},
+      SENDSALARY2 = #{sendsalary2,jdbcType=DOUBLE},
+      ALLSENDSALARY = #{allsendsalary,jdbcType=DOUBLE},
+      CHECKOUT = #{checkout,jdbcType=BIT},
+      REASON = #{reason,jdbcType=VARCHAR},
+      PAYCITY2 = #{paycity2,jdbcType=VARCHAR},
+      BONUS = #{bonus,jdbcType=DOUBLE},
+      ALLSEND = #{allsend,jdbcType=DOUBLE},
+      UPDATEID = #{updateid,jdbcType=INTEGER},
+      MONTH = #{month,jdbcType=VARCHAR},
+      STANDBY = #{standby,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

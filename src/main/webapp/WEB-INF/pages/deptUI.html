@@ -1,0 +1,191 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+            <h3 class="box-title">添加部门</h3>
+
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="dname" class="col-sm-2 control-label">部门名称</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="dname" placeholder="名称">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="parentId" class="col-sm-2 control-label">上级部门</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control load-dept" id="parentId" placeholder="上级部门">
+                        <div style="display:none; border:0 solid;width:100%;float: left;" class="deptTree">
+                            <ul id="deptTree" class="ztree"></ul>    <!-- 动态加载树 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="principal" class="col-sm-2 control-label">部门负责人：</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="principal" placeholder="负责人" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="remark" class="col-sm-2 control-label">备注：</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="remark" placeholder="备注" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="button" class="btn btn-default btn-cancel">Cancel</button>
+                <button type="button" class="btn btn-info pull-right btn-save">Save</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+    </div>
+    <script type="text/javascript" src="bower_components/ztree/jquery.ztree.all.min.js"></script>
+    <script type="text/javascript" src="bower_components/layer/layer.js">
+    </script>
+    <script type="text/javascript">
+        var zTree;
+        //初始化zTree时会用到
+        var setting = {
+            data : {
+                simpleData : {
+                    enable : true,
+                    idKey : "id",  //节点数据中保存唯一标识的属性名称
+                    pIdKey : "parentId",  //节点数据中保存其父节点唯一标识的属性名称
+                    rootPId : null  //根节点id
+                }//json 格式javascript对象
+            },
+            callback:{
+                onClick : zTreeOnClick
+            }
+        }//json 格式的javascript对象
+
+        $(function(){
+            debugger;
+            $(".form-group")
+                .on("click","#parentId",doLoadZtreeNodes)
+
+            $(".box-footer")
+                .on("click",".btn-cancel",doCancel)
+                .on("click",".btn-save",doSaveOrUpdate);
+
+
+            var data=$("#mainContentId").data("rowData");
+            if(data)doInitEditFormData(data);
+
+
+        });
+
+
+        function doInitEditFormData(data) {
+            debugger;
+            $("#dname").val(data.DNAME);
+            $("#parentId").val(data.PARENTNAME);
+            $("#principal").val(data.PRINCIPAL);
+            $("#remark").val(data.REMARK);
+            $("#parentId").data("parentId", data.PARENTID);
+        }
+
+        function doCancel() {
+            $("#mainContentId").load("dept/doDeptList.do", function() {
+                $("#mainContentId").removeData();
+            })
+        }
+
+        function doSaveOrUpdate() {
+            debugger;
+            //1.获取表单数据
+            var params = doGetEditFormData();
+            var rowData = $("#mainContentId").data("rowData");
+            if (rowData)params.id = rowData.ID;
+            //2.定义url
+            var insertUrl = "dept/doSaveObject.do";
+            var updateUrl = "dept/doUpdateObject.do";
+            var url = rowData ? updateUrl : insertUrl;
+            //3.异步提交数据
+            $.post(url, params, function(result) {
+                if (result.state == 1) {
+                    swal(result.message);
+                    doCancel();
+                } else {
+                    swal(result.message);
+                }
+            });
+        }
+
+        function doGetEditFormData() {
+            debugger;
+            var params = {
+
+                parentId:$("#parentId").data("parentId"),
+                dname : $("#dname").val(),
+                parentName : $("#parentId").val(),
+                principal : $("#principal").val(),
+                remark : $("#remark").val()
+            }
+            return params;
+        }
+
+        //确定按钮
+        function zTreeOnClick(event, treeId, treeNode) {
+            debugger;
+            //2.将对象中内容,填充到表单
+            $("#parentId").data("parentId", treeNode.id);
+            $("#parentId").val(treeNode.dname);
+            //3.隐藏树对象
+            hideTree();
+        }
+
+        function doLoadZtreeNodes() {
+            //显示div
+            debugger;
+            showTree();
+            var url = "dept/doFindZTreeNodes.do";
+            //异步加载数据,并初始化数据
+            $.getJSON(url, function(result) {
+                debugger;
+                if (result.state == 1) {
+                    //使用init函数需要先引入ztree对应的js文件
+                    zTree = $.fn.zTree
+                        .init($("#deptTree"), setting, result.data);
+                    console.log(result);
+                } else {
+                    swal(result.message);
+                }
+            })
+        }
+        function showTree(){
+            if($('.deptTree').css('display') == 'none'){
+                $('.deptTree').css('display','block');
+            } else{
+                $('.deptTree').css('display','none');
+            }
+            $("body").bind("mousedown", onBodyDownByActionType);
+        }
+        //区域外点击事件
+        function onBodyDownByActionType(event) {
+            debugger;
+            if (event.target.id.indexOf('deptTree') == -1){
+                if(event.target.id != 'selectDevType'){
+                    hideTree();
+                }
+            }
+        }
+        function hideTree() {
+            $('.deptTree').css('display','none');
+            $("body").unbind("mousedown", onBodyDownByActionType);
+            return false;
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    

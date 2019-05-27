@@ -1,0 +1,348 @@
+<!-- Horizontal Form -->
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="box-header with-border">
+        <h3 class="box-title">添加角色</h3>
+    </div>
+    <div id="sx" style="height: 44px;">
+        <button type="button" class="btn btn-info btn-cs">测试</button>
+        <button type="button" class="btn btn-info pull-right btn-clear">刷新</button>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form class="form-horizontal">
+        <div class="box-body">
+            <div class="form-group">
+                <label for="nameId" class="col-sm-2 control-label wbcd">名称</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name" id="nameId" placeholder="名称">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label wbcd">上级角色</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name" id="roleId" readonly="readonly" placeholder="上级角色">
+                    <div style="display:none;border:0 solid;width:100%;float: left;" class="roleTree">
+                        <ul id="roleTree" class="ztree"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="noteId" class="col-sm-2 control-label wbcd">描述</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="note" id="noteId" placeholder="描述">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label wbcd">授权</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name" id="menuId" readonly="readonly" placeholder="权限配置">
+                    <div style="display:none;border:0 solid;width:100%;float: left;" class="menuTree">
+                        <ul id="menuTree" class="ztree"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            <button type="button" class="btn btn-default btn-cancel">返回</button>
+            <button type="button" class="btn btn-info pull-right btn-save">添加</button>
+        </div>
+        <!-- /.box-footer -->
+    </form>
+</div>
+<script type="text/javascript" src="bower_components/ztree/jquery.ztree.all.min.js"></script>
+<style type="text/css">
+    .role-d{
+        display:none;
+    }
+</style>
+<script type="text/javascript">
+    //权限菜单树状图
+    var zTree;
+    var setting = {
+        data : {
+            simpleData : {
+                enable : true,
+                idKey : "id",  //节点数据中保存唯一标识的属性名称
+                pIdKey : "parentId",  //节点数据中保存其父节点唯一标识的属性名称
+                rootPId : null  //根节点id
+            }
+        },
+        check:{
+            enable:true,
+            nocheckInherit:true
+        },
+        callback: {
+            onCheck: onCheck
+        }//此配置提供复选框操作(可查官方zTree)
+    }
+    //角色树状图
+    var settings = {
+        data : {
+            simpleData : {
+                enable : true,
+                idKey : "id",  //节点数据中保存唯一标识的属性名称
+                pIdKey : "upRoleId",  //节点数据中保存其父节点唯一标识的属性名称
+                rootPId : null  //根节点id
+            }
+        },
+        /*check:{
+            enable:true,
+            nocheckInherit:true,
+            chkStyle: "radio",
+            radioType: "all"
+        },*/
+        callback:{
+            onClick:zTreeOnClick
+        }//此配置提供复选框操作(可查官方zTree)
+    }
+    $(function(){
+        //异步加载菜单信息,初始化页面菜单
+        var rowData=$("#mainContentId").data("data");
+        if(rowData) doLoadRole(rowData);
+        $(".form-group")
+            .on("click","#roleId",doLoadRoles)
+            .on("click","#menuId",doLoadMenus);
+        $("#sx")
+            .on("click",".btn-clear",doRefresh);
+        $(".box-footer")
+            .on("click",".btn-save",doSaveOrUpdate)
+            .on("click",".btn-cancel",doCancel);
+
+    });
+
+    function doRefresh() {
+        var title = "添加角色";
+        var rowData=$("#mainContentId").data("data");
+        if (rowData) title = "修改角色";
+        var url="role/doRoleEditUI.do";
+        $("#mainContentId").load(url,function(){
+            $(".box-title").html(title);
+        })
+    }
+
+    function doInitEditFormData(data){
+        //debugger
+
+        //1.初始化菜单信息
+        //1.1展开树节点
+        zTree.expandAll(true);
+        //1.2获取角色对应的菜单id
+        var menuIds=data.menuIds;
+        console.log(menuIds);
+        //1.3迭代所有菜单id
+        for(var i in menuIds){
+            //基于菜单id获取ztree中的node节点
+            var node=
+                zTree.getNodeByParam("id",menuIds[i]);
+            //让节点选中
+            zTree.checkNode(node,true,false);
+        }
+    }
+    function dorTreeHX(data) {
+        rzTree=$.fn.zTree.getZTreeObj("roleTree");
+        //3.初始化上级角色信息
+        //3.1展开树节点
+        rzTree.expandAll(true);
+        /*//2.2获取角色对应的菜单id
+        var roleId=$("#roleId").data("upRoleId");
+        console.log(roleId);
+        //2.3迭代所有菜单id
+        if (roleId!=0){
+            var rnode = rzTree.getNodeByParam("id",roleId);
+            rzTree.checkNode(rnode,true,false);
+        }*/
+    }
+    function doCancel(){
+        var url="role/doRoleList.do";
+        $("#mainContentId")
+            .load(url,function(){
+                $("#mainContentId").removeData();
+            });
+        /*history.go(-1);*/
+    }
+    function doSaveOrUpdate(){
+        debugger;
+        //1.参数(表单数据)
+        var params=doGetEditFormData();
+        var data=$("#mainContentId").data("data");
+        if(data)params.id=data.role.id;
+        //2.url
+        var insertUrl="role/doAddObject.do";
+        var updateUrl="role/doUpdateObject.do";
+        var url=data?updateUrl:insertUrl;
+        //3.ajax request
+        $.post(url,params,function(result){
+            if(result.state==1){
+                alert(result.message);
+                doCancel();
+            }else{
+                alert(result.message);
+            }
+        })
+    }
+    function doGetEditFormData(){
+        debugger;
+        //1.获取角色自身信息
+        var params={
+            /*id:$("#nameId").data("roleId"),*/
+            name:$("#nameId").val(),
+            remark:$("#noteId").val(),
+            uproleid:$("#roleId").data("upRoleId"),
+            manager:$("#menuId").val()?$("#menuId").val():"",
+            menuIds:$("#menuId").data("menuIds")?$("#menuId").data("menuIds").toString():""
+        }
+        //2.获取选中菜单信息
+        /*var menuIds=[];
+        var manager=[];
+        console.log(zTree)
+        var checkedNodes=
+            zTree.getCheckedNodes(true);
+        for(var i in checkedNodes){
+            menuIds.push(checkedNodes[i].id);
+            manager.push(checkedNodes[i].name)
+        }
+        params.menuIds=menuIds.toString();
+        params.manager=manager.toString();*/
+        /*rzTree=$.fn.zTree.getZTreeObj("roleTree");
+        var checkedNode= rzTree.getCheckedNodes(true);
+        var roleId=checkedNode[0].id;
+        params.uproleid=roleId.toString();*/
+        return params;
+    }
+    function docs() {
+        rzTree=$.fn.zTree.getZTreeObj("roleTree");
+        console.log(rzTree);
+        alert("rzTree:"+rzTree);
+        var checkedNodes=
+            rzTree.getCheckedNodes(true);
+        var menuIds=checkedNodes[0].id;
+        /*for(var i in checkedNodes){
+            menuIds.push(checkedNodes[i].id);
+        }*/
+        alert("checkedNodes:"+checkedNodes);
+        alert("menuIds:"+menuIds.toString());
+    }
+    //页面加载完成时初始化权限zTree
+    function doLoadMenus(){
+        //显示div
+        showMenuTree();
+        //debugger
+        var url="menu/doFindZtreeMenuNodes.do"
+        $.getJSON(url,function(result){
+            if(result.state==1){
+                zTree=$.fn.zTree.init(
+                    $("#menuTree"),setting,result.data);
+                //修改时添加如下代码(注意先后顺序)
+                var rowData=$("#mainContentId").data("data");
+                if(rowData)doInitEditFormData(rowData);
+            }else{
+                alert(result.message);
+            }
+        });
+    }
+
+    function onCheck(e, treeId, treeNode) {
+        /*debugger;
+        alert("[ "+treeNode.id+" onCheck ]&nbsp;&nbsp;&nbsp;&nbsp;" + treeNode.name );*/
+        //判断新增或减少
+        /*alert(treeNode.children());
+        var manager = $('#menuId').val().split(",");
+        var menuIds = $('#menuId').data("menuIds");
+        console.log("增加前：名称："+$('#menuId').val()+"|"+"menuIds:"+$('#menuId').data("menuIds"));*/
+        var checkedNodes=zTree.getCheckedNodes(true);
+        var managers=[],menusIds=[];
+        for (var i in checkedNodes){
+            managers.push(checkedNodes[i].name);
+            menusIds.push(checkedNodes[i].id);
+        }
+        $('#menuId').val(managers);
+        $('#menuId').data("menuIds",menusIds);
+        /*console.log("增加后：名称："+$('#menuId').val()+"|"+"menuIds:"+$('#menuId').data("menuIds"));*/
+    }
+
+    function showMenuTree() {
+        if($('.menuTree').css('display') == 'none'){
+            $('.menuTree').css('display','block');
+        } else{
+            $('.menuTree').css('display','none');
+        }
+        $("body").bind("mousedown", onBodyDownByActionType);
+    }
+    function hideMenuTree() {
+        $('.menuTree').css('display','none');
+        $("body").unbind("mousedown", onBodyDownByActionType);
+        return false;
+    }
+    //页面加载完成时初始化上级角色zTree
+    function doLoadRoles() {
+        //显示div
+        showTree();
+        var url="role/doFindZtreeRoleNodes.do";
+        $.getJSON(url,function(result){
+            if(result.state==1){
+                rzTree=$.fn.zTree.init(
+                    $("#roleTree"),settings,result.data);
+                //修改时添加如下代码(注意先后顺序)
+                /*var rowData=$("#mainContentId").data("data");
+                if(rowData)dorTreeHX(rowData);*/
+                //展开树节点
+                rzTree.expandAll(true);
+            }else{
+                alert(result.message);
+            }
+        });
+    }
+    //页面加载时初始化信息
+    function doLoadRole(data) {
+        //1.初始化角色自身信息
+        $("#nameId").val(data.role.name);
+        $("#noteId").val(data.role.remark);
+        if (data.upRole){
+            $("#roleId").val(data.upRole.name);
+            $("#roleId").data("upRoleId",data.upRole.id);
+        }
+        $("#menuId").val(data.role.manager);
+        $("#menuId").data("menuIds",data.menuIds);
+        $(".btn-save").html("修改");
+        /*$(".role-d").css('display','block');*/
+    }
+    //节点点击事件
+    function zTreeOnClick(event, treeId, treeNode) {
+        /*alert(treeNode.name+","+treeNode.id);
+        console.log("报告："+treeNode.name+","+treeNode.id);*/
+        $('#roleId').val(treeNode.name);
+        $('#roleId').data("upRoleId",treeNode.id)
+        hideTree();
+    }
+    //下拉框显示 隐藏
+    function showTree(){
+        if($('.roleTree').css('display') == 'none'){
+            $('.roleTree').css('display','block');
+        } else{
+            $('.roleTree').css('display','none');
+        }
+        $("body").bind("mousedown", onBodyDownByActionType);
+    }
+    function hideTree() {
+        $('.roleTree').css('display','none');
+        $("body").unbind("mousedown", onBodyDownByActionType);
+        return false;
+    }
+    //区域外点击事件
+    function onBodyDownByActionType(event) {
+        debugger;
+        if (event.target.id.indexOf('roleTree') == -1){
+            if(event.target.id != 'selectDevType'){
+                hideTree();
+            }
+        }
+        if (event.target.id.indexOf('menuTree') == -1){
+            if(event.target.id != 'selectDevType'){
+                hideMenuTree();
+            }
+        }
+    }
+</script>

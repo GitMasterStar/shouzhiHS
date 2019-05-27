@@ -1,0 +1,172 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2 class="title">部门管理</h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="add"><i class="fa fa-plus"></i></a>
+                </li>
+                <li><a class="update" ><i class="fa fa-wrench"></i></a>
+                </li>
+                <li><a class="delete"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="box-body table-responsive no-padding">
+            <table id="gridTreeTable" class="table table-hover">
+                <thead>
+                <tr>
+                    <th data-field="selectItem" data-checkbox="true"></th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="bower_components/treegrid/jquery.treegrid.extension.js"></script>
+<script type="text/javascript" src="bower_components/treegrid/jquery.treegrid.min.js"></script>
+<script type="text/javascript" src="bower_components/treegrid/tree.table.js"></script>
+<script type="text/javascript">
+    /**
+     * 初始化表格的列
+     */
+    var columns = [
+        {
+            field : 'selectItem',
+            radio : true
+        },
+        {
+            title : 'ID',
+            field : 'ID',
+            visible : false,
+            align : 'center',
+            valign : 'middle',
+            width : '80px'
+        },
+        {
+            title : '部门名称',
+            field : 'DNAME',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '100px'
+        },
+        {
+            title : '上级部门',
+            field : 'PARENTNAME',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '100px'
+        },
+        {
+            title : '负责人',
+            field : 'PRINCIPAL',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '80px'
+        },
+        {
+            title : '备注',
+            field : 'REMARK',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '150px'
+        }
+    ];
+
+    $(function(){
+        debugger;
+        doGetObjects();
+        $(".nav")
+            .on("click",".delete",doDeleteObjects)
+            .on("click",".add,.update",doLoadUI);
+    });
+
+    /**
+     * 获取数据
+     */
+    function doGetObjects(){
+        debugger;
+        var tableId="gridTreeTable";
+        var url="dept/doFindObjects.do";
+        var treeTable=new TreeTable(tableId,url,columns);
+        treeTable.setExpandColumn(2);
+        treeTable.init();
+    }
+
+    /**
+     * 删除数据
+     */
+    function doDeleteObjects(){
+        var  url="dept/doDeleteObejct.do";
+        var id=doGetCheckedId();
+        if(!id){
+            swal("请选择一条记录");
+            return;
+        }
+        var params={"id":id};
+        $.post(url,params,function(result){
+            if(result.state==1){
+                swal(result.message);
+                doGetObjects();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+
+
+    function doGetCheckedId(){
+        //获取选中记录
+        var selections=$("#gridTreeTable")
+        //函数固定写法
+        .bootstrapTreeTable("getSelections");
+        //判定是否有选中
+        if(selections.length>0)
+        //返回选中值
+        {
+            return selections[0].id;
+        }
+    }
+    /**
+     * 添加修改数据
+     */
+    function  doLoadUI() {
+        var title;
+        if($(this).hasClass("add")){
+            title="添加部门";
+        }else if($(this).hasClass("update")){
+            debugger;
+            title="修改部门";
+            var rowData=doGetCheckedItem();
+            if(!rowData){
+                swal("请选中一条记录");
+                return ;
+            }
+            $("#mainContentId").data("rowData",rowData);
+        }
+        var url="dept/doLoadUI.do";
+        $("#mainContentId").load(url,function (){
+            $(".title").html(title);
+        });
+    }
+    function doGetCheckedItem(){
+        debugger;
+        var tr=$("tbody input[type='radio']:checked").parents("tr");
+        var rowData=tr.data("rowData");
+        return rowData;
+    }
+
+
+
+
+
+
+    /**
+     * 获取数据
+     */
+</script>

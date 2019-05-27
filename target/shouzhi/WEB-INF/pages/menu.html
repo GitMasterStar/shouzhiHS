@@ -1,0 +1,173 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>资源管理</h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="btn menu-add"><i class="fa fa-plus"></i></a>
+                </li>
+                <li class="dropdown">
+                    <a class="btn menu-update"><i class="fa fa-wrench"></i></a>
+                </li>
+                <li>
+                    <a class="btn btn-delete"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="box-body table-responsive no-padding">
+            <table id="menuTable" class="table table-hover">
+                <thead>
+                <tr>
+                    <th data-field="selectItem" data-checkbox="true"></th>
+                </tr>
+                </thead>
+
+            </table>
+
+            <!--<div id="pageId" class="box-footer clearfix">-->
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="bower_components/treegrid/jquery.treegrid.extension.js"></script>
+<script type="text/javascript" src="bower_components/treegrid/jquery.treegrid.min.js"></script>
+<script type="text/javascript" src="bower_components/treegrid/tree.table.js"></script>
+<style type="text/css">
+    #menuTable{
+        height: 722px;
+    }
+    .treegrid-table tbody{
+        height: 730px;
+    }
+</style>
+<script type="text/javascript">
+    /**
+     * 初始化表格的列
+     */
+    var columns = [
+        {
+            field : 'selectItem',
+            radio : true
+        },
+        {
+            title : '资源ID',
+            field : 'ID',
+            visible : false,
+            align : 'center',
+            valign : 'middle',
+            width : '10%'
+        },
+        {
+            title : '资源名称',
+            field : 'NAME',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '10%'
+        },
+        {
+            title : '上级菜单',
+            field : 'parentName',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '10%'
+        },
+        {
+            title : '类型',
+            field : 'TYPE',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '10%',
+            formatter : function(item, index) {
+                if (item.TYPE == 0) {
+                    return '<span class="label label-success">菜单</span>';
+                }
+                if (item.TYPE == 1) {
+                    return '<span class="label label-info">功能</span>';
+                }
+                if (item.TYPE == 2) {
+                    return '<span class="label label-warning">按钮</span>';
+                }
+            }
+        },
+        {
+            title : '排序号',
+            field : 'SORT',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '10%'
+        },
+        /*{
+            title : '菜单URL',
+            field : 'url',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '160px'
+        },*/
+        {
+            title : '授权标识',
+            field : 'PERMISSION',
+            align : 'center',
+            valign : 'middle',
+            sortable : true,
+            width : '40%'
+        } ];//格式来自官方demos -->treeGrid(jquery扩展的一个网格树插件)
+
+
+    $(function () {
+        doGetObjects();
+
+        $(".nav")
+            .on("click",".menu-add",doLoadEditUI)
+            .on("click",".menu-update",doLoadEditUI);
+    })
+
+    function doLoadEditUI() {
+        debugger;
+        var title;
+        /*var cls=$(this).prop("class")
+        if(cls=="btn btn-default btn-add"){}*/
+        if($(this).hasClass("menu-add")){
+            title="添加菜单";
+        }else{
+            title="修改菜单";
+            //1.获取选中行的记录
+            var input=$("input[type='radio']:checked");
+            var tr=input.parents("tr");
+            var rowData=tr.data("rowData");
+            console.log("rowData:"+rowData);
+            if(!rowData){
+                alert("请先选择");
+                return;
+            }
+            //2.绑定当前行的记录(在编辑页面使用此记录填充表单)
+            $("#mainContentId").data("rowData",rowData);
+        }
+        var url="menu/doMenuEditUI.do";
+        $("#mainContentId").load(url,function(){
+            $(".box-title").html(title);
+        })
+
+    }
+
+    function doGetObjects(){
+        //1.构建treetable对象
+        var table=new TreeTable(
+            "menuTable",
+            "menu/dofindObjects.do",
+            columns);
+        //2.初始化treetable对象
+        table.setExpandColumn(2);
+
+        table.setExpandAll(true);
+
+        table.init();
+    }
+
+
+
+</script>

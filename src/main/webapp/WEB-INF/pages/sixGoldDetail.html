@@ -1,0 +1,349 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2 class="title">员工六金</h2>
+            <!--<div class="col-md-5 col-sm-5 col-xs-8  form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchNameId" placeholder="Search for...">
+                    <span class="input-group-btn"><button class="btn btn-default" type="button">Go!</button></span>
+                </div>
+            </div>-->
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-horizontal form-label-left">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">员工姓名:</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="searchNameId">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="nav pull-right panel_toolbox">
+                            <li><a class="btn refresh pull-right" id="refresh" type="button"><i class="fa fa-refresh"></i>重置</a></li>
+                            <li><a class="btn search pull-right" id="serach" type="button"><i class="fa fa-search"></i>查询</a></li>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="x_content">
+
+            <ul class="nav navbar-left panel_toolbox form-horizontal form-label-left">
+                <li class="form-group" style="width: 250px;">
+                    <label class="control-label col-sm-4">月度:</label>
+                    <div class="input-group date form_date col-sm-8" data-date="" data-date-format="yyyy/MM" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                        <input class="form-control" size="16" type="text" value="" readonly>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                    <input type="hidden" id="dtp_input2" value="" /><br/>
+                </li>
+                <li><a class="btn control-label download"><i class="fa fa-cloud-download"></i> 模板</a></li>
+                <li><a class="btn control-label upload"><i class="fa fa-cloud-upload"></i> 导入</a></li>
+            </ul>
+            <table class="table" style="text-align: center;">
+                <thead>
+                <tr>
+                    <th rowspan="2" style="text-align: center;"></th>
+                    <th rowspan="2" style="text-align: center;line-height:50px;">缴纳月数</th>
+                    <th rowspan="2" style="text-align: center;line-height:50px;">身份证号</th>
+                    <th rowspan="2" style="text-align: center;line-height:50px;">员工姓名</th>
+                    <th colspan="2" style="text-align: center;">养老保险</th>
+                    <th colspan="2" style="text-align: center;">医疗保险</th>
+                    <th colspan="2" style="text-align: center;">失业保险</th>
+                    <th rowspan="2" style="text-align: center;line-height:50px;">工伤(企业)</th>
+                    <th rowspan="2" style="text-align: center;line-height:50px;">生育(企业)</th>
+                    <th colspan="2" style="text-align: center;">住房公积金</th>
+                    <th rowspan="2" style="text-align: center;line-height:50px;">企业合计</th>
+                    <th rowspan="2" style="text-align: center;line-height:50px;">个人合计</th>
+                </tr>
+                <tr>
+                    <th style="text-align: center;">企业</th>
+                    <th style="text-align: center;">个人</th>
+                    <th style="text-align: center;">企业</th>
+                    <th style="text-align: center;">个人</th>
+                    <th style="text-align: center;">企业</th>
+                    <th style="text-align: center;">个人</th>
+                    <th style="text-align: center;">企业</th>
+                    <th style="text-align: center;">个人</th>
+                </tr>
+                </thead>
+                <tbody id="tbodyId">
+
+                </tbody>
+            </table>
+            <div id="pageId" class="box-footer clearfix">
+
+            </div>
+        </div>
+    </div>
+    <div class="layui-layer layui-layer-page layui-layer-molv layer-anim"
+         id="menuLayer" type="page" times="2" showtime="0" contype="object"
+         style="z-index: 59891016; width: 500px; height: 450px; top: 15%; left:20%; display: none">
+        <div class="layui-layer-title" style="cursor: move;">员工六金导入</div>
+        <div class="layui-layer-content" style="height: 358px;">
+            <form class="form-horizontal">
+                <div class="box-body">
+                    <br>
+                    <div class="form-group">
+                        <label for="input08" class="col-sm-2 control-label">选择Excel文件</label>
+                        <div class="col-sm-6">
+                            <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" id="input08">
+                        </div>
+                        <div class="col-sm-4">
+                            <button id="clear" class="btn btn-default" type="button">
+                                清空选择的文件
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">选择月度</label>
+                        <div class="col-sm-6">
+                            <div class="input-group date form_date1 col-sm-8" data-date="" data-date-format="yyyy/MM" data-link-field="dtp_input3" data-link-format="yyyy-mm-dd">
+                                <input class="form-control" size="16" type="text" value="" readonly>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <input type="hidden" id="dtp_input3" value="" /><br/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <span class="layui-layer-setwin"> <a
+                class="layui-layer-ico layui-layer-close layui-layer-close1 btn-cancel"></a></span>
+        <div class="layui-layer-btn layui-layer-btn-">
+            <a class="layui-layer-btn0 btn-confirm">确定</a>
+            <a class="layui-layer-btn1 btn-cancel">取消</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $('.form_date').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 3,
+        minView: 3,
+        forceParse: 0
+    });
+
+    $('.form_date1').datetimepicker({
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 3,
+        minView: 3,
+        forceParse: 0
+    });
+
+    $(function(){
+
+        $('#input08').filestyle({
+            buttonText : '',
+            buttonName : 'btn-success'
+        });
+
+        $('#clear').click(function() {
+            $('#input08').filestyle('clear');
+        });
+
+        $("#pageId").load("doPageUI.do",function () {
+            /*doGetObjects();*/
+        })
+
+        $(".nav")
+            .on('click','.upload',doFindPageObjects)
+            .on("click","#refresh",doClear)
+            .on("click","#serach",doGetObjects);
+
+        $('#menuLayer')
+            .on('click','.btn-cancel',doHidePage);
+    });
+
+    function upload() {
+        var files = $('input[id="input08"]').prop('files');//获取到文件列表
+        if (files.length==0){
+            return;
+        }else {
+            /*var reader = new FileReader();//新建一个FileReader
+            reader.readAsText(files[0], "UTF-8");//读取文件
+            reader.onload = function (evt) { //读取完文件之后会回来这里
+                var fileString = evt.target.result;
+                $.post(url,params,function (result) {
+                    if(result.state==1){
+                        swal(result.message);
+                        doCancel();
+                    }else{
+                        swal(result.message);
+                    }
+                }
+            }*/
+        }
+    }
+
+    function doHidePage() {
+        //隐藏弹框
+        $('#menuLayer').css('display','none');
+        //隐藏遮罩层
+        hideMask();
+    }
+
+    function doFindPageObjects() {
+        //显示弹框
+        $('#menuLayer').css('display','block');
+        $('#menuLayer').css('height',$(document).height()*0.4);
+        $('#menuLayer').css('width',$(document).width()*0.6);
+        $('.layui-layer-content').css("height",$(document).height()*0.3);
+        //显示遮罩层
+        showMask();
+    }
+
+    /**
+     * 重置查询信息
+     */
+    function doClear() {
+        $('#searchNameId').val("");
+        $('#type').val("").css("selected");
+        $('#status').val("0").css("selected");
+    }
+
+    /**
+     * 添加/修改功能
+     */
+    function doLoadPage(title){
+        var url="sixGlodDetail/doSupplierEditUI.do";
+        $("#mainContentId").load(url,function () {
+            $(".title").html(title);
+        })
+    }
+    function doLoadUI() {
+        debugger;
+        var title;
+        if ($(this).hasClass("add")){
+            debugger;
+            title="录入新供应商";
+        }else{
+            debugger;
+            title="编辑供应商";
+            //1.获取选中行的记录
+            /*var id=$("tbody input[name='cItem']:checked").val();*/
+            var input=$("tbody input[type='checkbox']:checked");
+            var tr =input.parents("tr");
+            console.log("tr="+tr);
+            var rowData=tr.data("rowData");
+            if (!rowData){
+                swal("请选择一条记录");
+                return;
+            }
+            //2.绑定当前行的记录(在编辑页面使用此记录填充表单)
+            $("#mainContentId").data("rowData",rowData);
+            /*doFindByUserid(id,title);*/
+        }
+        doLoadPage(title);
+    }
+
+    /**
+     * 删除功能
+     */
+    function  doDeleteObjects() {
+        debugger;
+        var ids=doGetCheckedIds();
+        if(ids.length==0){
+            swal("请选择对象");
+            return;
+        }
+        var params={"ids":ids.toString()};
+        var url="sixGlodDetail/doDeleteObjects.do";
+        $.post(url,params,function (result) {
+            debugger;
+            if(result.state==1){
+                swal(result.message);
+                var pageCurrent = $("#pageId").data("pageCurrent");
+                var pageCount = $("#pageId").data("pageCount");
+                if(pageCurrent==pageCount){
+                    $("#pageId").data("pageCurrent",pageCount-1)
+                }
+                doGetObjects();
+            }else{
+                swal(result.message);
+            }
+        });
+    }
+    function doGetCheckedIds(){
+        debugger;
+        var array=[];
+        $("#tbodyId input[type='checkbox']").each(function(){
+            if($(this).prop("checked")){
+                array.push($(this).val());
+            }
+        });
+        return array;
+    }
+
+
+    /**
+     * 获取数据
+     */
+    function doGetObjects() {
+        debugger;
+        $("#checkAllId").prop("checked",false);
+        var url = "sixGlodDetail/doFindPageObjects.do";
+        var pageCurrent = $("#pageId").data("pageCurrent");
+        if (!pageCurrent)
+            pageCurrent = 1;
+        var params = {"pageCurrent": pageCurrent}
+        params.sname = $("#searchNameId").val().toString();
+        $.getJSON(url, params, function (result) {
+            doHandleResponseResult(result);
+        });
+
+    }
+    function doHandleResponseResult(result){
+        if(result.state==1){
+            doSetTableBodyRows(result.data.records);
+            doSetPagination(result.data);
+        }else{
+            swal(result.message);
+        }
+    }
+    function doSetTableBodyRows(data){
+        debugger;
+        var tbody=$("#tbodyId");
+        tbody.empty();
+        for(var i in data){
+            var tr=$("<tr></tr>");
+            tr.data("rowData",data[i]);
+            var tds=doCreateTds(data[i]);
+            tr.append(tds);
+            tbody.append(tr);
+        }
+
+    }
+
+    function doCreateTds(row){
+        var tds=
+            "<td><input type='checkbox' name='cItem' class='cItem' value='"+row.id+"'></td>"+
+            "<td style='text-align: center;'>"+row.sname+"</td>"+
+            "<td style='text-align: center;'>"+row.sfullname+"</td>"+
+            "<td style='text-align: center;'>"+doTypeByZt(row.type)+"</td>"+
+            "<td style='text-align: center;'>"+row.dbank+"</td>"+
+            "<td style='text-align: center;'>"+row.baccount+"</td>"+
+            "<td style='text-align: center;'>"+row.legalpersonid+"</td>"+
+            "<td style='text-align: center;'>"+(row.sstatus==0?"激活":"冻结")+"</td>";
+        return tds;
+    }
+
+</script>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sz.dao.SixGoldDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.sz.pojo.SixGoldDetail" >
+    <constructor >
+      <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="WORKERID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="WORKERIDCARD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DEPTID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="ENDOWMENTENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="ENDOWMENTPERSONAGE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="MEDICALENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="MEDICALPERSONAGE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="UNEMPLOYMENTENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="UNEMPLOYMENTPERSONAGE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="INDUCTRIALINJURYENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="MATERNITYENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="HOUSINGFUNDENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="HOUSINGFUNDPERSONAGE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="COLLECTENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="COLLECTPERSONAGE" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="COLLECT" jdbcType="DOUBLE" javaType="java.lang.Double" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, WORKERID, WORKERIDCARD, DEPTID, ENDOWMENTENTERPRISE, ENDOWMENTPERSONAGE, MEDICALENTERPRISE, 
+    MEDICALPERSONAGE, UNEMPLOYMENTENTERPRISE, UNEMPLOYMENTPERSONAGE, INDUCTRIALINJURYENTERPRISE, 
+    MATERNITYENTERPRISE, HOUSINGFUNDENTERPRISE, HOUSINGFUNDPERSONAGE, COLLECTENTERPRISE, 
+    COLLECTPERSONAGE, COLLECT
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sixgolddetail
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sixgolddetail
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sz.pojo.SixGoldDetail" >
+    insert into sixgolddetail (ID, WORKERID, WORKERIDCARD, 
+      DEPTID, ENDOWMENTENTERPRISE, ENDOWMENTPERSONAGE, 
+      MEDICALENTERPRISE, MEDICALPERSONAGE, UNEMPLOYMENTENTERPRISE, 
+      UNEMPLOYMENTPERSONAGE, INDUCTRIALINJURYENTERPRISE, 
+      MATERNITYENTERPRISE, HOUSINGFUNDENTERPRISE, 
+      HOUSINGFUNDPERSONAGE, COLLECTENTERPRISE, 
+      COLLECTPERSONAGE, COLLECT)
+    values (#{id,jdbcType=INTEGER}, #{workerid,jdbcType=INTEGER}, #{workeridcard,jdbcType=VARCHAR}, 
+      #{deptid,jdbcType=INTEGER}, #{endowmententerprise,jdbcType=DOUBLE}, #{endowmentpersonage,jdbcType=DOUBLE}, 
+      #{medicalenterprise,jdbcType=DOUBLE}, #{medicalpersonage,jdbcType=DOUBLE}, #{unemploymententerprise,jdbcType=DOUBLE}, 
+      #{unemploymentpersonage,jdbcType=DOUBLE}, #{inductrialinjuryenterprise,jdbcType=DOUBLE}, 
+      #{maternityenterprise,jdbcType=DOUBLE}, #{housingfundenterprise,jdbcType=DOUBLE}, 
+      #{housingfundpersonage,jdbcType=DOUBLE}, #{collectenterprise,jdbcType=DOUBLE}, 
+      #{collectpersonage,jdbcType=DOUBLE}, #{collect,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sz.pojo.SixGoldDetail" >
+    insert into sixgolddetail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="workerid != null" >
+        WORKERID,
+      </if>
+      <if test="workeridcard != null" >
+        WORKERIDCARD,
+      </if>
+      <if test="deptid != null" >
+        DEPTID,
+      </if>
+      <if test="endowmententerprise != null" >
+        ENDOWMENTENTERPRISE,
+      </if>
+      <if test="endowmentpersonage != null" >
+        ENDOWMENTPERSONAGE,
+      </if>
+      <if test="medicalenterprise != null" >
+        MEDICALENTERPRISE,
+      </if>
+      <if test="medicalpersonage != null" >
+        MEDICALPERSONAGE,
+      </if>
+      <if test="unemploymententerprise != null" >
+        UNEMPLOYMENTENTERPRISE,
+      </if>
+      <if test="unemploymentpersonage != null" >
+        UNEMPLOYMENTPERSONAGE,
+      </if>
+      <if test="inductrialinjuryenterprise != null" >
+        INDUCTRIALINJURYENTERPRISE,
+      </if>
+      <if test="maternityenterprise != null" >
+        MATERNITYENTERPRISE,
+      </if>
+      <if test="housingfundenterprise != null" >
+        HOUSINGFUNDENTERPRISE,
+      </if>
+      <if test="housingfundpersonage != null" >
+        HOUSINGFUNDPERSONAGE,
+      </if>
+      <if test="collectenterprise != null" >
+        COLLECTENTERPRISE,
+      </if>
+      <if test="collectpersonage != null" >
+        COLLECTPERSONAGE,
+      </if>
+      <if test="collect != null" >
+        COLLECT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="workerid != null" >
+        #{workerid,jdbcType=INTEGER},
+      </if>
+      <if test="workeridcard != null" >
+        #{workeridcard,jdbcType=VARCHAR},
+      </if>
+      <if test="deptid != null" >
+        #{deptid,jdbcType=INTEGER},
+      </if>
+      <if test="endowmententerprise != null" >
+        #{endowmententerprise,jdbcType=DOUBLE},
+      </if>
+      <if test="endowmentpersonage != null" >
+        #{endowmentpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalenterprise != null" >
+        #{medicalenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalpersonage != null" >
+        #{medicalpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="unemploymententerprise != null" >
+        #{unemploymententerprise,jdbcType=DOUBLE},
+      </if>
+      <if test="unemploymentpersonage != null" >
+        #{unemploymentpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="inductrialinjuryenterprise != null" >
+        #{inductrialinjuryenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="maternityenterprise != null" >
+        #{maternityenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="housingfundenterprise != null" >
+        #{housingfundenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="housingfundpersonage != null" >
+        #{housingfundpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="collectenterprise != null" >
+        #{collectenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="collectpersonage != null" >
+        #{collectpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="collect != null" >
+        #{collect,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.SixGoldDetail" >
+    update sixgolddetail
+    <set >
+      <if test="workerid != null" >
+        WORKERID = #{workerid,jdbcType=INTEGER},
+      </if>
+      <if test="workeridcard != null" >
+        WORKERIDCARD = #{workeridcard,jdbcType=VARCHAR},
+      </if>
+      <if test="deptid != null" >
+        DEPTID = #{deptid,jdbcType=INTEGER},
+      </if>
+      <if test="endowmententerprise != null" >
+        ENDOWMENTENTERPRISE = #{endowmententerprise,jdbcType=DOUBLE},
+      </if>
+      <if test="endowmentpersonage != null" >
+        ENDOWMENTPERSONAGE = #{endowmentpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalenterprise != null" >
+        MEDICALENTERPRISE = #{medicalenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalpersonage != null" >
+        MEDICALPERSONAGE = #{medicalpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="unemploymententerprise != null" >
+        UNEMPLOYMENTENTERPRISE = #{unemploymententerprise,jdbcType=DOUBLE},
+      </if>
+      <if test="unemploymentpersonage != null" >
+        UNEMPLOYMENTPERSONAGE = #{unemploymentpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="inductrialinjuryenterprise != null" >
+        INDUCTRIALINJURYENTERPRISE = #{inductrialinjuryenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="maternityenterprise != null" >
+        MATERNITYENTERPRISE = #{maternityenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="housingfundenterprise != null" >
+        HOUSINGFUNDENTERPRISE = #{housingfundenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="housingfundpersonage != null" >
+        HOUSINGFUNDPERSONAGE = #{housingfundpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="collectenterprise != null" >
+        COLLECTENTERPRISE = #{collectenterprise,jdbcType=DOUBLE},
+      </if>
+      <if test="collectpersonage != null" >
+        COLLECTPERSONAGE = #{collectpersonage,jdbcType=DOUBLE},
+      </if>
+      <if test="collect != null" >
+        COLLECT = #{collect,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sz.pojo.SixGoldDetail" >
+    update sixgolddetail
+    set WORKERID = #{workerid,jdbcType=INTEGER},
+      WORKERIDCARD = #{workeridcard,jdbcType=VARCHAR},
+      DEPTID = #{deptid,jdbcType=INTEGER},
+      ENDOWMENTENTERPRISE = #{endowmententerprise,jdbcType=DOUBLE},
+      ENDOWMENTPERSONAGE = #{endowmentpersonage,jdbcType=DOUBLE},
+      MEDICALENTERPRISE = #{medicalenterprise,jdbcType=DOUBLE},
+      MEDICALPERSONAGE = #{medicalpersonage,jdbcType=DOUBLE},
+      UNEMPLOYMENTENTERPRISE = #{unemploymententerprise,jdbcType=DOUBLE},
+      UNEMPLOYMENTPERSONAGE = #{unemploymentpersonage,jdbcType=DOUBLE},
+      INDUCTRIALINJURYENTERPRISE = #{inductrialinjuryenterprise,jdbcType=DOUBLE},
+      MATERNITYENTERPRISE = #{maternityenterprise,jdbcType=DOUBLE},
+      HOUSINGFUNDENTERPRISE = #{housingfundenterprise,jdbcType=DOUBLE},
+      HOUSINGFUNDPERSONAGE = #{housingfundpersonage,jdbcType=DOUBLE},
+      COLLECTENTERPRISE = #{collectenterprise,jdbcType=DOUBLE},
+      COLLECTPERSONAGE = #{collectpersonage,jdbcType=DOUBLE},
+      COLLECT = #{collect,jdbcType=DOUBLE}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
