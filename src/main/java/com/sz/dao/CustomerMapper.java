@@ -25,7 +25,9 @@ public interface CustomerMapper {
      * @param cname 客户简称
      * @return
      */
-    int getRowCount(@Param("cname") String cname);
+    int getRowCount(@Param("cname") String cname,
+                    @Param("ctype") Integer ctype,
+                    @Param("cstatus") Integer cstatus);
 
     /**
      * 分页查询客户信息
@@ -46,5 +48,6 @@ public interface CustomerMapper {
      * @return
      */
     int statusById(@Param("id") Integer id, @Param("status") Integer status);
+
 
 }

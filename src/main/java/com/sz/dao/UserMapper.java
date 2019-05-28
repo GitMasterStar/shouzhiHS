@@ -26,15 +26,13 @@ public interface UserMapper {
 
     /**
      * 查询用户总数
-     *
-     * @param username
+     * @param userrealname
      * @return
      */
     int getRowCount(@Param("userrealname") String userrealname);
 
     /**
      * 分页查询用户信息
-     *
      * @param userrealname
      * @param startIndex
      * @param pageSize
@@ -47,7 +45,6 @@ public interface UserMapper {
 
     /**
      * 修改用户状态（0：禁用 1：启用）
-     *
      * @param userid
      * @param valid
      * @param updateuser
@@ -60,11 +57,10 @@ public interface UserMapper {
 
     /**
      * 删除（可多选）
-     *
      * @param userids
      * @return
      */
-    int deleteObjects(@Param("userids") Integer... userids);
+    int deleteObjects(@Param("userids")Integer... userids);
 
     String findRoleNameByUserId(@Param("id") Integer id);
 

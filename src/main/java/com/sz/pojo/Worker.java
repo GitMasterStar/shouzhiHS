@@ -3,7 +3,7 @@ package com.sz.pojo;
 import java.util.Date;
 
 public class Worker {
-    private Integer id;
+    private String id;
 
     private String workername;
 
@@ -93,7 +93,7 @@ public class Worker {
 
     private String icbcaccount;
 
-    public Worker(Integer id, String workername, String workersex, String workeridcard, String worknative, String workerphone, String workeremail, String workerdept, String workerlevel, String workerleader, String workercustomer, String createpeople, Date createdate, Double price, String pricetype, Double normalsalary, Double basesalary, Double performancesalary, String salaryratio, String grossprofitrate, String sixgoldcity, Double sixgoldbase, String paycity1, Double paysalary1, String paycity2, Double paysalary2, Double childeducation, Double againeducation, Double seriousillness, Double houseloans, Double rentinghouse, Double supportold, String equipment, Double equipmentsubsidy, Integer workerstatus, Date dimissiondate, String dimissionreason, String declarationstatus, String socialsecuritystatus, Date updatedate, String updatepeople, String remark, String standby, String cmbcaccount, String icbcaccount) {
+    public Worker(String id, String workername, String workersex, String workeridcard, String worknative, String workerphone, String workeremail, String workerdept, String workerlevel, String workerleader, String workercustomer, String createpeople, Date createdate, Double price, String pricetype, Double normalsalary, Double basesalary, Double performancesalary, String salaryratio, String grossprofitrate, String sixgoldcity, Double sixgoldbase, String paycity1, Double paysalary1, String paycity2, Double paysalary2, Double childeducation, Double againeducation, Double seriousillness, Double houseloans, Double rentinghouse, Double supportold, String equipment, Double equipmentsubsidy, Integer workerstatus, Date dimissiondate, String dimissionreason, String declarationstatus, String socialsecuritystatus, Date updatedate, String updatepeople, String remark, String standby, String cmbcaccount, String icbcaccount) {
         this.id = id;
         this.workername = workername;
         this.workersex = workersex;
@@ -145,12 +145,12 @@ public class Worker {
         super();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(String id) {
+        this.id = id == null ? null : id.trim();
     }
 
     public String getWorkername() {

@@ -17,7 +17,7 @@ public interface WorkerService {
      */
     PageObject<Worker> findPageObjects(String workername, Integer pageCurrent);
 
-    Worker doFindWorkerById(Integer id);
+    Worker doFindWorkerById(String id);
 
     int doAddObject(Worker entity);
 

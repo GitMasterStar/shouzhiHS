@@ -48,9 +48,9 @@ public class WorkerServiceImpl implements WorkerService{
     }
 
     @Override
-    public Worker doFindWorkerById(Integer id) {
+    public Worker doFindWorkerById(String id) {
         //1.判断参数合法性
-        if (id==null||id<=0)
+        if (id==null)
             throw new IllegalArgumentException("userId值参数不正确");
         //2.执行查询用户信息
         Worker worker = workerMapper.selectByPrimaryKey(id);

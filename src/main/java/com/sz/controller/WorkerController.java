@@ -79,7 +79,7 @@ public class WorkerController {
      */
     @RequestMapping("/doFindWorkerById")
     @ResponseBody
-    public JsonResult doFindWorkerById(Integer id) {
+    public JsonResult doFindWorkerById(String id) {
         Worker worker= workerService.doFindWorkerById(id);
         return new JsonResult(worker);
     }
@@ -130,7 +130,7 @@ public class WorkerController {
         if (file.isEmpty()) {
             System.out.println("上传文件："+file.getName());
         }*/
-       /* workerService.parseAndSava(request,response,file);*/
+        workerService.parseAndSava(request,response,file);
         return new JsonResult("上传文件成功");
     }
 

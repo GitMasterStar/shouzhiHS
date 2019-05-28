@@ -1,5 +1,7 @@
 package com.sz.pojo;
 
+import java.util.Date;
+
 public class SixGoldDetail {
     private Integer id;
 
@@ -35,7 +37,9 @@ public class SixGoldDetail {
 
     private Double collect;
 
-    public SixGoldDetail(Integer id, Integer workerid, String workeridcard, Integer deptid, Double endowmententerprise, Double endowmentpersonage, Double medicalenterprise, Double medicalpersonage, Double unemploymententerprise, Double unemploymentpersonage, Double inductrialinjuryenterprise, Double maternityenterprise, Double housingfundenterprise, Double housingfundpersonage, Double collectenterprise, Double collectpersonage, Double collect) {
+    private Date month;
+
+    public SixGoldDetail(Integer id, Integer workerid, String workeridcard, Integer deptid, Double endowmententerprise, Double endowmentpersonage, Double medicalenterprise, Double medicalpersonage, Double unemploymententerprise, Double unemploymentpersonage, Double inductrialinjuryenterprise, Double maternityenterprise, Double housingfundenterprise, Double housingfundpersonage, Double collectenterprise, Double collectpersonage, Double collect, Date month) {
         this.id = id;
         this.workerid = workerid;
         this.workeridcard = workeridcard;
@@ -53,6 +57,7 @@ public class SixGoldDetail {
         this.collectenterprise = collectenterprise;
         this.collectpersonage = collectpersonage;
         this.collect = collect;
+        this.month = month;
     }
 
     public SixGoldDetail() {
@@ -193,5 +198,13 @@ public class SixGoldDetail {
 
     public void setCollect(Double collect) {
         this.collect = collect;
+    }
+
+    public Date getMonth() {
+        return month;
+    }
+
+    public void setMonth(Date month) {
+        this.month = month;
     }
 }

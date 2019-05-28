@@ -5,20 +5,20 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
 @Repository
 public interface WorkerMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String id);
 
     int insert(Worker record);
 
     int insertSelective(Worker record);
 
-    Worker selectByPrimaryKey(Integer id);
+    Worker selectByPrimaryKey(String id);
 
     int updateByPrimaryKeySelective(Worker record);
 
-    int updateByPrimaryKey(Worker record);/**
+    int updateByPrimaryKey(Worker record);
+    /**
      * 查询用户总数
      * @param workername
      * @return
@@ -39,5 +39,4 @@ public interface WorkerMapper {
     int deleteObjects(@Param("ids") Integer... ids);
 
     int doFindByWorker(Worker entity);
-
 }

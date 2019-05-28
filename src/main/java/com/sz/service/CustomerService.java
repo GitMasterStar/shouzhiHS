@@ -11,7 +11,7 @@ public interface CustomerService {
      * @param pageCurrent 页数
      * @return
      */
-    PageObject<Customer> findPageObjects(String cname, Integer pageCurrent);
+    PageObject<Customer> findPageObjects(String cname, Integer pageCurrent,Integer ctype, Integer cstatus);
 
     /**
      * 录入新客户信息

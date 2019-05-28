@@ -18,12 +18,12 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerMapper customerMapper;
 
     @Override
-    public PageObject<Customer> findPageObjects(String cname, Integer pageCurrent) {
+    public PageObject<Customer> findPageObjects(String cname, Integer pageCurrent,Integer ctype, Integer cstatus) {
         //1.校验参数合法性
         if (pageCurrent==null||pageCurrent<=0)
             throw new ServiceException("请选择页数");
         //2.依据条件获取总记录数
-        int rowCount = customerMapper.getRowCount(cname);
+        int rowCount = customerMapper.getRowCount(cname,ctype,cstatus);
         if (rowCount==0)
             throw new ServiceException("系统没有查询到相应记录");
         //3.计算startIndex的值
@@ -40,6 +40,8 @@ public class CustomerServiceImpl implements CustomerService {
         //6.返回结果集
         return pageObject;
     }
+
+
 
     @Override
     public int addObject(Customer entity) {

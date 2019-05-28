@@ -1,9 +1,7 @@
 package com.sz.dao;
 
 import com.sz.pojo.SixGoldDetail;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface SixGoldDetailMapper {
     int deleteByPrimaryKey(Integer id);
 

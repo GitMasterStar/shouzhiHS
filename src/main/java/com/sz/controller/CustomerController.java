@@ -34,8 +34,8 @@ public class CustomerController {
      */
     @RequestMapping("/doFindPageObjects")
     @ResponseBody
-    public JsonResult doFindPageObjects(String cname,Integer pageCurrent) {
-        PageObject<Customer> pageObject = customerService.findPageObjects(cname,pageCurrent);
+    public JsonResult doFindPageObjects(String cname,Integer pageCurrent,Integer ctype, Integer cstatus) {
+        PageObject<Customer> pageObject = customerService.findPageObjects(cname,pageCurrent,ctype,cstatus);
         return new JsonResult(pageObject);
     }
 
