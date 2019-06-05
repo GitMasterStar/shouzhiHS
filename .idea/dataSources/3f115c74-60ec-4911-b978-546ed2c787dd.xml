@@ -1610,10 +1610,10 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="344" parent="215" name="WORKERID">
+    <column id="344" parent="215" name="WORKERNAME">
       <Position>2</Position>
       <Comment>员工id</Comment>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="345" parent="215" name="WORKERIDCARD">
@@ -1622,7 +1622,7 @@
       <DataType>varchar(500)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="346" parent="215" name="DEPTID">
+    <column id="346" parent="215" name="PAYMONTH">
       <Position>4</Position>
       <Comment>部门id</Comment>
       <DataType>int(11)|0</DataType>
@@ -1706,12 +1706,18 @@
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="360" parent="215" name="PRIMARY">
+    <column id="360" parent="215" name="MONTH">
+      <Position>18</Position>
+      <Comment>月份</Comment>
+      <DataType>date|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="361" parent="215" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="361" parent="216" name="ID">
+    <column id="362" parent="216" name="ID">
       <Position>1</Position>
       <Comment>供应商ID</Comment>
       <DataType>int(11)|0</DataType>
@@ -1719,72 +1725,78 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="362" parent="216" name="SNAME">
+    <column id="363" parent="216" name="SNAME">
       <Position>2</Position>
       <Comment>供应商姓名</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="363" parent="216" name="SFULLNAME">
+    <column id="364" parent="216" name="SFULLNAME">
       <Position>3</Position>
       <Comment>供应商全称</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="364" parent="216" name="DBANK">
+    <column id="365" parent="216" name="DBANK">
       <Position>4</Position>
       <Comment>开户银行</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="365" parent="216" name="BACCOUNT">
+    <column id="366" parent="216" name="BACCOUNT">
       <Position>5</Position>
       <Comment>银行账号</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="366" parent="216" name="LEGALPERSONID">
+    <column id="367" parent="216" name="LEGALPERSONID">
       <Position>6</Position>
       <Comment>签约法人</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="367" parent="216" name="SSTATUS">
+    <column id="368" parent="216" name="SSTATUS">
       <Position>7</Position>
       <Comment>供应商状态  0.激活  1.状态</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="368" parent="216" name="CREATEDTIME">
+    <column id="369" parent="216" name="CREATEDTIME">
       <Position>8</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="369" parent="216" name="CREATEDUSER">
+    <column id="370" parent="216" name="CREATEDUSER">
       <Position>9</Position>
       <Comment>创建用户</Comment>
       <DataType>varchar(200)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="370" parent="216" name="MODIFIEDTIME">
+    <column id="371" parent="216" name="MODIFIEDTIME">
       <Position>10</Position>
       <Comment>修改时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="371" parent="216" name="MODIFIEDUSER">
+    <column id="372" parent="216" name="MODIFIEDUSER">
       <Position>11</Position>
       <Comment>修改用户</Comment>
       <DataType>varchar(200)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="372" parent="216" name="PRIMARY">
+    <column id="373" parent="216" name="TYPE">
+      <Position>12</Position>
+      <Comment>企业性质</Comment>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="374" parent="216" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="373" parent="217" name="USERID">
+    <column id="375" parent="217" name="USERID">
       <Position>1</Position>
       <Comment>用户id</Comment>
       <DataType>int(11)|0</DataType>
@@ -1792,102 +1804,102 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="374" parent="217" name="USERNAME">
+    <column id="376" parent="217" name="USERNAME">
       <Position>2</Position>
       <Comment>用户名称</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="375" parent="217" name="USERPWD">
+    <column id="377" parent="217" name="USERPWD">
       <Position>3</Position>
       <Comment>用户密码</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="376" parent="217" name="USERREALNAME">
+    <column id="378" parent="217" name="USERREALNAME">
       <Position>4</Position>
       <Comment>真实姓名</Comment>
       <DataType>varchar(100)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="377" parent="217" name="CREATEDATE">
+    <column id="379" parent="217" name="CREATEDATE">
       <Position>5</Position>
       <Comment>创建时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="378" parent="217" name="UPDATEDATE">
+    <column id="380" parent="217" name="UPDATEDATE">
       <Position>6</Position>
       <Comment>修改时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="379" parent="217" name="DEPTID">
+    <column id="381" parent="217" name="DEPTID">
       <Position>7</Position>
       <Comment>部门id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="380" parent="217" name="LEADERID">
+    <column id="382" parent="217" name="LEADERID">
       <Position>8</Position>
       <Comment>上级领导id</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="381" parent="217" name="EMAIL">
+    <column id="383" parent="217" name="EMAIL">
       <Position>9</Position>
       <Comment>邮箱</Comment>
       <DataType>varchar(100)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="382" parent="217" name="PHONE">
+    <column id="384" parent="217" name="PHONE">
       <Position>10</Position>
       <Comment>电话</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="383" parent="217" name="REMARK">
+    <column id="385" parent="217" name="REMARK">
       <Position>11</Position>
       <Comment>备注</Comment>
       <DataType>varchar(500)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="384" parent="217" name="STANDBY">
+    <column id="386" parent="217" name="STANDBY">
       <Position>12</Position>
       <Comment>备用</Comment>
       <DataType>varchar(200)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="385" parent="217" name="CREATEUSER">
+    <column id="387" parent="217" name="CREATEUSER">
       <Position>13</Position>
       <Comment>创建用户</Comment>
       <DataType>varchar(200)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="386" parent="217" name="UPDATEUSER">
+    <column id="388" parent="217" name="UPDATEUSER">
       <Position>14</Position>
       <Comment>修改用户</Comment>
       <DataType>varchar(200)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="387" parent="217" name="VALID">
+    <column id="389" parent="217" name="VALID">
       <Position>15</Position>
       <Comment>状态  0：禁用  1：正常（默认）</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="388" parent="217" name="SALT">
+    <column id="390" parent="217" name="SALT">
       <Position>16</Position>
       <Comment>盐值  密码加密时前缀，是加密后的值不同</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="389" parent="217" name="PRIMARY">
+    <key id="391" parent="217" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>USERID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="390" parent="218" name="ID">
+    <column id="392" parent="218" name="ID">
       <Position>1</Position>
       <Comment>ID</Comment>
       <DataType>int(11)|0</DataType>
@@ -1895,24 +1907,24 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="391" parent="218" name="USERID">
+    <column id="393" parent="218" name="USERID">
       <Position>2</Position>
       <Comment>用户ID</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="392" parent="218" name="ROLEID">
+    <column id="394" parent="218" name="ROLEID">
       <Position>3</Position>
       <Comment>角色ID</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="393" parent="218" name="PRIMARY">
+    <key id="395" parent="218" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="394" parent="219" name="ID">
+    <column id="396" parent="219" name="ID">
       <Position>1</Position>
       <Comment>工作日ID</Comment>
       <DataType>int(11)|0</DataType>
@@ -1920,434 +1932,433 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="395" parent="219" name="YEAR">
+    <column id="397" parent="219" name="YEAR">
       <Position>2</Position>
       <Comment>年度</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="396" parent="219" name="JANUARY">
+    <column id="398" parent="219" name="JANUARY">
       <Position>3</Position>
       <Comment>一月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="397" parent="219" name="FEBRUARY">
+    <column id="399" parent="219" name="FEBRUARY">
       <Position>4</Position>
       <Comment>二月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="398" parent="219" name="MARCH">
+    <column id="400" parent="219" name="MARCH">
       <Position>5</Position>
       <Comment>三月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="399" parent="219" name="APRIL">
+    <column id="401" parent="219" name="APRIL">
       <Position>6</Position>
       <Comment>四月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="400" parent="219" name="MAY">
+    <column id="402" parent="219" name="MAY">
       <Position>7</Position>
       <Comment>五月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="401" parent="219" name="JUNE">
+    <column id="403" parent="219" name="JUNE">
       <Position>8</Position>
       <Comment>六月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="402" parent="219" name="JULY">
+    <column id="404" parent="219" name="JULY">
       <Position>9</Position>
       <Comment>七月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="403" parent="219" name="AUGUST">
+    <column id="405" parent="219" name="AUGUST">
       <Position>10</Position>
       <Comment>八月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="404" parent="219" name="SEPTEMBER">
+    <column id="406" parent="219" name="SEPTEMBER">
       <Position>11</Position>
       <Comment>九月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="405" parent="219" name="OCTOBER">
+    <column id="407" parent="219" name="OCTOBER">
       <Position>12</Position>
       <Comment>十月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="406" parent="219" name="NOVEMBER">
+    <column id="408" parent="219" name="NOVEMBER">
       <Position>13</Position>
       <Comment>十一月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="407" parent="219" name="DECEMBER">
+    <column id="409" parent="219" name="DECEMBER">
       <Position>14</Position>
       <Comment>十二月工作日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="408" parent="219" name="JANUARYWEEKEND">
+    <column id="410" parent="219" name="JANUARYWEEKEND">
       <Position>15</Position>
       <Comment>一月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="409" parent="219" name="FEBRUARYWEEKEND">
+    <column id="411" parent="219" name="FEBRUARYWEEKEND">
       <Position>16</Position>
       <Comment>二月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="410" parent="219" name="MARCHWEEKEND">
+    <column id="412" parent="219" name="MARCHWEEKEND">
       <Position>17</Position>
       <Comment>三月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="411" parent="219" name="APRILWEEKEND">
+    <column id="413" parent="219" name="APRILWEEKEND">
       <Position>18</Position>
       <Comment>四月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="412" parent="219" name="MAYWEEKEND">
+    <column id="414" parent="219" name="MAYWEEKEND">
       <Position>19</Position>
       <Comment>五月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="413" parent="219" name="JUNEWEEKEND">
+    <column id="415" parent="219" name="JUNEWEEKEND">
       <Position>20</Position>
       <Comment>六月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="414" parent="219" name="JULYWEEKEND">
+    <column id="416" parent="219" name="JULYWEEKEND">
       <Position>21</Position>
       <Comment>七月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="415" parent="219" name="AUGUSTWEEKEND">
+    <column id="417" parent="219" name="AUGUSTWEEKEND">
       <Position>22</Position>
       <Comment>八月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="416" parent="219" name="SEPTEMBERWEEKEND">
+    <column id="418" parent="219" name="SEPTEMBERWEEKEND">
       <Position>23</Position>
       <Comment>九月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="417" parent="219" name="OCTOBERWEEKEND">
+    <column id="419" parent="219" name="OCTOBERWEEKEND">
       <Position>24</Position>
       <Comment>十月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="418" parent="219" name="NOVEMBERWEEKEND">
+    <column id="420" parent="219" name="NOVEMBERWEEKEND">
       <Position>25</Position>
       <Comment>十一月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="419" parent="219" name="DECEMBERWEEKEND">
+    <column id="421" parent="219" name="DECEMBERWEEKEND">
       <Position>26</Position>
       <Comment>十二月双休日数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="420" parent="219" name="PRIMARY">
+    <key id="422" parent="219" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="421" parent="220" name="ID">
+    <column id="423" parent="220" name="ID">
       <Position>1</Position>
       <Comment>员工id</Comment>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="422" parent="220" name="WORKERNAME">
+    <column id="424" parent="220" name="WORKERNAME">
       <Position>2</Position>
       <Comment>姓名</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="423" parent="220" name="WORKERSEX">
+    <column id="425" parent="220" name="WORKERSEX">
       <Position>3</Position>
       <Comment>性别</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="424" parent="220" name="WORKERIDCARD">
+    <column id="426" parent="220" name="WORKERIDCARD">
       <Position>4</Position>
       <Comment>身份证</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="425" parent="220" name="WORKNATIVE">
+    <column id="427" parent="220" name="WORKNATIVE">
       <Position>5</Position>
       <Comment>户口性质</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="426" parent="220" name="WORKERPHONE">
+    <column id="428" parent="220" name="WORKERPHONE">
       <Position>6</Position>
       <Comment>手机</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="427" parent="220" name="WORKEREMAIL">
+    <column id="429" parent="220" name="WORKEREMAIL">
       <Position>7</Position>
       <Comment>邮箱</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="428" parent="220" name="WORKERDEPTID">
+    <column id="430" parent="220" name="WORKERDEPT">
       <Position>8</Position>
-      <Comment>部门id</Comment>
-      <DataType>int(11)|0</DataType>
+      <Comment>部门</Comment>
+      <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="429" parent="220" name="WORKERLEVEL">
+    <column id="431" parent="220" name="WORKERLEVEL">
       <Position>9</Position>
       <Comment>员工类别</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="430" parent="220" name="WORKERLEADERID">
+    <column id="432" parent="220" name="WORKERLEADER">
       <Position>10</Position>
-      <Comment>所属上级id</Comment>
-      <DataType>int(11)|0</DataType>
+      <Comment>所属上级</Comment>
+      <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="431" parent="220" name="WORKERCUSTOMERID">
+    <column id="433" parent="220" name="WORKERCUSTOMER">
       <Position>11</Position>
-      <Comment>签约客户id</Comment>
-      <DataType>int(11)|0</DataType>
+      <Comment>签约客户</Comment>
+      <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="432" parent="220" name="CREATEPEOPLE">
+    <column id="434" parent="220" name="CREATEPEOPLE">
       <Position>12</Position>
       <Comment>创建人</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="433" parent="220" name="CREATEDATE">
+    <column id="435" parent="220" name="CREATEDATE">
       <Position>13</Position>
       <Comment>入职时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="434" parent="220" name="PRICE">
+    <column id="436" parent="220" name="PRICE">
       <Position>14</Position>
       <Comment>单价</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="435" parent="220" name="PRICETYPE">
+    <column id="437" parent="220" name="PRICETYPE">
       <Position>15</Position>
       <Comment>单价方式</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="436" parent="220" name="NORMALSALARY">
+    <column id="438" parent="220" name="NORMALSALARY">
       <Position>16</Position>
       <Comment>标准</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="437" parent="220" name="BASESALARY">
+    <column id="439" parent="220" name="BASESALARY">
       <Position>17</Position>
       <Comment>基本工资</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="438" parent="220" name="PERFORMANCESALARY">
+    <column id="440" parent="220" name="PERFORMANCESALARY">
       <Position>18</Position>
       <Comment>效绩工资</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="439" parent="220" name="SALARYRATIO">
+    <column id="441" parent="220" name="SALARYRATIO">
       <Position>19</Position>
       <Comment>试用折扣率</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="440" parent="220" name="GROSSPROFITRATE">
+    <column id="442" parent="220" name="GROSSPROFITRATE">
       <Position>20</Position>
       <Comment>毛利率</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="441" parent="220" name="SIXGOLDCITY">
+    <column id="443" parent="220" name="SIXGOLDCITY">
       <Position>21</Position>
       <Comment>六金城市</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="442" parent="220" name="SIXGOLDBASE">
+    <column id="444" parent="220" name="SIXGOLDBASE">
       <Position>22</Position>
       <Comment>六金基数</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="443" parent="220" name="PAYCITY1">
+    <column id="445" parent="220" name="PAYCITY1">
       <Position>23</Position>
       <Comment>发薪地1</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="444" parent="220" name="PAYSALARY1">
+    <column id="446" parent="220" name="PAYSALARY1">
       <Position>24</Position>
       <Comment>发薪金额1</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="445" parent="220" name="PAYCITY2">
+    <column id="447" parent="220" name="PAYCITY2">
       <Position>25</Position>
       <Comment>发薪地2</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="446" parent="220" name="PAYSALARY2">
+    <column id="448" parent="220" name="PAYSALARY2">
       <Position>26</Position>
       <Comment>发薪金额2</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="447" parent="220" name="CHILDEDUCATION">
+    <column id="449" parent="220" name="CHILDEDUCATION">
       <Position>27</Position>
       <Comment>子女教育</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="448" parent="220" name="AGAINEDUCATION">
+    <column id="450" parent="220" name="AGAINEDUCATION">
       <Position>28</Position>
       <Comment>继续教育</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="449" parent="220" name="SERIOUSILLNESS">
+    <column id="451" parent="220" name="SERIOUSILLNESS">
       <Position>29</Position>
       <Comment>大病医疗</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="450" parent="220" name="HOUSELOANS">
+    <column id="452" parent="220" name="HOUSELOANS">
       <Position>30</Position>
       <Comment>住房贷款</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="451" parent="220" name="RENTINGHOUSE">
+    <column id="453" parent="220" name="RENTINGHOUSE">
       <Position>31</Position>
       <Comment>租房租金</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="452" parent="220" name="SUPPORTOLD">
+    <column id="454" parent="220" name="SUPPORTOLD">
       <Position>32</Position>
       <Comment>赡养老人</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="453" parent="220" name="EQUIPMENT">
+    <column id="455" parent="220" name="EQUIPMENT">
       <Position>33</Position>
       <Comment>设备</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="454" parent="220" name="EQUIPMENTSUBSIDY">
+    <column id="456" parent="220" name="EQUIPMENTSUBSIDY">
       <Position>34</Position>
       <Comment>设备补贴</Comment>
       <DataType>double|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="455" parent="220" name="WORKERSTATUS">
+    <column id="457" parent="220" name="WORKERSTATUS">
       <Position>35</Position>
       <Comment>员工状态（0.在职 1.离职）</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="456" parent="220" name="DIMISSIONDATE">
+    <column id="458" parent="220" name="DIMISSIONDATE">
       <Position>36</Position>
       <Comment>离职日期</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="457" parent="220" name="DIMISSIONREASON">
+    <column id="459" parent="220" name="DIMISSIONREASON">
       <Position>37</Position>
       <Comment>离职理由</Comment>
       <DataType>varchar(500)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="458" parent="220" name="DECLARATIONSTATUS">
+    <column id="460" parent="220" name="DECLARATIONSTATUS">
       <Position>38</Position>
       <Comment>申报状态</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="459" parent="220" name="SOCIALSECURITYSTATUS">
+    <column id="461" parent="220" name="SOCIALSECURITYSTATUS">
       <Position>39</Position>
       <Comment>社保状态</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="460" parent="220" name="UPDATEDATE">
+    <column id="462" parent="220" name="UPDATEDATE">
       <Position>40</Position>
       <Comment>修改时间</Comment>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="461" parent="220" name="UPDATEPEOPLE">
+    <column id="463" parent="220" name="UPDATEPEOPLE">
       <Position>41</Position>
       <Comment>最后修改人</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="462" parent="220" name="REMARK">
+    <column id="464" parent="220" name="REMARK">
       <Position>42</Position>
       <Comment>备注</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="463" parent="220" name="STANDBY">
+    <column id="465" parent="220" name="STANDBY">
       <Position>43</Position>
       <Comment>备用</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="464" parent="220" name="CMBCACCOUNT">
+    <column id="466" parent="220" name="CMBCACCOUNT">
       <Position>44</Position>
       <Comment>招商银行账号</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="465" parent="220" name="ICBCACCOUNT">
+    <column id="467" parent="220" name="ICBCACCOUNT">
       <Position>45</Position>
       <Comment>工商银行账号</Comment>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="466" parent="220" name="PRIMARY">
+    <key id="468" parent="220" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

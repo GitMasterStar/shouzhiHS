@@ -5,11 +5,11 @@ import java.util.Date;
 public class SixGoldDetail {
     private Integer id;
 
-    private Integer workerid;
+    private String workername;
 
     private String workeridcard;
 
-    private Integer deptid;
+    private Integer paymonth;
 
     private Double endowmententerprise;
 
@@ -39,11 +39,11 @@ public class SixGoldDetail {
 
     private Date month;
 
-    public SixGoldDetail(Integer id, Integer workerid, String workeridcard, Integer deptid, Double endowmententerprise, Double endowmentpersonage, Double medicalenterprise, Double medicalpersonage, Double unemploymententerprise, Double unemploymentpersonage, Double inductrialinjuryenterprise, Double maternityenterprise, Double housingfundenterprise, Double housingfundpersonage, Double collectenterprise, Double collectpersonage, Double collect, Date month) {
+    public SixGoldDetail(Integer id, String workername, String workeridcard, Integer paymonth, Double endowmententerprise, Double endowmentpersonage, Double medicalenterprise, Double medicalpersonage, Double unemploymententerprise, Double unemploymentpersonage, Double inductrialinjuryenterprise, Double maternityenterprise, Double housingfundenterprise, Double housingfundpersonage, Double collectenterprise, Double collectpersonage, Double collect, Date month) {
         this.id = id;
-        this.workerid = workerid;
+        this.workername = workername;
         this.workeridcard = workeridcard;
-        this.deptid = deptid;
+        this.paymonth = paymonth;
         this.endowmententerprise = endowmententerprise;
         this.endowmentpersonage = endowmentpersonage;
         this.medicalenterprise = medicalenterprise;
@@ -72,12 +72,12 @@ public class SixGoldDetail {
         this.id = id;
     }
 
-    public Integer getWorkerid() {
-        return workerid;
+    public String getWorkername() {
+        return workername;
     }
 
-    public void setWorkerid(Integer workerid) {
-        this.workerid = workerid;
+    public void setWorkername(String workername) {
+        this.workername = workername;
     }
 
     public String getWorkeridcard() {
@@ -88,12 +88,12 @@ public class SixGoldDetail {
         this.workeridcard = workeridcard == null ? null : workeridcard.trim();
     }
 
-    public Integer getDeptid() {
-        return deptid;
+    public Integer getPaymonth() {
+        return paymonth;
     }
 
-    public void setDeptid(Integer deptid) {
-        this.deptid = deptid;
+    public void setPaymonth(Integer paymonth) {
+        this.paymonth = paymonth;
     }
 
     public Double getEndowmententerprise() {

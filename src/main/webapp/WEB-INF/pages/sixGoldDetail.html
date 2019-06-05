@@ -15,7 +15,7 @@
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label class="control-label col-sm-3">员工姓名:</label>
+                            <label class="control-label col-sm-1">员工姓名:</label>
                             <div class="col-sm-3">
                                 <input type="text" class="form-control" id="searchNameId">
                             </div>
@@ -35,21 +35,23 @@
 
             <ul class="nav navbar-left panel_toolbox form-horizontal form-label-left">
                 <li class="form-group" style="width: 250px;">
-                    <label class="control-label col-sm-4">月度:</label>
-                    <div class="input-group date form_date col-sm-8" data-date="" data-date-format="yyyy/MM" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                        <input class="form-control" size="16" type="text" value="" readonly>
+                    <label class="control-label col-sm-3" >月度:</label>
+                    <div class="input-group date form_date col-sm-8" data-date="" data-date-format="yyyy-MM" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                        <input id="time" class="form-control" size="16" type="text"  readonly="readonly">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
-                    <input type="hidden" id="dtp_input2" value="" /><br/>
                 </li>
-                <li><a class="btn control-label download"><i class="fa fa-cloud-download"></i> 模板</a></li>
+                <form id="fileForm" action="/sixGlodDetail/upload.do" method="post" class="form-horizontal" enctype="multipart/form-data">
+                    <input id="file" type="file" name="file" multiple="multiple" />
+                    <input id="okk" type="button" value="文件上传" />
+                </form>
+                <li><a class="btn control-label download" href="sixGlodDetail/download.do?filename=moban.xlsx"><i class="fa fa-cloud-download"></i> 模板</a></li>
                 <li><a class="btn control-label upload"><i class="fa fa-cloud-upload"></i> 导入</a></li>
             </ul>
             <table class="table" style="text-align: center;">
                 <thead>
                 <tr>
-                    <th rowspan="2" style="text-align: center;"></th>
                     <th rowspan="2" style="text-align: center;line-height:50px;">缴纳月数</th>
                     <th rowspan="2" style="text-align: center;line-height:50px;">身份证号</th>
                     <th rowspan="2" style="text-align: center;line-height:50px;">员工姓名</th>
@@ -87,13 +89,13 @@
          style="z-index: 59891016; width: 500px; height: 450px; top: 15%; left:20%; display: none">
         <div class="layui-layer-title" style="cursor: move;">员工六金导入</div>
         <div class="layui-layer-content" style="height: 358px;">
-            <form class="form-horizontal">
+            <form  id="sixGoldForm" method="post" class="form-horizontal" enctype="multipart/form-data">
                 <div class="box-body">
                     <br>
                     <div class="form-group">
                         <label for="input08" class="col-sm-2 control-label">选择Excel文件</label>
                         <div class="col-sm-6">
-                            <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" id="input08">
+                            <input name="file" type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" id="input08">
                         </div>
                         <div class="col-sm-4">
                             <button id="clear" class="btn btn-default" type="button">
@@ -103,24 +105,19 @@
                     </div>
                     <br>
                     <div class="form-group">
-                        <label class="control-label col-sm-2">选择月度</label>
+                        <label class="col-sm-2 control-label">上传文件的结果:</label>
                         <div class="col-sm-6">
-                            <div class="input-group date form_date1 col-sm-8" data-date="" data-date-format="yyyy/MM" data-link-field="dtp_input3" data-link-format="yyyy-mm-dd">
-                                <input class="form-control" size="16" type="text" value="" readonly>
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                            </div>
-                            <input type="hidden" id="dtp_input3" value="" /><br/>
+                            <label class="col-sm-3 control-label" id="inputLabel"></label>
                         </div>
                     </div>
+                    <br>
                 </div>
             </form>
         </div>
-        <span class="layui-layer-setwin"> <a
-                class="layui-layer-ico layui-layer-close layui-layer-close1 btn-cancel"></a></span>
+        <span class="layui-layer-setwin"> <a class="layui-layer-ico layui-layer-close layui-layer-close1 btn-cancel"></a></span>
         <div class="layui-layer-btn layui-layer-btn-">
-            <a class="layui-layer-btn0 btn-confirm">确定</a>
-            <a class="layui-layer-btn1 btn-cancel">取消</a>
+            <a id="ok" class="layui-layer-btn0 btn-confirm">上传</a>
+          <!--  <a class="layui-layer-btn1 btn-cancel">返回</a>-->
         </div>
     </div>
 </div>
@@ -138,18 +135,17 @@
         forceParse: 0
     });
 
-    $('.form_date1').datetimepicker({
-        language:  'zh-CN',
-        weekStart: 1,
-        todayBtn:  1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 3,
-        minView: 3,
-        forceParse: 0
-    });
+
+    $('.form_date')
+        .datetimepicker()
+        .on('changeDate',function () {
+            doGetObjects();
+        });
 
     $(function(){
+
+       $('#time').attr('value',moment().startOf('month').format('YYYY-MM'));
+
 
         $('#input08').filestyle({
             buttonText : '',
@@ -161,7 +157,7 @@
         });
 
         $("#pageId").load("doPageUI.do",function () {
-            /*doGetObjects();*/
+            doGetObjects();
         })
 
         $(".nav")
@@ -173,35 +169,62 @@
             .on('click','.btn-cancel',doHidePage);
     });
 
-    function upload() {
+    $("#ok").click(function () {
+        debugger;
         var files = $('input[id="input08"]').prop('files');//获取到文件列表
+
         if (files.length==0){
             return;
         }else {
-            /*var reader = new FileReader();//新建一个FileReader
-            reader.readAsText(files[0], "UTF-8");//读取文件
-            reader.onload = function (evt) { //读取完文件之后会回来这里
-                var fileString = evt.target.result;
-                $.post(url,params,function (result) {
-                    if(result.state==1){
-                        swal(result.message);
-                        doCancel();
-                    }else{
-                        swal(result.message);
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/sixGlodDetail/doUpLoadFile.do",
+                data: new FormData($("#sixGoldForm")[0]),
+                processData: false,
+                contentType: false,
+                success: function (result) {
+                    debugger;
+                    if (result.state == 1) {
+                        $('#inputLabel').html(result.message+"，3秒后自动跳转回主页面");
+                        setTimeout(doHidePage,3000);
                     }
                 }
-            }*/
+            });
         }
-    }
+    })
+    $("#okk").click(function () {
+        debugger;
+        var files = $('input[id="file"]').prop('files');//获取到文件列表
+
+        if (files.length==0){
+            return;
+        }else {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost/sixGlodDetail/upload.do",
+                data: new FormData($("#fileForm")[0]),
+                processData: false,
+                contentType: false,
+                success: function (result) {
+                    debugger;
+                    if (result.state == 1) {
+                       swal("文件存在");
+                    }
+                }
+            });
+        }
+    })
 
     function doHidePage() {
         //隐藏弹框
         $('#menuLayer').css('display','none');
         //隐藏遮罩层
         hideMask();
+        doGetObjects();
     }
 
     function doFindPageObjects() {
+        debugger;
         //显示弹框
         $('#menuLayer').css('display','block');
         $('#menuLayer').css('height',$(document).height()*0.4);
@@ -223,13 +246,13 @@
     /**
      * 添加/修改功能
      */
-    function doLoadPage(title){
+  /*  function doLoadPage(title){
         var url="sixGlodDetail/doSupplierEditUI.do";
         $("#mainContentId").load(url,function () {
             $(".title").html(title);
         })
-    }
-    function doLoadUI() {
+    }*/
+  /*  function doLoadUI() {
         debugger;
         var title;
         if ($(this).hasClass("add")){
@@ -239,7 +262,7 @@
             debugger;
             title="编辑供应商";
             //1.获取选中行的记录
-            /*var id=$("tbody input[name='cItem']:checked").val();*/
+            /!*var id=$("tbody input[name='cItem']:checked").val();*!/
             var input=$("tbody input[type='checkbox']:checked");
             var tr =input.parents("tr");
             console.log("tr="+tr);
@@ -250,15 +273,15 @@
             }
             //2.绑定当前行的记录(在编辑页面使用此记录填充表单)
             $("#mainContentId").data("rowData",rowData);
-            /*doFindByUserid(id,title);*/
+            /!*doFindByUserid(id,title);*!/
         }
         doLoadPage(title);
-    }
+    }*/
 
     /**
      * 删除功能
      */
-    function  doDeleteObjects() {
+   /* function  doDeleteObjects() {
         debugger;
         var ids=doGetCheckedIds();
         if(ids.length==0){
@@ -281,8 +304,8 @@
                 swal(result.message);
             }
         });
-    }
-    function doGetCheckedIds(){
+    }*/
+  /*  function doGetCheckedIds(){
         debugger;
         var array=[];
         $("#tbodyId input[type='checkbox']").each(function(){
@@ -292,7 +315,7 @@
         });
         return array;
     }
-
+*/
 
     /**
      * 获取数据
@@ -300,13 +323,18 @@
     function doGetObjects() {
         debugger;
         $("#checkAllId").prop("checked",false);
-        var url = "sixGlodDetail/doFindPageObjects.do";
+        var url = "sixGlodDetail/doFindPageObject.do";
         var pageCurrent = $("#pageId").data("pageCurrent");
         if (!pageCurrent)
             pageCurrent = 1;
         var params = {"pageCurrent": pageCurrent}
-        params.sname = $("#searchNameId").val().toString();
+        params.workername = $("#searchNameId").val();
+        params.month= $("#time").val();
         $.getJSON(url, params, function (result) {
+            debugger;
+            if(result.data==null||result.data==""){
+                swal("没有您要查询的记录");
+    }
             doHandleResponseResult(result);
         });
 
@@ -334,15 +362,23 @@
     }
 
     function doCreateTds(row){
+        debugger;
         var tds=
-            "<td><input type='checkbox' name='cItem' class='cItem' value='"+row.id+"'></td>"+
-            "<td style='text-align: center;'>"+row.sname+"</td>"+
-            "<td style='text-align: center;'>"+row.sfullname+"</td>"+
-            "<td style='text-align: center;'>"+doTypeByZt(row.type)+"</td>"+
-            "<td style='text-align: center;'>"+row.dbank+"</td>"+
-            "<td style='text-align: center;'>"+row.baccount+"</td>"+
-            "<td style='text-align: center;'>"+row.legalpersonid+"</td>"+
-            "<td style='text-align: center;'>"+(row.sstatus==0?"激活":"冻结")+"</td>";
+            "<td style='text-align: center;'>"+row.paymonth+"</td>"+
+            "<td style='text-align: center;'>"+row.workeridcard+"</td>"+
+            "<td style='text-align: center;'>"+row.workername+"</td>"+
+            "<td style='text-align: center;'>"+row.endowmententerprise+"</td>"+
+            "<td style='text-align: center;'>"+row.endowmentpersonage+"</td>"+
+            "<td style='text-align: center;'>"+row.medicalenterprise+"</td>"+
+            "<td style='text-align: center;'>"+row.medicalpersonage+"</td>"+
+            "<td style='text-align: center;'>"+row.unemploymententerprise+"</td>"+
+            "<td style='text-align: center;'>"+row.unemploymentpersonage+"</td>"+
+            "<td style='text-align: center;'>"+row.inductrialinjuryenterprise+"</td>"+
+            "<td style='text-align: center;'>"+row.maternityenterprise+"</td>"+
+            "<td style='text-align: center;'>"+row.housingfundenterprise+"</td>"+
+            "<td style='text-align: center;'>"+row.housingfundpersonage+"</td>"+
+            "<td style='text-align: center;'>"+row.collectenterprise+"</td>"+
+            "<td style='text-align: center;'>"+row.collectpersonage+"</td>";
         return tds;
     }
 

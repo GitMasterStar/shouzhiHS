@@ -6,7 +6,7 @@
     <!-- 基于用户id查找角色id(可以通过此数据初始化修改页面
                  中用户所具备的角色) -->
     <select id="findRoleIdsByUserId"
-            resultType="int">
+            resultType="java.lang.Integer">
         select ROLEID
         from user_roles
         where USERID=#{userid}

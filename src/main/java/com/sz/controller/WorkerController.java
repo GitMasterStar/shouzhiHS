@@ -130,7 +130,11 @@ public class WorkerController {
         if (file.isEmpty()) {
             System.out.println("上传文件："+file.getName());
         }*/
-        workerService.parseAndSava(request,response,file);
+        try {
+            workerService.uploadParse(request,response,file);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return new JsonResult("上传文件成功");
     }
 

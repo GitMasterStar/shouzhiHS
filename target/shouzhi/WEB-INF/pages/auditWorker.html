@@ -251,78 +251,12 @@
         }
     })
 
-    /*function upload(){
-        /!*layui.use('from',function () {
-            var form = layui.form;
-            form.on('submit(formDemo)',function (data) {
-                var formDemo = new FormData($("#workerForm")[0]);
-            })
-        })*!/
-        debugger;
-       /!* var formData = new FormData($("#workerForm")[0]);*!/
-        $.ajax({
-            url : 'http://localhost/worker/uploadAuditWorker.do',
-            secureuri:false,
-            type: 'POST',
-            fileElementId:'fileData',
-            dataType:'json',
-            /!*fileObjName: 'fileData',
-            data: formData,*!/
-            /!*async: false,
-            cache: false,
-            contentType: false,
-            processData: false,*!/
-            /!*  onUploadStart: function (file) {
-                 //在onUploadStart事件中，也就是上传之前，把参数写好传递到后台。
-                 $('#uploadify').uploadify("settings", "formData", { 'ext1': $("#state").val() });
-             },
-             onUploadSuccess : function(file, data, response) {
-                 total++;
-                 data = $.parseJSON(data);
-                 if (data.status == 0) {
-                     newFile++;
-                 }
-                 else if (data.status == 1) {
-                     repeatFile++;
-                 }
-                 else {
-                     var fileName = data.fileName;
-                     invalidFileNames.push(fileName);
-                     invalidFile++;
-                 }
-
-             } *!/
-            success : function(data) {
-                debugger;
-                data = $.parseJSON(data);
-                if(data.url){
-                    alert(data.message);
-                    $('#attachment').val(data.url);
-                }else{
-                    alert(data.message);
-                }
-
-            }
-        });
-    }*/
-
     function upload() {
         var files = $('input[id="fileData"]').prop('files');//获取到文件列表
         if (files.length == 0) {
             $('#inputLabel').html('请选择文件');
             return;
         } else {
-            /*var reader = new FileReader();//新建一个FileReader
-            reader.readAsText(files[0]);//读取文件
-            reader.onload = function (evt) { //读取完文件之后会回来这里
-                var fileString = evt.target.result;  //post方式上传图片到控制器
-                var date = {"file": fileString};
-                $.post("worker/uploadAuditWorker.do", date).success(function (result) {
-                    if (result.state==1){
-                        $('#inputLabel').html(result.message);
-                    }
-                });
-            }*/
             var url="worker/uploadAuditWorker.do";
             var params = {fileData:files};
             $.getJSON(url,params,function (result) {
@@ -331,18 +265,6 @@
                 }
             })
         }
-        /*var fileDir = $("#fileData").val();
-        var suffix = fileDir.substr(fileDir.lastIndexOf("."));
-        if("" == fileDir){
-            $('#inputLabel').html("选择需要导入的Excel文件！");
-            return false;
-        }
-        if(".xls" != suffix && ".xlsx" != suffix ){
-            $('#inputLabel').html("选择Excel格式的文件导入！");
-            return false;
-        }
-        return true;*/
-
     }
 
     $('#fileData').filestyle({

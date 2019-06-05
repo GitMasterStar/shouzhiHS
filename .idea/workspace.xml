@@ -6,11 +6,109 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/sz/dao/DeptMapper.java" description="&#10;public interface DeptMapper {&#10;" line="9" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/sz/controller/revenueApprovalMan.java" line="6" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc524886-e3b5-4d37-9541-a984512d1a40" name="Default" comment="" />
+    <list default="true" readonly="true" id="fc524886-e3b5-4d37-9541-a984512d1a40" name="Default" comment="修改">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_11.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_3_11.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_ooxml_schemas_3_11.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlbeans_xmlbeans_2_6_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sz/common/util/ExcelUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sz/service/SixGoldService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/SixGoldServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-datetimepicker.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/bootstrap-datetimepicker.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-datetimepicker.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-datetimepicker.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-datetimepicker.zh-CN.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/moment-with-locales.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/src/bootstrap-filestyle.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/src/bootstrap-filestyle.min.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/shouzhiHS_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/shouzhiHS_war_exploded.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f115c74-60ec-4911-b978-546ed2c787dd.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/3f115c74-60ec-4911-b978-546ed2c787dd.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/shouzhiHS.iml" afterPath="$PROJECT_DIR$/shouzhiHS.iml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/common/util/PowerInterceptor.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/controller/SixGlodDetailController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sz/controller/SixGlodDetailController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/controller/WorkerController.java" afterPath="$PROJECT_DIR$/src/main/java/com/sz/controller/WorkerController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/AttendanceMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/DeptMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/IncomeMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/InsuranceMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/LegalpersonMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/MenusMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/ParameterMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/RoleMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/RoleMenuMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/SixGoldDetailMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/sz/dao/SixGoldDetailMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/SupplierMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/UserRoleMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/dao/WorkDayMapper.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/pojo/SixGoldDetail.java" afterPath="$PROJECT_DIR$/src/main/java/com/sz/pojo/SixGoldDetail.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/service/WorkerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/sz/service/WorkerService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/WorkerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/WorkerServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CustomerMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CustomerMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MenusMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MenusMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SixGoldDetailMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SixGoldDetailMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WorkerMapper.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/auditWorker.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/auditWorker.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sixGoldDetail.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sixGoldDetail.html" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/common/util/PowerInterceptor.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/controller/CustomerController.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/controller/CustomerController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/controller/SixGlodDetailController.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/controller/SixGlodDetailController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/controller/WorkerController.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/controller/WorkerController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/dao/CustomerMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/dao/CustomerMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/dao/SixGoldDetailMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/dao/SixGoldDetailMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/dao/UserRoleMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/dao/UserRoleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/dao/WorkDayMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/dao/WorkDayMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/dao/WorkerMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/dao/WorkerMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/pojo/SixGoldDetail.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/pojo/SixGoldDetail.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/pojo/Worker.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/pojo/Worker.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/service/CustomerService.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/service/CustomerService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/service/WorkerService.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/service/WorkerService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/serviceImpl/CustomerServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/serviceImpl/CustomerServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sz/serviceImpl/WorkerServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/sz/serviceImpl/WorkerServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CustomerMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/CustomerMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SixGoldDetailMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/SixGoldDetailMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/WorkerMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/WorkerMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/common/util/PowerInterceptor.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/controller/CustomerController.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/controller/CustomerController.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/controller/SixGlodDetailController.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/controller/SixGlodDetailController.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/controller/WorkerController.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/controller/WorkerController.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/CustomerMapper.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/CustomerMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/SixGoldDetailMapper.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/SixGoldDetailMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/UserRoleMapper.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/UserRoleMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/WorkDayMapper.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/WorkDayMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/WorkerMapper.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/dao/WorkerMapper.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/pojo/SixGoldDetail.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/pojo/SixGoldDetail.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/pojo/Worker.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/pojo/Worker.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/service/CustomerService.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/service/CustomerService.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/service/WorkerService.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/service/WorkerService.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/serviceImpl/CustomerServiceImpl.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/serviceImpl/CustomerServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/serviceImpl/WorkerServiceImpl.class" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/com/sz/serviceImpl/WorkerServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/generatorConfig.xml" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/mapper/CustomerMapper.xml" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/mapper/CustomerMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/mapper/SixGoldDetailMapper.xml" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/mapper/SixGoldDetailMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/mapper/WorkerMapper.xml" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/mapper/WorkerMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/spring-mvc.xml" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/classes/spring-mvc.xml" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/pages/auditWorker.html" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/pages/auditWorker.html" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/pages/index.html" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/pages/index.html" />
+      <change beforePath="$PROJECT_DIR$/target/shouzhi/WEB-INF/pages/sixGoldDetail.html" afterPath="$PROJECT_DIR$/target/shouzhi/WEB-INF/pages/sixGoldDetail.html" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,120 +132,167 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="shouzhi_manage@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="shouzhi_manage@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="shouzhi_manage@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="shouzhi_manage: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/UserController.java">
+      <file leaf-file-name="SixGoldDetailMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/SixGoldDetailMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="179" column="32" lean-forward="false" selection-start-line="179" selection-start-column="22" selection-end-line="179" selection-end-column="32" />
+            <state relative-caret-position="340">
+              <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#898#899#0" expanded="true" />
-                <element signature="e#927#928#0" expanded="true" />
-                <element signature="e#992#993#0" expanded="true" />
-                <element signature="e#1023#1024#0" expanded="true" />
-                <element signature="e#4418#4419#0" expanded="true" />
-                <element signature="e#4485#4486#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.html">
+      <file leaf-file-name="moment-with-locales.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/moment-with-locales.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="890">
-              <caret line="400" column="9" lean-forward="false" selection-start-line="400" selection-start-column="9" selection-end-line="400" selection-end-column="9" />
+            <state relative-caret-position="211">
+              <caret line="5810" column="8" lean-forward="false" selection-start-line="5810" selection-start-column="8" selection-end-line="5810" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SixGoldDetailMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SixGoldDetailMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="273" column="2" lean-forward="false" selection-start-line="273" selection-start-column="2" selection-end-line="273" selection-end-column="2" />
               <folding>
-                <element signature="e#15193#15199#0" expanded="true" />
+                <marker date="1559723105020" expanded="true" signature="2331:2440" ph="select from sixgolddetail" />
+                <marker date="1559723105020" expanded="true" signature="2527:2590" ph="delete from sixgolddetail... " />
+                <marker date="1559723105020" expanded="true" signature="2673:3769" ph="insert into sixgolddetail... " />
+                <marker date="1559723105020" expanded="true" signature="3047:3769" ph="insert into sixgolddetail... " />
+                <marker date="1559723105020" expanded="true" signature="7377:9504" ph="update sixgolddetail... " />
+                <marker date="1559723105020" expanded="true" signature="9599:10717" ph="update sixgolddetail... " />
+                <marker date="1559723105020" expanded="true" signature="10816:10850" ph="SELECT * FRO... sixgolddetail" />
+                <marker date="1559723105020" expanded="true" signature="11310:11337" ph="SELECT * FRO... sixgolddetail" />
+                <marker date="1559723105020" expanded="true" signature="11310:11380" ph="SELECT * FRO... sixgolddetail" />
+                <marker date="1559723105020" expanded="true" signature="11310:11406" ph="SELECT * FRO... sixgolddetail" />
+                <marker date="1559723105020" expanded="true" signature="11482:11627" ph="SELECT COUNT... sixgolddetail" />
+                <marker date="1559723105020" expanded="true" signature="11701:11726" ph="INSERT INTO sixgolddetail... " />
+                <marker date="1559723105020" expanded="true" signature="11701:12071" ph="INSERT INTO sixgolddetail... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkerServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/WorkerServiceImpl.java">
+      <file leaf-file-name="sixGoldDetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sixGoldDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/common/util/SessionInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4380">
-              <caret line="146" column="32" lean-forward="false" selection-start-line="146" selection-start-column="32" selection-end-line="146" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InsuranceController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/InsuranceController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="insurance.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/insurance.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1080">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkerController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/WorkerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="117" column="7" lean-forward="false" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6330">
-              <caret line="240" column="16" lean-forward="false" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="revenueApprovalMan.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/revenueApprovalMan.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="150">
+              <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#345#346#0" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1559721877423" expanded="true" signature="13362:13381" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="13431:13450" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="13504:13523" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="13575:13594" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="13655:13674" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="13734:13753" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="13812:13831" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="13889:13908" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="13972:13991" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="14054:14073" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="14141:14160" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="14221:14240" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="14303:14322" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="14384:14403" ph="..." />
+                <marker date="1559721877423" expanded="true" signature="14462:14481" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-mvc.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-570">
+              <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRoleMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/UserRoleMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenusMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/MenusMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/RoleMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="101" column="2" lean-forward="false" selection-start-line="101" selection-start-column="2" selection-end-line="101" selection-end-column="2" />
+              <folding>
+                <marker date="1559723104956" expanded="true" signature="1019:1119" ph="select from role" />
+                <marker date="1559723104956" expanded="true" signature="1205:1259" ph="delete from role... " />
+                <marker date="1559723104956" expanded="true" signature="1332:1549" ph="insert into role... " />
+                <marker date="1559723104956" expanded="true" signature="2576:3009" ph="update role... " />
+                <marker date="1559723104956" expanded="true" signature="3094:3318" ph="update role... " />
+                <marker date="1559723104956" expanded="true" signature="3394:3419" ph="SELECT count... role" />
+                <marker date="1559723104956" expanded="true" signature="3567:3657" ph="SELECT * FRO... role" />
+                <marker date="1559723104956" expanded="true" signature="3741:3769" ph="SELECT ID,NA... role" />
+                <marker date="1559723104956" expanded="true" signature="3858:3899" ph="SELECT ID,UP... role" />
+                <marker date="1559723104956" expanded="true" signature="3970:4202" ph="SELECT c.ID role" />
+                <marker date="1559723104956" expanded="true" signature="4053:4102" ph="SELECT NAME role" />
+                <marker date="1559723104956" expanded="true" signature="4312:4372" ph="SELECT * FRO... role" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRoleMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+              <folding>
+                <marker date="1559723105068" expanded="true" signature="361:429" ph="select ROLEI... user_roles" />
+                <marker date="1559723105068" expanded="true" signature="524:585" ph="delete from user_roles" />
+                <marker date="1559723105068" expanded="true" signature="711:772" ph="delete from user_roles" />
               </folding>
             </state>
           </provider>
@@ -161,44 +306,44 @@
         <option value="Tag Library Descriptor" />
         <option value="FxmlFile" />
         <option value="Jsp File" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>jquery.min.js</find>
-      <find>mask</find>
-      <find>login</find>
-      <find>authorMap</find>
-      <find>container</find>
-      <find>info</find>
-      <find>clean</find>
-      <find>doLogin</find>
-      <find>doLogout.do</find>
-      <find>mainContentId</find>
-      <find>doLoginUI</find>
-      <find>tbodyId</find>
-      <find>shiro</find>
-      <find>UnauthorizedUrl</find>
-      <find>unauthorizedUrl</find>
-      <find>dologout</find>
-      <find>logout</find>
-      <find>dosession</find>
-      <find>findRoleNameByUserId</find>
-      <find>loginName</find>
-      <find>&quot;load-revenueApprovalMan-id</find>
-      <find>load-revenueApprovalMan-id</find>
-      <find>oad-sixgold-id</find>
-      <find>findDeptNameByUserId</find>
-      <find>doLoadUI</find>
-      <find>load-insurance-id</find>
-      <find>oad-Person-id</find>
-      <find>oad-revenueApprovalMan-id</find>
-      <find>auditWorker</find>
-      <find>load-auditWorker-id</find>
+      <find>menuLayer</find>
+      <find>clear</find>
+      <find>inputUpload</find>
+      <find>list</find>
+      <find>+</find>
+      <find>workerForm</find>
+      <find>workerMapper</find>
+      <find>doFindPageObjects</find>
+      <find>sql</find>
+      <find>form_date1</find>
+      <find>form_da</find>
+      <find>rowCount</find>
+      <find>searchNameId</find>
+      <find>btn-cancel</find>
+      <find>inputLabel</find>
+      <find>input-group-addon</find>
+      <find>glyphicon-remove</find>
+      <find>serach</find>
+      <find>select</find>
+      <find>time</find>
+      <find>form_date</find>
+      <find>fa-cloud-upload</find>
+      <find>upload</find>
+      <find>layui-layer-content</find>
+      <find>ok</find>
+      <find>okk</find>
+      <find>input08</find>
+      <find>files</find>
+      <find>maxSize</find>
+      <find>sixGoldForm</find>
     </findStrings>
     <replaceStrings>
       <replace>createdate</replace>
@@ -230,32 +375,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/service/DeptService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/dao/UserRoleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/roleEditUI.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/common/vo/PageObject.java" />
-        <option value="src:table:/1dffeb45/3f115c74-60ec-4911-b978-546ed2c787dd/shouzhi_manage.user" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/dao/DeptMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/userUI.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/controller/HttpServletRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/common/vo/JsonResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/common/vo/Sion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/datasource.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/vendors/jquery/dist/jquery.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/SessionTimeOut.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/service/WorkerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/WorkerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/dao/WorkerMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/WorkerMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workerUI.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/role.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sz/common/vo/Session.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sz/common/util/ShiroUserRealm.java" />
@@ -269,18 +394,38 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring-config.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sz/controller/DeptController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/DeptServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sz/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sz/controller/revenueApprovalman.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/revenueApprovalman.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/sz/controller/revenueApprovalMan.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/revenueApprovalMan.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/WorkerMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/dao/WorkDayMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/dao/WorkerMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/service/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/dao/CustomerMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/controller/CustomerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/service/WorkerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sz/controller/WorkerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/WorkerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/auditWorker.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/pojo/SixGoldDetail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/service/SixGoldService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/dao/SixGoldDetailMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SixGoldDetailMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/dept.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/SixGoldServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sz/controller/SixGlodDetailController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sixGoldDetail.html" />
       </list>
     </option>
   </component>
@@ -350,6 +495,9 @@
             <id>Abstraction issuesJava</id>
           </State>
           <State>
+            <id>CodeSpring CoreSpring</id>
+          </State>
+          <State>
             <id>Google Web Toolkit issues</id>
           </State>
           <State>
@@ -361,10 +509,16 @@
           <State>
             <id>Serialization issuesJava</id>
           </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>SerializableHasSerialVersionUIDField</id>
+            <id>SpringJavaInjectionPointsAutowiringInspection</id>
           </State>
         </selected-state>
       </profile-state>
@@ -386,7 +540,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -394,27 +551,50 @@
               <item name="shouzhi" type="b2602c69:ProjectViewProjectNode" />
               <item name="shouzhiHS" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="shouzhi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shouzhiHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shouzhi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shouzhiHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shouzhi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shouzhiHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shouzhi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shouzhiHS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sz" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="findRoleNameByUserId&#9;PSI&#9;JAVA://com.sz.dao.UserMapper#findRoleNameByUserId&#10;findDeptNameByUserId&#9;PSI&#9;JAVA://com.sz.dao.UserMapper#findDeptNameByUserId&#10;doLoginUI&#9;PSI&#9;JAVA://com.sz.controller.LoginController#doLoginUI&#10;container&#9;FILE&#9;file://D:/shouzhiHS/src/main/webapp/vendors/select2/src/js/select2/compat/containerCss.js&#10;contai&#9;FILE&#9;file://D:/shouzhiHS/src/main/webapp/vendors/select2/src/js/select2/compat/containerCss.js&#10;fontawesome-webfont&#9;FILE&#9;file://D:/shouzhiHS/src/main/webapp/vendors/select2/docs/vendor/fonts/fontawesome-webfont.woff&#10;location&#9;PSI&#9;JAVA://sun.plugin.javascript.navig.Location&#10;2019&#9;null&#9;null&#10;session&#9;FILE&#9;jar://E:/chengqian/Repository/org/apache/shiro/shiro-web/1.2.2/shiro-web-1.2.2.jar!/org/apache/shiro/web/filter/session&#10;ServletRequest&#9;PSI&#9;JAVA://javax.servlet.ServletRequest&#10;HttpServletRequest&#9;FILE&#9;jar://E:/chengqian/Repository/javax/servlet/javax.servlet-api/4.0.0-b01/javax.servlet-api-4.0.0-b01.jar!/javax/servlet/http/HttpServletRequest.class&#10;密码不正确&#9;null&#9;null&#10;invalid &#9;PSI&#9;JAVA://org.omg.CORBA.DynAnyPackage.Invalid&#10;collapse&#9;FILE&#9;file://D:/shouzhiHS/src/main/webapp/bower_components/bootstrap/js/collapse.js&#10;custom.min.css&#9;FILE&#9;file://E:/shouzhiHS/src/main/webapp/build/css/custom.min.css&#10;body&#9;null&#9;null&#10;footer&#9;null&#9;null&#10;sidebar-footer&#9;null&#9;null&#10;nav-md&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/shouzhiHS/src/main/resources/mapper/WorkerMapper.xml&#10;findRoleNameByUserId&#9;PSI&#9;JAVA://com.sz.dao.UserMapper#findRoleNameByUserId&#10;findDeptNameByUserId&#9;PSI&#9;JAVA://com.sz.dao.UserMapper#findDeptNameByUserId&#10;doLoginUI&#9;PSI&#9;JAVA://com.sz.controller.LoginController#doLoginUI&#10;container&#9;FILE&#9;file://D:/shouzhiHS/src/main/webapp/vendors/select2/src/js/select2/compat/containerCss.js&#10;contai&#9;FILE&#9;file://D:/shouzhiHS/src/main/webapp/vendors/select2/src/js/select2/compat/containerCss.js&#10;fontawesome-webfont&#9;FILE&#9;file://D:/shouzhiHS/src/main/webapp/vendors/select2/docs/vendor/fonts/fontawesome-webfont.woff&#10;location&#9;PSI&#9;JAVA://sun.plugin.javascript.navig.Location&#10;2019&#9;null&#9;null&#10;session&#9;FILE&#9;jar://E:/chengqian/Repository/org/apache/shiro/shiro-web/1.2.2/shiro-web-1.2.2.jar!/org/apache/shiro/web/filter/session&#10;ServletRequest&#9;PSI&#9;JAVA://javax.servlet.ServletRequest&#10;HttpServletRequest&#9;FILE&#9;jar://E:/chengqian/Repository/javax/servlet/javax.servlet-api/4.0.0-b01/javax.servlet-api-4.0.0-b01.jar!/javax/servlet/http/HttpServletRequest.class&#10;密码不正确&#9;null&#9;null&#10;invalid &#9;PSI&#9;JAVA://org.omg.CORBA.DynAnyPackage.Invalid&#10;collapse&#9;FILE&#9;file://D:/shouzhiHS/src/main/webapp/bower_components/bootstrap/js/collapse.js&#10;custom.min.css&#9;FILE&#9;file://E:/shouzhiHS/src/main/webapp/build/css/custom.min.css&#10;body&#9;null&#9;null&#10;footer&#9;null&#9;null&#10;sidebar-footer&#9;null&#9;null&#10;nav-md&#9;null&#9;null" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
@@ -423,10 +603,10 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\shouzhiHS\src\main\webapp\js" />
-      <recent name="D:\shouzhiHS\src\main\webapp" />
-      <recent name="D:\shouzhiHS\src\main\webapp\images" />
       <recent name="D:\shouzhiHS\src\main\webapp\css" />
-      <recent name="D:\shouzhiHS\src\main\java\com\sz\serviceImpl" />
+      <recent name="D:\shouzhiHS\src\main\webapp\src" />
+      <recent name="D:\shouzhiHS\src\main\java\com\sz\common\util" />
+      <recent name="D:\shouzhiHS\src\main\webapp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sz.common.vo" />
@@ -628,6 +808,7 @@
   </component>
   <component name="SvnConfiguration" cleanupOnStartRun="true">
     <configuration>C:\Users\ZL003\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -689,12 +870,28 @@
       <workItem from="1558574119713" duration="4633000" />
       <workItem from="1558599386973" duration="3666000" />
       <workItem from="1558660322589" duration="13712000" />
-      <workItem from="1558919345457" duration="10528000" />
+      <workItem from="1558919345457" duration="10543000" />
+      <workItem from="1559005466961" duration="12604000" />
+      <workItem from="1559093500419" duration="178000" />
+      <workItem from="1559093715446" duration="21016000" />
+      <workItem from="1559178608339" duration="16417000" />
+      <workItem from="1559285971613" duration="9427000" />
+      <workItem from="1559524983089" duration="20486000" />
+      <workItem from="1559610874601" duration="20102000" />
+      <workItem from="1559696946994" duration="15795000" />
     </task>
+    <task id="LOCAL-00001" summary="字段类型更新，微调整">
+      <created>1559029928747</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1559029928747</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="808121000" />
+    <option name="totallyTimeSpent" value="924161000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -709,37 +906,37 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5021322" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38260868" sideWeight="0.54584223" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14232409" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14232409" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.092750534" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14232409" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35070574" sideWeight="0.4792111" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28338763" sideWeight="0.47547975" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35" sideWeight="0.4664179" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2826087" sideWeight="0.38379532" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38260868" sideWeight="0.46908316" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.4914712" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14925373" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.48294243" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18695652" sideWeight="0.45415777" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4914712" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15085287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51140064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51140064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -748,38 +945,40 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="D:\shouzhiHS\SHmanage" />
+      <path value="D:\shouzhiHS\shouzhiHS" />
+    </ignored-roots>
+    <MESSAGE value="字段类型更新，微调整" />
+    <MESSAGE value="修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/UserServiceImpl.java</url>
-          <line>110</line>
-          <properties class="com.sz.serviceImpl.UserServiceImpl" method="addObject">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sz/controller/SixGlodDetailController.java</url>
+          <line>71</line>
+          <properties class="com.sz.controller.SixGlodDetailController" method="upload">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="189" />
+          <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/UserServiceImpl.java</url>
-          <line>169</line>
-          <properties class="com.sz.serviceImpl.UserServiceImpl" method="deleteObjects">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sz/controller/SixGlodDetailController.java</url>
+          <line>91</line>
+          <properties class="com.sz.controller.SixGlodDetailController" method="fileDownload">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="190" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/sz/common/util/ShiroUserRealm.java</url>
-          <line>110</line>
-          <properties class="com.sz.common.util.ShiroUserRealm" method="doGetAuthorizationInfo">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="191" />
+          <option name="timeStamp" value="213" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="194" />
+      <option name="time" value="214" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -788,399 +987,461 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-web/1.2.2/shiro-web-1.2.2.jar!/org/apache/shiro/web/filter/PathMatchingFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-web/1.2.2/shiro-web-1.2.2.jar!/org/apache/shiro/web/filter/AccessControlFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="14" column="60" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-web/1.2.2/shiro-web-1.2.2.jar!/org/apache/shiro/web/filter/authz/AuthorizationFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="15" column="58" lean-forward="false" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-spring/1.4.0/shiro-spring-1.4.0.jar!/org/apache/shiro/spring/web/ShiroFilterFactoryBean.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="208" column="43" lean-forward="false" selection-start-line="208" selection-start-column="43" selection-end-line="208" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/common/util/PowerInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1230">
-          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/common/Exception/globalException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/service/WorkDayService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-config.xml">
+    <entry file="jar://E:/chengqian/jdk-1.8/src.zip!/java/util/Iterator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="51" />
+        <state relative-caret-position="121">
+          <caret line="53" column="17" lean-forward="false" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1119">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/realm/AuthenticatingRealm.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="195" column="0" lean-forward="false" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="454" column="0" lean-forward="false" selection-start-line="454" selection-start-column="0" selection-end-line="454" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/subject/support/SubjectCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/filter/DelegatingFilterProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-web/1.2.2/shiro-web-1.2.2.jar!/org/apache/shiro/web/servlet/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-web/1.2.2/shiro-web-1.2.2.jar!/org/apache/shiro/web/servlet/AbstractShiroFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="407" column="0" lean-forward="false" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="411" column="0" lean-forward="false" selection-start-line="411" selection-start-column="0" selection-end-line="411" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar!/org/springframework/web/servlet/HandlerExecutionChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/subject/support/DelegatingSubject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="294" column="0" lean-forward="false" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-shiro.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="45" column="54" lean-forward="true" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/UserRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-359">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding>
-            <marker date="1557222274842" expanded="true" signature="347:415" ph="select ROLEI... user_roles" />
-            <marker date="1557222274842" expanded="true" signature="510:571" ph="delete from user_roles" />
-            <marker date="1557222274842" expanded="true" signature="697:758" ph="delete from user_roles" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/service/DeptService.java">
+    <entry file="jar://E:/chengqian/Repository/org/apache/poi/poi/3.11/poi-3.11.jar!/org/apache/poi/ss/usermodel/Workbook.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/DeptServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="120" column="25" lean-forward="false" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="55" column="46" lean-forward="false" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/realm/AuthorizingRealm.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4860">
-          <caret line="206" column="51" lean-forward="false" selection-start-line="206" selection-start-column="50" selection-end-line="206" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-aop/4.3.9.RELEASE/spring-aop-4.3.9.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4350">
-          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://src:table:/1dffeb45/3f115c74-60ec-4911-b978-546ed2c787dd/shouzhi_manage.role">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/roleEditUI.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/MenusMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MenusMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6600">
-          <caret line="220" column="15" lean-forward="false" selection-start-line="220" selection-start-column="15" selection-end-line="220" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/common/util/ShiroUserRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-389">
-          <caret line="110" column="28" lean-forward="false" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="270" column="34" lean-forward="false" selection-start-line="270" selection-start-column="14" selection-end-line="270" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="72" column="23" lean-forward="false" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/DeptController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/revenueApprovalMan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="120" column="85" lean-forward="false" selection-start-line="120" selection-start-column="84" selection-end-line="120" selection-end-column="85" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6330">
-          <caret line="240" column="16" lean-forward="false" selection-start-line="240" selection-start-column="16" selection-end-line="240" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="179" column="32" lean-forward="false" selection-start-line="179" selection-start-column="22" selection-end-line="179" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#927#928#0" expanded="true" />
-            <element signature="e#992#993#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#4418#4419#0" expanded="true" />
-            <element signature="e#4485#4486#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4380">
-          <caret line="146" column="32" lean-forward="false" selection-start-line="146" selection-start-column="32" selection-end-line="146" selection-end-column="32" />
+        <state relative-caret-position="-7739">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/role.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4828">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/RoleMenuMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/workerUI.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/auditWorker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1140">
+          <caret line="161" column="39" lean-forward="true" selection-start-line="161" selection-start-column="39" selection-end-line="161" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/pojo/Dept.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/pojo/SixGoldDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/revenueApprovalMan.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/service/WorkerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="203">
+          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/WorkerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="71" column="61" lean-forward="false" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/WorkerMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="37" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/supplier.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="283" column="13" lean-forward="false" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/worker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="126" column="19" lean-forward="true" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-beans/4.3.9.RELEASE/spring-beans-4.3.9.RELEASE.jar!/org/springframework/beans/propertyeditors/CustomDateEditor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/bind/annotation/InitBinder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/chengqian/jdk-1.8/src.zip!/java/text/DateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="347" column="0" lean-forward="true" selection-start-line="347" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="531" column="0" lean-forward="false" selection-start-line="531" selection-start-column="0" selection-end-line="531" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="476" column="0" lean-forward="false" selection-start-line="476" selection-start-column="0" selection-end-line="476" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3083">
+          <caret line="267" column="4" lean-forward="false" selection-start-line="267" selection-start-column="4" selection-end-line="267" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
+            <marker date="1559026185352" expanded="true" signature="2051:2213" ph="select ,(SEL... " />
+            <marker date="1559026185352" expanded="true" signature="2300:2362" ph="delete from user... " />
+            <marker date="1559026185352" expanded="true" signature="2436:3110" ph="insert into user... " />
+            <marker date="1559026185352" expanded="true" signature="5799:7289" ph="update user... " />
+            <marker date="1559026185352" expanded="true" signature="7375:8101" ph="update user... " />
+            <marker date="1559026185352" expanded="true" signature="8216:8282" ph="SELECT * FRO... user" />
+            <marker date="1559026185352" expanded="true" signature="8359:8384" ph="SELECT count... user" />
+            <marker date="1559026185352" expanded="true" signature="8496:8971" ph="SELECT c.USE... user" />
+            <marker date="1559026185352" expanded="true" signature="8572:8629" ph="SELECT USERR... user" />
+            <marker date="1559026185352" expanded="true" signature="8833:8877" ph="SELECT DNAME... dept" />
+            <marker date="1559026185352" expanded="true" signature="9014:9127" ph="UPDATE user... " />
+            <marker date="1559026185352" expanded="true" signature="9457:9493" ph="SELECT NAME role" />
+            <marker date="1559026185352" expanded="true" signature="9579:9624" ph="SELECT DNAME... dept" />
+            <marker date="1559026185352" expanded="true" signature="9712:9778" ph="SELECT USERI... user" />
+            <marker date="1559026185352" expanded="true" signature="9867:9921" ph="SELECT USERR... user" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/common/util/SessionInterceptor.java">
+    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="630">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/InsuranceController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="930">
+          <caret line="207" column="50" lean-forward="false" selection-start-line="207" selection-start-column="50" selection-end-line="207" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/insurance.html">
+    <entry file="das://src:table:/1dffeb45/3f115c74-60ec-4911-b978-546ed2c787dd/shouzhi_manage.sixgolddetail">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1080">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="182">
+          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/WorkerService.java">
+    <entry file="jar://E:/chengqian/jdk-1.8/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="890">
-          <caret line="400" column="9" lean-forward="false" selection-start-line="400" selection-start-column="9" selection-end-line="400" selection-end-column="9" />
+        <state relative-caret-position="190">
+          <caret line="832" column="23" lean-forward="false" selection-start-line="832" selection-start-column="23" selection-end-line="832" selection-end-column="23" />
           <folding>
-            <element signature="e#15193#15199#0" expanded="true" />
+            <element signature="e#30684#30685#0" expanded="false" />
+            <element signature="e#30716#30717#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WorkerMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="603" column="44" lean-forward="true" selection-start-line="603" selection-start-column="44" selection-end-line="603" selection-end-column="44" />
+          <folding>
+            <marker date="1559024499708" expanded="true" signature="4755:4856" ph="select from worker" />
+            <marker date="1559024499708" expanded="true" signature="4942:4998" ph="delete from worker... " />
+            <marker date="1559024499708" expanded="true" signature="5074:7367" ph="insert into worker... " />
+            <marker date="1559024499708" expanded="true" signature="15114:19897" ph="update worker... " />
+            <marker date="1559024499708" expanded="true" signature="19985:22397" ph="update worker... " />
+            <marker date="1559024499708" expanded="true" signature="22653:22680" ph="SELECT COUNT... worker" />
+            <marker date="1559024499708" expanded="true" signature="22832:22924" ph="SELECT * FRO... worker" />
+            <marker date="1559024499708" expanded="true" signature="23910:23943" ph="SELECT COUNT... worker" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/WorkerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="9240">
+          <caret line="334" column="37" lean-forward="false" selection-start-line="334" selection-start-column="37" selection-end-line="334" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/WorkerController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/common/util/PowerInterceptor.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/common/util/SessionInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="117" column="7" lean-forward="false" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="7" />
+        <state relative-caret-position="300">
+          <caret line="22" column="61" lean-forward="false" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/bootstrap-datetimepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43470">
+          <caret line="1474" column="33" lean-forward="false" selection-start-line="1474" selection-start-column="33" selection-end-line="1474" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/dept.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="101" column="11" lean-forward="false" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="537" column="13" lean-forward="false" selection-start-line="537" selection-start-column="13" selection-end-line="537" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/AttendanceMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/multipart/MultipartFile.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/http/HttpHeaders.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="302" column="16" lean-forward="false" selection-start-line="302" selection-start-column="16" selection-end-line="302" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/service/SixGoldService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/chengqian/Repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="159" column="32" lean-forward="false" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/controller/SixGlodDetailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/serviceImpl/SixGoldServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="42" column="32" lean-forward="false" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sixGoldDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="7" lean-forward="false" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1559721877423" expanded="true" signature="13362:13381" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="13431:13450" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="13504:13523" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="13575:13594" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="13655:13674" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="13734:13753" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="13812:13831" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="13889:13908" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="13972:13991" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="14054:14073" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="14141:14160" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="14221:14240" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="14303:14322" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="14384:14403" ph="..." />
+            <marker date="1559721877423" expanded="true" signature="14462:14481" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-570">
+          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding>
+            <marker date="1559723105068" expanded="true" signature="361:429" ph="select ROLEI... user_roles" />
+            <marker date="1559723105068" expanded="true" signature="524:585" ph="delete from user_roles" />
+            <marker date="1559723105068" expanded="true" signature="711:772" ph="delete from user_roles" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/UserRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/MenusMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/RoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="101" column="2" lean-forward="false" selection-start-line="101" selection-start-column="2" selection-end-line="101" selection-end-column="2" />
+          <folding>
+            <marker date="1559723104956" expanded="true" signature="1019:1119" ph="select from role" />
+            <marker date="1559723104956" expanded="true" signature="1205:1259" ph="delete from role... " />
+            <marker date="1559723104956" expanded="true" signature="1332:1549" ph="insert into role... " />
+            <marker date="1559723104956" expanded="true" signature="2576:3009" ph="update role... " />
+            <marker date="1559723104956" expanded="true" signature="3094:3318" ph="update role... " />
+            <marker date="1559723104956" expanded="true" signature="3394:3419" ph="SELECT count... role" />
+            <marker date="1559723104956" expanded="true" signature="3567:3657" ph="SELECT * FRO... role" />
+            <marker date="1559723104956" expanded="true" signature="3741:3769" ph="SELECT ID,NA... role" />
+            <marker date="1559723104956" expanded="true" signature="3858:3899" ph="SELECT ID,UP... role" />
+            <marker date="1559723104956" expanded="true" signature="3970:4202" ph="SELECT c.ID role" />
+            <marker date="1559723104956" expanded="true" signature="4053:4102" ph="SELECT NAME role" />
+            <marker date="1559723104956" expanded="true" signature="4312:4372" ph="SELECT * FRO... role" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SixGoldDetailMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="273" column="2" lean-forward="false" selection-start-line="273" selection-start-column="2" selection-end-line="273" selection-end-column="2" />
+          <folding>
+            <marker date="1559723105020" expanded="true" signature="2331:2440" ph="select from sixgolddetail" />
+            <marker date="1559723105020" expanded="true" signature="2527:2590" ph="delete from sixgolddetail... " />
+            <marker date="1559723105020" expanded="true" signature="2673:3769" ph="insert into sixgolddetail... " />
+            <marker date="1559723105020" expanded="true" signature="3047:3769" ph="insert into sixgolddetail... " />
+            <marker date="1559723105020" expanded="true" signature="7377:9504" ph="update sixgolddetail... " />
+            <marker date="1559723105020" expanded="true" signature="9599:10717" ph="update sixgolddetail... " />
+            <marker date="1559723105020" expanded="true" signature="10816:10850" ph="SELECT * FRO... sixgolddetail" />
+            <marker date="1559723105020" expanded="true" signature="11310:11337" ph="SELECT * FRO... sixgolddetail" />
+            <marker date="1559723105020" expanded="true" signature="11310:11380" ph="SELECT * FRO... sixgolddetail" />
+            <marker date="1559723105020" expanded="true" signature="11310:11406" ph="SELECT * FRO... sixgolddetail" />
+            <marker date="1559723105020" expanded="true" signature="11482:11627" ph="SELECT COUNT... sixgolddetail" />
+            <marker date="1559723105020" expanded="true" signature="11701:11726" ph="INSERT INTO sixgolddetail... " />
+            <marker date="1559723105020" expanded="true" signature="11701:12071" ph="INSERT INTO sixgolddetail... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sz/dao/SixGoldDetailMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/moment-with-locales.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="5810" column="8" lean-forward="false" selection-start-line="5810" selection-start-column="8" selection-end-line="5810" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1250,11 +1511,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|shouzhiHS</last-edited>
+          <last-edited>shouzhiHS</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

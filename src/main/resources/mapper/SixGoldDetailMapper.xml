@@ -4,9 +4,9 @@
   <resultMap id="BaseResultMap" type="com.sz.pojo.SixGoldDetail" >
     <constructor >
       <idArg column="ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="WORKERID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="WORKERNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="WORKERIDCARD" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="DEPTID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="PAYMONTH" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="ENDOWMENTENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
       <arg column="ENDOWMENTPERSONAGE" jdbcType="DOUBLE" javaType="java.lang.Double" />
       <arg column="MEDICALENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
@@ -20,13 +20,14 @@
       <arg column="COLLECTENTERPRISE" jdbcType="DOUBLE" javaType="java.lang.Double" />
       <arg column="COLLECTPERSONAGE" jdbcType="DOUBLE" javaType="java.lang.Double" />
       <arg column="COLLECT" jdbcType="DOUBLE" javaType="java.lang.Double" />
+      <arg column="MONTH" jdbcType="DATE" javaType="java.util.Date" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, WORKERID, WORKERIDCARD, DEPTID, ENDOWMENTENTERPRISE, ENDOWMENTPERSONAGE, MEDICALENTERPRISE, 
+    ID, WORKERNAME, WORKERIDCARD, PAYMONTH, ENDOWMENTENTERPRISE, ENDOWMENTPERSONAGE, MEDICALENTERPRISE,
     MEDICALPERSONAGE, UNEMPLOYMENTENTERPRISE, UNEMPLOYMENTPERSONAGE, INDUCTRIALINJURYENTERPRISE, 
     MATERNITYENTERPRISE, HOUSINGFUNDENTERPRISE, HOUSINGFUNDPERSONAGE, COLLECTENTERPRISE, 
-    COLLECTPERSONAGE, COLLECT
+    COLLECTPERSONAGE, COLLECT, MONTH
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -39,20 +40,22 @@
     where ID = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.sz.pojo.SixGoldDetail" >
-    insert into sixgolddetail (ID, WORKERID, WORKERIDCARD, 
-      DEPTID, ENDOWMENTENTERPRISE, ENDOWMENTPERSONAGE, 
-      MEDICALENTERPRISE, MEDICALPERSONAGE, UNEMPLOYMENTENTERPRISE, 
-      UNEMPLOYMENTPERSONAGE, INDUCTRIALINJURYENTERPRISE, 
-      MATERNITYENTERPRISE, HOUSINGFUNDENTERPRISE, 
-      HOUSINGFUNDPERSONAGE, COLLECTENTERPRISE, 
-      COLLECTPERSONAGE, COLLECT)
-    values (#{id,jdbcType=INTEGER}, #{workerid,jdbcType=INTEGER}, #{workeridcard,jdbcType=VARCHAR}, 
-      #{deptid,jdbcType=INTEGER}, #{endowmententerprise,jdbcType=DOUBLE}, #{endowmentpersonage,jdbcType=DOUBLE}, 
+    insert into sixgolddetail (ID, WORKERNAME, WORKERIDCARD,
+      PAYMONTH, ENDOWMENTENTERPRISE, ENDOWMENTPERSONAGE,
+      MEDICALENTERPRISE, MEDICALPERSONAGE, UNEMPLOYMENTENTERPRISE,
+      UNEMPLOYMENTPERSONAGE, INDUCTRIALINJURYENTERPRISE,
+      MATERNITYENTERPRISE, HOUSINGFUNDENTERPRISE,
+      HOUSINGFUNDPERSONAGE, COLLECTENTERPRISE,
+      COLLECTPERSONAGE, COLLECT, MONTH
+      )
+    values (#{id,jdbcType=INTEGER}, #{workername,jdbcType=VARCHAR}, #{workeridcard,jdbcType=VARCHAR},
+      #{paymonth,jdbcType=INTEGER}, #{endowmententerprise,jdbcType=DOUBLE}, #{endowmentpersonage,jdbcType=DOUBLE},
       #{medicalenterprise,jdbcType=DOUBLE}, #{medicalpersonage,jdbcType=DOUBLE}, #{unemploymententerprise,jdbcType=DOUBLE}, 
       #{unemploymentpersonage,jdbcType=DOUBLE}, #{inductrialinjuryenterprise,jdbcType=DOUBLE}, 
       #{maternityenterprise,jdbcType=DOUBLE}, #{housingfundenterprise,jdbcType=DOUBLE}, 
       #{housingfundpersonage,jdbcType=DOUBLE}, #{collectenterprise,jdbcType=DOUBLE}, 
-      #{collectpersonage,jdbcType=DOUBLE}, #{collect,jdbcType=DOUBLE})
+      #{collectpersonage,jdbcType=DOUBLE}, #{collect,jdbcType=DOUBLE}, #{month,jdbcType=DATE}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.sz.pojo.SixGoldDetail" >
     insert into sixgolddetail
@@ -60,14 +63,14 @@
       <if test="id != null" >
         ID,
       </if>
-      <if test="workerid != null" >
-        WORKERID,
+      <if test="workername != null" >
+        WORKERNAME,
       </if>
       <if test="workeridcard != null" >
         WORKERIDCARD,
       </if>
-      <if test="deptid != null" >
-        DEPTID,
+      <if test="paymonth != null" >
+        PAYMONTH,
       </if>
       <if test="endowmententerprise != null" >
         ENDOWMENTENTERPRISE,
@@ -108,19 +111,22 @@
       <if test="collect != null" >
         COLLECT,
       </if>
+      <if test="month != null" >
+        MONTH,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="workerid != null" >
-        #{workerid,jdbcType=INTEGER},
+      <if test="workername != null" >
+        #{workername,jdbcType=VARCHAR},
       </if>
       <if test="workeridcard != null" >
         #{workeridcard,jdbcType=VARCHAR},
       </if>
-      <if test="deptid != null" >
-        #{deptid,jdbcType=INTEGER},
+      <if test="paymonth != null" >
+        #{paymonth,jdbcType=INTEGER},
       </if>
       <if test="endowmententerprise != null" >
         #{endowmententerprise,jdbcType=DOUBLE},
@@ -161,19 +167,22 @@
       <if test="collect != null" >
         #{collect,jdbcType=DOUBLE},
       </if>
+      <if test="month != null" >
+        #{month,jdbcType=DATE},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.sz.pojo.SixGoldDetail" >
     update sixgolddetail
     <set >
-      <if test="workerid != null" >
-        WORKERID = #{workerid,jdbcType=INTEGER},
+      <if test="workername != null" >
+        WORKERNAME = #{workername,jdbcType=VARCHAR},
       </if>
       <if test="workeridcard != null" >
         WORKERIDCARD = #{workeridcard,jdbcType=VARCHAR},
       </if>
-      <if test="deptid != null" >
-        DEPTID = #{deptid,jdbcType=INTEGER},
+      <if test="paymonth != null" >
+        PAYMONTH = #{paymonth,jdbcType=INTEGER},
       </if>
       <if test="endowmententerprise != null" >
         ENDOWMENTENTERPRISE = #{endowmententerprise,jdbcType=DOUBLE},
@@ -214,14 +223,17 @@
       <if test="collect != null" >
         COLLECT = #{collect,jdbcType=DOUBLE},
       </if>
+      <if test="month != null" >
+        MONTH = #{month,jdbcType=DATE},
+      </if>
     </set>
     where ID = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.sz.pojo.SixGoldDetail" >
     update sixgolddetail
-    set WORKERID = #{workerid,jdbcType=INTEGER},
+    set WORKERNAME = #{workername,jdbcType=VARCHAR},
       WORKERIDCARD = #{workeridcard,jdbcType=VARCHAR},
-      DEPTID = #{deptid,jdbcType=INTEGER},
+      PAYMONTH = #{paymonth,jdbcType=INTEGER},
       ENDOWMENTENTERPRISE = #{endowmententerprise,jdbcType=DOUBLE},
       ENDOWMENTPERSONAGE = #{endowmentpersonage,jdbcType=DOUBLE},
       MEDICALENTERPRISE = #{medicalenterprise,jdbcType=DOUBLE},
@@ -234,7 +246,53 @@
       HOUSINGFUNDPERSONAGE = #{housingfundpersonage,jdbcType=DOUBLE},
       COLLECTENTERPRISE = #{collectenterprise,jdbcType=DOUBLE},
       COLLECTPERSONAGE = #{collectpersonage,jdbcType=DOUBLE},
-      COLLECT = #{collect,jdbcType=DOUBLE}
+      COLLECT = #{collect,jdbcType=DOUBLE},
+      MONTH = #{month,jdbcType=DATE}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getRowCount" resultType="java.lang.Integer" parameterType="String">
+    SELECT COUNT(*) FROM sixgolddetail
+    <include refid="wherename"/>
+
+  </select>
+  <sql id="wherename">
+    <where>
+      <if test="workername!=null and workername!='' ">
+           workername like cancat("%",#{workername},"%")
+      </if>
+      <if test="months!=null and year!=null">
+        AND month(Month)=#{months} and year(Month)=#{year}
+    </if>
+    </where>
+  </sql>
+  <select id="findPageObjects" resultType="com.sz.pojo.SixGoldDetail" parameterType="com.sz.pojo.SixGoldDetail">
+    SELECT * FROM sixgolddetail
+    <include refid="wherename"/>
+    limit #{startIndex},#{pageSize}
+  </select>
+
+  <select id="selectSame" resultType="java.lang.Integer">
+    SELECT COUNT(WORKERIDCARD) FROM sixgolddetail where year(Month)=#{month} and month(Month)=#{year} GROUP BY WORKERIDCARD HAVING COUNT(#{IdCard})>1
+  </select>
+
+  <insert id="insertAll" parameterType="java.util.List">
+   INSERT INTO sixgolddetail ( WORKERNAME, WORKERIDCARD,
+    PAYMONTH, ENDOWMENTENTERPRISE, ENDOWMENTPERSONAGE,
+    MEDICALENTERPRISE, MEDICALPERSONAGE, UNEMPLOYMENTENTERPRISE,
+    UNEMPLOYMENTPERSONAGE, INDUCTRIALINJURYENTERPRISE,
+    MATERNITYENTERPRISE, HOUSINGFUNDENTERPRISE,
+    HOUSINGFUNDPERSONAGE, COLLECTENTERPRISE,
+    COLLECTPERSONAGE, COLLECT, MONTH)
+    VALUES
+    <foreach collection="list" item="item" index="index" separator=",">
+      (#{item.workername,jdbcType=VARCHAR}, #{item.workeridcard,jdbcType=VARCHAR},
+      #{item.paymonth,jdbcType=INTEGER}, #{item.endowmententerprise,jdbcType=DOUBLE}, #{item.endowmentpersonage,jdbcType=DOUBLE},
+      #{item.medicalenterprise,jdbcType=DOUBLE}, #{item.medicalpersonage,jdbcType=DOUBLE}, #{item.unemploymententerprise,jdbcType=DOUBLE},
+      #{item.unemploymentpersonage,jdbcType=DOUBLE}, #{item.inductrialinjuryenterprise,jdbcType=DOUBLE},
+      #{item.maternityenterprise,jdbcType=DOUBLE}, #{item.housingfundenterprise,jdbcType=DOUBLE},
+      #{item.housingfundpersonage,jdbcType=DOUBLE}, #{item.collectenterprise,jdbcType=DOUBLE},
+      #{item.collectpersonage,jdbcType=DOUBLE}, #{item.collect,jdbcType=DOUBLE}, #{item.month,jdbcType=DATE}
+      )
+    </foreach>
+  </insert>
 </mapper>

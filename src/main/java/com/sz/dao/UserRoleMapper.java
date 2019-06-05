@@ -10,10 +10,10 @@ import java.util.List;
 public interface UserRoleMapper {
     /**
      * 基于用户id获取用户对应的角色id
-     * @param id
+     * @param userid
      * @return
      */
-    List<Integer> findRoleIdsByUserId(Integer id);
+    List<Integer> findRoleIdsByUserId(Integer userid);
 
 
     /**
@@ -23,8 +23,8 @@ public interface UserRoleMapper {
      * @return
      */
     int insertObject(
-            @Param("userid") Integer userid,
-                    @Param("roleIds")Integer[] roleIds);
+            @Param("USERID") Integer userId,
+            @Param("ROLEID")Integer[] roleIds);
 
     /**
      * 基于用户id删除用户和角色的关系数据

@@ -243,7 +243,7 @@
     <include refid="Blob_Column_List" />
     from menus
   </select>
-  <select id="getClildCount" parameterType="int" resultType="int">
+  <select id="getClildCount" parameterType="int" resultType="java.lang.Integer">
     SELECT COUNT(*)
     FROM menus
     WHERE PARENTID=#{id}

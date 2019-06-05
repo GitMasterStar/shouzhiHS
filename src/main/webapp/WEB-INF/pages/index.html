@@ -35,6 +35,9 @@
     <!--时间插件css-->
     <link rel="stylesheet" type="text/css" media="all" href="js/daterangepicker-bs3.css" />
 
+    <!--时间css start-->
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
     <style type="text/css">
       .mask {
         position: absolute; top: 0px; filter: alpha(opacity=60); background-color: #777;
@@ -378,8 +381,16 @@
     <script src="../js/bootprompt.all.min.js"></script>
     <script src="../assets/sweetalert/sweetalert.min.js"></script>
 
-  <!--时间插件js-->
-  <script src="../laydate/laydate.js"></script>
+    <!--时间插件js-->
+    <script src="../laydate/laydate.js"></script>
+  <!--时间js start-->
+  <script src="js/moment-with-locales.js"></script>
+  <script src="js/bootstrap-datetimepicker.js"></script>
+  <script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+
+  <!--上传控件-->
+    <script type="text/javascript" src="src/bootstrap-filestyle.js"></script>
 
     <script type="text/javascript">
     $(function () {
@@ -445,7 +456,7 @@
 
 
 
-            $("#" + id).click(function () {
+            $("#"+id).click(function () {
 
                 debugger;
                 var urlo="user/checkToken.do";

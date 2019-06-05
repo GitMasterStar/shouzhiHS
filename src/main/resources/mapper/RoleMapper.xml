@@ -99,7 +99,7 @@
       REMARK = #{remark,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
-  <select id="getRowCount" resultType="int">
+  <select id="getRowCount" resultType="java.lang.Integer">
     SELECT count(*) FROM role
     <include refid="queryWhereId"/>
   </select>

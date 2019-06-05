@@ -2,9 +2,10 @@ package com.sz.dao;
 
 import com.sz.pojo.WorkDay;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface WorkDayMapper {
     int deleteByPrimaryKey(Integer id);
 

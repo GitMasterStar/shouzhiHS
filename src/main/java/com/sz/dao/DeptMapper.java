@@ -27,6 +27,5 @@ public interface DeptMapper {
      * @return
      */
     List<Map<String, Object>> findObjects();
-    
     List<Node>findZTreeNodes();
 }
